@@ -2,7 +2,7 @@ import { ChatMessage, ClassificationResult, ClassificationCategory } from '../..
 import * as fs from 'fs';
 import * as path from 'path';
 
-const DEFAULT_REGION = process.env.AWS_REGION || 'us-east-1';
+const DEFAULT_REGION = process.env.APP_AWS_REGION || process.env.AWS_REGION || 'us-east-1';
 const DEFAULT_MODEL_ID = process.env.BEDROCK_MODEL_ID || 'anthropic.claude-3-haiku-20240307-v1:0';
 const DEFAULT_CONFIDENCE_THRESHOLD = parseFloat(process.env.CONFIDENCE_THRESHOLD || '0.70');
 const DEFAULT_BATCH_SIZE = parseInt(process.env.BATCH_SIZE || '10', 10);
@@ -11,6 +11,7 @@ const DEFAULT_BATCH_SIZE = parseInt(process.env.BATCH_SIZE || '10', 10);
  * Options for classification execution
  */
 export interface ClassifyOptions {
+  freelancerRole?: string;
   confidenceThreshold?: number;
   batchSize?: number;
   mockMode?: boolean;
@@ -77,7 +78,9 @@ async function runBedrockClassification(
 
   // Load system prompt and user prompt template from /ai/prompts/
   const promptsDir = path.join(__dirname, '../../../ai/prompts');
-  const systemPrompt = fs.readFileSync(path.join(promptsDir, 'classification-system.md'), 'utf-8');
+  const rawSystemPrompt = fs.readFileSync(path.join(promptsDir, 'classification-system.md'), 'utf-8');
+  const roleContext = options.freelancerRole || 'web-dev';
+  const systemPrompt = rawSystemPrompt.replace('{{FREELANCER_ROLE}}', roleContext);
   const userPromptTemplate = fs.readFileSync(path.join(promptsDir, 'classification-user.md'), 'utf-8');
 
   const messagesPayload = batch.map((m) => ({
