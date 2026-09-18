@@ -1,78 +1,201 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/*
+ * ALXO — Semantic theme tokens.
+ * All component styling MUST consume these tokens (or Tailwind's token
+ * classes that reference them). Never hardcode theme hex values in components.
+ *
+ * Tokens are defined as raw RGB channel triplets so Tailwind's
+ * `rgb(var(--token) / <alpha-value>)` can apply opacity modifiers.
+ *
+ * Brand: primary is the deep "ink" indigo (trust, precision). `--brand-accent`
+ * is the electric cyan used for the X motif and gradient moments — never for
+ * large surfaces or body text.
+ */
+
 :root {
   --font-inter: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-jetbrains: 'JetBrains Mono', monospace;
 
-  /* Light Theme Defaults */
-  --bg-main: #f8fafc;
-  --bg-card: rgba(255, 255, 255, 0.95);
-  --bg-card-subtle: #f1f5f9;
-  --text-primary: #0f172a;
-  --text-secondary: #475569;
-  --text-muted: #64748b;
-  --border-color: rgba(203, 213, 225, 0.8);
-  --input-bg: #ffffff;
+  /* Light */
+  --background: 248 250 252; /* #f8fafc slate-50 */
+  --foreground: 15 23 42; /* #0f172a slate-900 */
+
+  --card: 255 255 255;
+  --card-foreground: 15 23 42;
+
+  --popover: 255 255 255;
+  --popover-foreground: 15 23 42;
+
+  --primary: 67 56 202; /* ink indigo — #4338ca indigo-700 */
+  --primary-foreground: 255 255 255;
+
+  --secondary: 241 245 249; /* slate-100 */
+  --secondary-foreground: 51 65 85; /* slate-700 */
+
+  --muted: 241 245 249; /* slate-100 */
+  --muted-foreground: 100 116 139; /* slate-500 */
+
+  --accent: 207 250 254; /* cyan-100 */
+  --accent-foreground: 14 116 144; /* cyan-800 */
+
+  --border: 226 232 240; /* slate-200 */
+  --input: 226 232 240;
+  --ring: 67 56 202; /* indigo-700 */
+
+  --brand-accent: 6 182 212; /* electric cyan — #06b6d4 cyan-500 */
+  --brand-ink: 67 56 202; /* #4338ca indigo-700 */
+
+  --success: 5 150 105; /* emerald-600 */
+  --success-foreground: 255 255 255;
+  --warning: 217 119 6; /* amber-600 */
+  --warning-foreground: 255 251 235; /* amber-50 */
+  --danger: 225 29 72; /* rose-600 */
+  --danger-foreground: 255 255 255;
+  --info: 2 132 199; /* sky-600 */
+  --info-foreground: 240 249 255; /* sky-50 */
 }
 
-html.dark {
-  /* Dark Theme Tokens */
-  --bg-main: #0b0f19;
-  --bg-card: rgba(15, 23, 42, 0.75);
-  --bg-card-subtle: #0f172a;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
-  --border-color: rgba(255, 255, 255, 0.08);
-  --input-bg: #0f172a;
+.dark {
+  /* Dark */
+  --background: 11 17 32; /* #0b1120 slate-950 — deep ink backdrop */
+  --foreground: 241 245 249; /* #f1f5f9 slate-100 */
+
+  --card: 15 23 42; /* slate-900 */
+  --card-foreground: 241 245 249;
+
+  --popover: 15 23 42;
+  --popover-foreground: 241 245 249;
+
+  --primary: 124 92 248; /* vivid indigo — #7c5cf8 */
+  --primary-foreground: 255 255 255;
+
+  --secondary: 51 65 85; /* slate-700 */
+  --secondary-foreground: 226 232 240; /* slate-200 */
+
+  --muted: 51 65 85; /* slate-700 */
+  --muted-foreground: 148 163 184; /* slate-400 */
+
+  --accent: 8 51 68; /* cyan-950 */
+  --accent-foreground: 103 232 249; /* cyan-300 */
+
+  --border: 30 41 59; /* slate-800 */
+  --input: 51 65 85; /* slate-700 */
+  --ring: 124 92 248; /* indigo-400 */
+
+  --brand-accent: 34 211 238; /* electric cyan — #22d3ee cyan-400 */
+  --brand-ink: 124 92 248; /* #7c5cf8 */
+
+  --success: 16 185 129; /* emerald-500 */
+  --success-foreground: 6 78 59; /* emerald-900 */
+  --warning: 245 158 11; /* amber-500 */
+  --warning-foreground: 69 26 3; /* amber-950 */
+  --danger: 244 63 94; /* rose-500 */
+  --danger-foreground: 76 5 25; /* rose-950 */
+  --info: 14 165 233; /* sky-500 */
+  --info-foreground: 12 74 110; /* sky-950 */
 }
 
-body {
-  font-family: var(--font-inter);
-  background-color: var(--bg-main);
-  color: var(--text-primary);
-  min-height: 100vh;
-  transition: background-color 0.25s ease, color 0.25s ease;
+@layer base {
+  * {
+    border-color: rgb(var(--border));
+  }
+
+  body {
+    background-color: rgb(var(--background));
+    color: rgb(var(--foreground));
+    font-family: var(--font-inter);
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(var(--ring) / 0.6);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
 }
 
-/* Custom Glassmorphism Card Style */
-.glass-card {
-  background: var(--bg-card);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
-  transition: all 0.2s ease-in-out;
+@layer components {
+  /* Minimal legacy compatibility shims (removed from pages over time) */
+  .glass-card {
+    background: rgb(var(--card));
+    border: 1px solid rgb(var(--border));
+  }
+
+  .glass-card-hover:hover {
+    border-color: rgb(var(--ring) / 0.4);
+  }
 }
 
-.glass-card-hover:hover {
-  border-color: rgba(59, 130, 246, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.15);
-}
-
-/* Custom Scrollbars */
+/* Custom scrollbars */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-card-subtle);
+  background: rgb(var(--background));
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #94a3b8;
+  background: rgb(var(--muted-foreground) / 0.5);
   border-radius: 4px;
 }
 
-html.dark ::-webkit-scrollbar-thumb {
-  background: #334155;
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--muted-foreground) / 0.8);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #64748b;
+/* Glassmorphic card variants used in dark mode showcase */
+@layer components {
+  .glass-deep {
+    background: rgb(var(--card) / 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgb(var(--border) / 0.6);
+  }
+
+  /* Glow border accent variants — semantic, no hardcoded hex */
+  .glow-border-danger  { border-color: rgb(var(--danger) / 0.4); }
+  .glow-border-success { border-color: rgb(var(--success) / 0.4); }
+  .glow-border-info    { border-color: rgb(var(--info) / 0.4); }
+  .glow-border-warning { border-color: rgb(var(--warning) / 0.4); }
+
+  /* Hide scrollbar but keep scroll functionality */
+  .scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Animation delay utilities for staggered entrances */
+  .delay-50  { animation-delay: 50ms; }
+  .delay-100 { animation-delay: 100ms; }
+  .delay-150 { animation-delay: 150ms; }
+  .delay-200 { animation-delay: 200ms; }
+  .delay-250 { animation-delay: 250ms; }
+  .delay-300 { animation-delay: 300ms; }
+
+  /* SVG sparkline draw animation helper */
+  .sparkline-path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    pathLength: 1;
+  }
 }
