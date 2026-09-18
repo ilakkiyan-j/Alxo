@@ -4,9 +4,10 @@ import {
   ProjectAnalysis,
   LedgerItem,
   ClassificationCategory,
-} from '../../../shared/types';
+} from '@scope-creep-ledger/shared';
 import { parseConversation } from './parser';
 import { classifyMessages, ClassifyOptions } from './classifier';
+import { saveProject, saveLedgerItems } from '../../ledger/src/ledger-service';
 
 const DEFAULT_CONFIDENCE_THRESHOLD = parseFloat(process.env.CONFIDENCE_THRESHOLD || '0.70');
 
@@ -107,6 +108,23 @@ export async function handleAnalyzeRequest(
       ledgerItems.push(ledgerItem);
     }
   }
+
+  const project = {
+    id: projectId,
+    userId: request.userId,
+    name: request.projectName,
+    clientName: request.clientName,
+    freelancerRole: request.freelancerRole || 'web-dev',
+    originalScope: request.originalScope,
+    hourlyRate,
+    currency: request.currency || 'USD',
+    status: 'analyzed' as const,
+    createdAt: new Date().toISOString(),
+    updatedAt: new Date().toISOString(),
+  };
+
+  await saveProject(project, request.userId);
+  await saveLedgerItems(ledgerItems, request.userId);
 
   const summary: ProjectAnalysis = {
     projectId,

@@ -1,36 +1,31 @@
-# Scope Creep Ledger — Development Rules
+# Development Rules & Standards — Scope Creep Ledger
 
-## 1. Code Quality & Conventions
-- **TypeScript**: Strict mode enabled. No `any` types unless explicitly isolated with a documented reason.
-- **Naming**:
-  - `camelCase` for variables, functions, and properties.
-  - `PascalCase` for React components, types, interfaces, and classes.
-  - `kebab-case` for file names and API endpoints.
-  - `UPPER_SNAKE_CASE` for global constants and environment variables.
-- **Functions**: Small, single-responsibility functions with explicit return type annotations.
+## 1. Core Engineering Mandates
+1. **Preserve Working Functionality**: Never rewrite existing working code unless necessary for feature integration. Extend or refactor incrementally.
+2. **Never Guess Code Logic or Schemas**: Inspect source files directly before consuming functions, methods, or types.
+3. **No Superficial Error Patching**: Trace failures to root causes instead of suppressing exceptions or returning dummy data.
+4. **Deterministic Math Enforcement**: All cost arithmetic must happen in code. Never ask Bedrock to calculate financial totals.
+5. **Least Privilege & AWS Security**: Never hardcode AWS keys, expose secrets in frontend code, or expose private S3 objects publicly.
 
-## 2. API Design & Validation
-- Shared types must live under `/shared/types/`.
-- Request and response contracts must be validated with Zod/JSON schemas under `/shared/schemas/`.
-- Frontend and backend must use identical contract types from `/shared/types/`.
+## 2. Code Quality & Conventions
+- **Language**: TypeScript with strict mode enabled.
+- **Shared Types**: Use `shared/types/index.ts` as the single source of truth for domain models across frontend and backend.
+- **Money**: Never hardcode a currency symbol (`$`, `₹`, etc.) in UI code or templates. Every monetary value must be rendered through `lib/currency.ts` `formatMoney(amount, currency)`. Store `amount` (number) + `currency` (code) separately — never a formatted string as source of truth.
+- **Currency**: Never add currency codes from different projects as if they were equal amounts. Cross-currency admin aggregation must be shown grouped by currency (no fake FX conversion).
+- **Theme**: All styling must use semantic tokens (`background`, `card`, `muted-foreground`, etc.). Never hardcode theme hex colors (`#0b0f19`, `bg-slate-900`, `dark:bg-[...]`) directly in components. Light/dark must share one component system via `darkMode: 'class'` + token classes.
+- **Routing**: Every route has a purpose. Public / user / admin routes are strictly separated (`/`, `/app/*`, `/admin/*`). Demo workspace is an authenticated demo **user** experience and must NEVER route to `/admin`.
+- **Demo separation**: `mock` data and `real` API data must be clearly separated. Never ship mock statistics as real user data.
+- **No fake functionality**: Buttons that appear functional but do nothing are forbidden. Disable, mark unavailable, or remove.
+- **Component Styling**: Use Tailwind CSS with semantic tokens for Light and Dark mode consistency.
+- **Error Handling**: Return human-readable error messages to users while logging detailed errors safely to CloudWatch / console.
 
-## 3. Error Handling
-- Never silently swallow errors or return empty dummy fallbacks.
-- External dependencies (Bedrock, DynamoDB, S3) must be wrapped with try/catch blocks and structured error logging.
-- Error responses sent to the client must be safe, friendly, and free of sensitive infrastructure tracebacks or keys.
-
-## 4. AI & Bedrock Integration Rules
-- Never hardcode AI prompts inside Lambda or application source code.
-- Prompts must be stored in `/ai/prompts/` and schemas in `/ai/schemas/`.
-- All Bedrock outputs must pass schema validation before writing to any storage layer.
-- If Bedrock output fails JSON parsing or schema validation, reject immediately and log to CloudWatch.
-
-## 5. Security & Credentials
-- **NEVER** hardcode AWS credentials (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`) anywhere in code or commit them to Git.
-- **NEVER** expose AWS SDK keys to client-side frontend code. All AWS operations must occur server-side inside Lambda.
-- Use standard `.env.example` templates for local configuration. Never commit `.env` files.
-
-## 6. AWS & Infrastructure
-- Follow least-privilege IAM permissions.
-- Document every AWS service addition or configuration change in `/docs/aws/<service-name>.md` and `/ai/AWS_STATUS.md`.
-- Keep AWS Region consistent across services (e.g. `us-east-1` or `us-west-2` where Bedrock models are available).
+## 3. Testing & Verification Rules
+- **No Declaration of Success Without Command Execution**: Run `npm test` or `npm run build` after changes and verify clean passing output before completing tasks.
+- **Automated Test Coverage**:
+  - Unit & Service: `npx tsx services/test-all.ts`
+  - Playwright E2E & API: `npx playwright test`
+- **Route/QA gate (every major route, before declaring done)**:
+  - Checked in: Light mode, Dark mode, Desktop, Tablet, Mobile.
+  - Checked for: routing, navigation, spacing, typography, contrast, cards, forms, tables, buttons, dialogs, loading, empty states, errors, currency display, authorization.
+- **Currency QA gate**: verify user default currency flows into new projects, project can override currency, and ledger/change-order/dashboard all display the project currency. Changing currency must NOT convert the numeric rate (no FX).
+- **Theme QA gate**: no component may look visually broken when switching themes; no random hard-coded theme colors remain.

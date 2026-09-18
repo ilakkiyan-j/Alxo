@@ -1,11 +1,12 @@
-# Scope Creep Ledger — AWS Status
+# AWS Infrastructure Status Matrix — Scope Creep Ledger
 
-| Service | Purpose | Status | Region | Configured | Notes |
-| :--- | :--- | :--- | :--- | :--- | :--- |
-| **Amazon S3** | Raw conversation file storage | Documented | us-east-1 | Optional | Private bucket `scope-creep-ledger-conversations-dev`. Service built in `services/analyze/src/s3-storage.ts`. AWS guide at `docs/aws/s3.md`. Offline fallback active. |
-| **Amazon DynamoDB** | Project & verified ledger storage | Documented | us-east-1 | Optional | Tables: `scope-creep-ledger-projects-dev` and `scope-creep-ledger-items-dev`. Service built in `services/ledger/src/ledger-service.ts`. AWS guide at `docs/aws/dynamodb.md`. Offline fallback active. |
-| **AWS Lambda** | Serverless backend execution | Documented | us-east-1 | Optional | Handlers built in `services/analyze` and `services/ledger`. Direct deployment ready. |
-| **Amazon API Gateway**| HTTP REST API routing | Documented | us-east-1 | Optional | API Routes exposed under `/api/analyze` and `/api/change-order`. |
-| **Amazon Bedrock** | AI classification & email generation | Documented | us-east-1 | Optional | Integrated in `services/analyze/src/classifier.ts` and `services/change-order`. AWS guide at `docs/aws/bedrock.md`. Offline fallback active. |
-| **AWS Amplify** | Next.js frontend hosting | Documented | ap-southeast-2 | Optional | Next.js App Router app (`apps/web`). AWS guide at `docs/aws/amplify.md` (Sydney region). Clean build verified. |
-| **Amazon CloudWatch** | Structured backend logging & metrics| Documented | us-east-1 | Optional | Structured JSON logging module in `services/analyze/src/logger.ts`. AWS guide at `docs/aws/cloudwatch.md`. |
+| AWS Service | Product Purpose | Status | Configured | Tested | Notes / Resource Name |
+|---|---|---|---|---|---|
+| **AWS Amplify** | Web Hosting & CI/CD | ✅ Active | Yes | Yes | `https://master.d2ctutlbtt1yhj.amplifyapp.com/` |
+| **Amazon Bedrock** | AI Message Classification | ✅ Active | Yes | Yes | `anthropic.claude-3-haiku-20240307-v1:0` (`ap-southeast-2`) |
+| **Amazon S3** | Raw Conversation Storage | ✅ Active | Yes | Yes | `scope-creep-ledger-conversations-dev` |
+| **Amazon DynamoDB** | Project & Ledger Data | ✅ Active | Yes | Yes | `scope-creep-ledger-projects-dev` & `items-dev` |
+| **Amazon CloudWatch** | Monitoring & Logging | ✅ Active | Yes | Yes | Backend logs monitoring |
+| **Amazon Cognito** | Authentication & Roles | ⏳ Planned | No | No | Target for Phase 8 (User Pool & App Client) |
+| **AWS Lambda** | Serverless Microservices | ⏳ Planned | No | No | Next.js API routes currently running on Amplify |
+| **API Gateway** | REST API Gateway | ⏳ Planned | No | No | Next.js route handlers currently manage endpoints |
