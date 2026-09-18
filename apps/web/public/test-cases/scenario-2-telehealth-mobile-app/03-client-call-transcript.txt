@@ -1,0 +1,11 @@
+Call Transcript: PulseCare Weekly Sync
+Date: 15 Sep 2026, 11:00 AM IST
+Attendees: Dr. Vikram Patel (PulseCare), Jordan Lee (Lead Developer)
+
+[00:02:15] Dr. Vikram Patel: Jordan, during our internal demo today, our hospital ops team insisted that we need an automated insurance eligibility verification API integrated into the booking step. Patients shouldn't be allowed to book a doctor unless their health insurance provider is validated in real-time.
+
+[00:03:40] Jordan Lee: Vikram, integrating third-party insurance verification gateways requires custom API connections, HIPAA/DISHA security compliance, and error fallback handlers. That is well beyond the simple appointment scheduling flow defined in our MVP scope.
+
+[00:05:10] Dr. Vikram Patel: Also, for the doctor's calendar, we cannot use standard time slots. We need a dynamic AI-driven schedule optimization algorithm that automatically adjusts consultation duration based on patient symptoms. We assume this is included in the scheduling setup.
+
+[00:06:30] Jordan Lee: AI schedule optimization algorithms and dynamic slot recalculation were explicitly listed as out of scope in our initial agreement. I will prepare an itemized change order with cost estimates for both insurance verification and AI scheduling.

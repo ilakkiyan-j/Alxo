@@ -1,0 +1,3 @@
+[04/09/2026, 14:00:10] Rohan Mehta (QuizWise Founder): Hi Jordan, reviewing our project brief for QuizWise. We are building a React Native iOS and Android app that presents 50 static multiple-choice questions organized into 5 topics, along with a local score display and simple leaderboard.
+[04/09/2026, 14:15:30] Jordan Lee (Developer): Hi Rohan! Yes, confirmed. We will bundle the 50 static questions into a JSON file, build the quiz screens, and include 1 round of UI polish. Complex backend features like AI question generation or multiplayer quizzes are excluded.
+[04/09/2026, 14:22:15] Rohan Mehta (QuizWise Founder): Perfect! 50 static questions is great for our initial app store launch.

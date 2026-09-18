@@ -47,8 +47,8 @@ export default function ScopePage({ params }: { params: { projectId: string } })
               classifier.
             </p>
             <Button variant="link" size="sm" className="mt-1 p-0" asChild>
-              <Link href="/app/projects/new">
-                Start a new project with updated scope <ArrowRight className="h-4 w-4" />
+              <Link href="/app/analysis/new">
+                Start a new analysis with updated scope <ArrowRight className="h-4 w-4 ml-1" />
               </Link>
             </Button>
           </div>

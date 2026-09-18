@@ -1,0 +1,8 @@
+{
+  "projectName": "QuizWise EdTech Mobile App",
+  "clientName": "QuizWise Education",
+  "role": "Web / Software Developer",
+  "hourlyRate": 3000,
+  "currency": "INR",
+  "originalScope": "React Native mobile app displaying 50 static quiz questions categorized by topic.\nLocal scoring system, basic high-score leaderboard, and user profile page.\nIncludes 1 round of UI polish.\nExcludes AI dynamic question generation, real-time 1v1 multiplayer mode, and web admin dashboard."
+}

@@ -134,6 +134,22 @@ export default function DashboardPage() {
     return () => { alive = false; };
   }, [projects, user?.userId]);
 
+  const [syncingCloud, setSyncingCloud] = React.useState(false);
+
+  const handleDashboardSync = async () => {
+    setSyncingCloud(true);
+    try {
+      await api.syncLocalProjectsToCloud(user?.userId);
+      if (typeof window !== 'undefined') {
+        window.dispatchEvent(new Event('scope-creep-project-updated'));
+      }
+    } catch {
+      /* ignore */
+    } finally {
+      setSyncingCloud(false);
+    }
+  };
+
   const recentProjects = (projects ?? []).slice(0, 5);
   const consolidatedValue = aggregate
     ? consolidateCurrencies(aggregate.costByCurrency, preferredCurrency)
@@ -207,10 +223,10 @@ export default function DashboardPage() {
           title={`${greeting()}, ${user?.name?.split(' ')[0] ?? 'there'} 👋`}
           description="Catch the unbilled work hiding between the lines."
           actions={
-            <Button asChild size="lg" id="dashboard-new-project-btn">
-              <Link href="/app/projects/new">
-                <FolderPlus className="h-4 w-4" />
-                New Project
+            <Button asChild size="lg" id="dashboard-new-analysis-btn">
+              <Link href="/app/analysis/new">
+                <Sparkles className="h-4 w-4" />
+                New Analysis
               </Link>
             </Button>
           }
@@ -265,7 +281,9 @@ export default function DashboardPage() {
                     description="Upload a conversation to get started."
                     action={
                       <Button asChild size="sm">
-                        <Link href="/app/projects/new">Create first project</Link>
+                        <Link href="/app/analysis/new">
+                          <Sparkles className="h-3.5 w-3.5 mr-1" /> Start New Analysis
+                        </Link>
                       </Button>
                     }
                   />
@@ -348,89 +366,49 @@ export default function DashboardPage() {
 
         {/* ── Right Narrow Column ── */}
         <div className="space-y-4">
-          {/* Quick Actions */}
+          {/* Quick Actions (Compact 3-Tile Action Bar) */}
           <Card className="border-primary/20 bg-primary/5">
-            <CardHeader className="pb-2 flex-row items-center justify-between">
-              <CardTitle className="text-sm">Quick Actions</CardTitle>
+            <CardHeader className="pb-2.5 flex-row items-center justify-between">
+              <CardTitle className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Quick Actions</CardTitle>
               <kbd className="hidden sm:inline-flex items-center gap-0.5 rounded border border-border bg-card/80 px-1.5 py-0.5 text-[10px] text-muted-foreground font-mono shadow-xs">
                 ⌘K
               </kbd>
             </CardHeader>
-            <CardContent className="space-y-2">
-              <Button asChild className="w-full justify-between h-10 group" size="sm" id="dashboard-analyze-btn">
-                <Link href="/app/analysis/new">
-                  <span className="flex items-center gap-2.5">
-                    <span className="p-1 rounded-md bg-primary-foreground/20 text-primary-foreground">
-                      <Sparkles className="h-3.5 w-3.5" />
-                    </span>
-                    <span>Analyse New Project</span>
-                  </span>
-                  <ArrowRight className="h-3.5 w-3.5 opacity-70 group-hover:translate-x-0.5 transition-transform" />
+            <CardContent>
+              <div className="grid grid-cols-3 gap-2">
+                {/* Action 1: New Analysis */}
+                <Link
+                  href="/app/analysis/new"
+                  id="dashboard-analyze-btn"
+                  title="Analyse New Project"
+                  className="flex flex-col items-center justify-center p-2.5 rounded-lg border border-primary/20 bg-primary/10 text-primary hover:bg-primary/20 transition-all group text-center"
+                >
+                  <Sparkles className="h-4 w-4 mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-[11px] font-semibold leading-tight">Analyse</span>
                 </Link>
-              </Button>
-              <Button asChild variant="outline" className="w-full justify-between h-10 text-xs group" size="sm">
-                <Link href="/app/projects/new?sample=benchmark">
-                  <span className="flex items-center gap-2.5">
-                    <span className="p-1 rounded-md bg-warning/10 text-warning border border-warning/20">
-                      <FolderPlus className="h-3.5 w-3.5" />
-                    </span>
-                    <span>Load Benchmark Demo</span>
-                  </span>
-                  <ArrowRight className="h-3.5 w-3.5 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="w-full justify-between h-10 text-xs group" size="sm">
-                <Link href="/app/projects">
-                  <span className="flex items-center gap-2.5">
-                    <span className="p-1 rounded-md bg-success/10 text-success border border-success/20">
-                      <ListOrdered className="h-3.5 w-3.5" />
-                    </span>
-                    <span>View All Projects</span>
-                  </span>
-                  <ArrowRight className="h-3.5 w-3.5 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" className="w-full justify-between h-10 text-xs group" size="sm">
-                <Link href="/app/activity">
-                  <span className="flex items-center gap-2.5">
-                    <span className="p-1 rounded-md bg-info/10 text-info border border-info/20">
-                      <ActivityIcon className="h-3.5 w-3.5" />
-                    </span>
-                    <span>Activity Feed</span>
-                  </span>
-                  <ArrowRight className="h-3.5 w-3.5 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
 
-          {/* AWS Powered Mini-Card */}
-          <Card className="border-brand-accent/20 bg-brand-accent/5 hover:shadow-glow transition-all duration-200">
-            <CardContent className="pt-4 pb-4 space-y-3">
-              <div className="flex items-center gap-2">
-                <Cloud className="h-4 w-4 text-brand-accent" />
-                <span className="text-xs font-semibold text-foreground">Powered by AWS</span>
-                <span className="ml-auto h-1.5 w-1.5 rounded-full bg-success animate-pulse-dot" />
-              </div>
-              <div className="space-y-1.5 text-[10px] text-muted-foreground">
-                <div className="flex items-center gap-1.5">
-                  <Zap className="h-3 w-3 text-warning flex-shrink-0" />
-                  <span>Amazon Bedrock (Claude 3 Haiku)</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Database className="h-3 w-3 text-success flex-shrink-0" />
-                  <span>DynamoDB · Projects · Ledger · Activity</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Cloud className="h-3 w-3 text-info flex-shrink-0" />
-                  <span>S3 · Conversation archives</span>
-                </div>
-              </div>
-              <Button asChild variant="ghost" size="sm" className="w-full h-7 text-[10px] text-brand-accent hover:bg-brand-accent/10">
-                <Link href="/app/aws-architecture">
-                  View Architecture <ExternalLink className="h-3 w-3 ml-1" />
+                {/* Action 2: Sync AWS */}
+                <button
+                  type="button"
+                  onClick={handleDashboardSync}
+                  disabled={syncingCloud}
+                  title="Sync Local Projects to AWS Cloud"
+                  className="flex flex-col items-center justify-center p-2.5 rounded-lg border border-warning/30 bg-warning/10 text-warning hover:bg-warning/20 disabled:opacity-50 transition-all group text-center"
+                >
+                  <Cloud className={`h-4 w-4 mb-1 group-hover:scale-110 transition-transform ${syncingCloud ? 'animate-spin' : ''}`} />
+                  <span className="text-[11px] font-semibold leading-tight">{syncingCloud ? 'Syncing' : 'AWS Sync'}</span>
+                </button>
+
+                {/* Action 3: AWS Architecture */}
+                <Link
+                  href="/aws-architecture"
+                  title="AWS Architecture Showcase"
+                  className="flex flex-col items-center justify-center p-2.5 rounded-lg border border-brand-accent/30 bg-brand-accent/10 text-brand-accent hover:bg-brand-accent/20 transition-all group text-center"
+                >
+                  <Zap className="h-4 w-4 mb-1 group-hover:scale-110 transition-transform" />
+                  <span className="text-[11px] font-semibold leading-tight">AWS Stack</span>
                 </Link>
-              </Button>
+              </div>
             </CardContent>
           </Card>
 

@@ -17,7 +17,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   FolderPlus, FolderKanban, Search, Filter, LayoutGrid, List,
-  ArrowUpDown, Cloud, CheckCircle2, Clock, AlertCircle
+  ArrowUpDown, Cloud, CheckCircle2, Clock, AlertCircle, Sparkles
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { useProjects } from '@/hooks/useProject';
@@ -111,8 +111,8 @@ export default function ProjectsPage() {
         description="Monitor and track scope creep across all client engagements."
         actions={
           <Button asChild size="lg" id="projects-new-btn">
-            <Link href="/app/projects/new">
-              <FolderPlus className="h-4 w-4" /> New Project
+            <Link href="/app/analysis/new">
+              <Sparkles className="h-4 w-4" /> New Analysis
             </Link>
           </Button>
         }
@@ -226,7 +226,9 @@ export default function ProjectsPage() {
                 description="Upload a conversation transcript to start detecting scope creep."
                 action={
                   <Button asChild size="sm">
-                    <Link href="/app/projects/new">Create Project</Link>
+                    <Link href="/app/analysis/new">
+                      <Sparkles className="h-3.5 w-3.5 mr-1" /> New Analysis
+                    </Link>
                   </Button>
                 }
               />

@@ -1,0 +1,4 @@
+[01/09/2026, 10:00:15] Jordan Lee (Developer): Hi Priya! Thanks for reviewing the Statement of Work for the Aura Shop Storefront Redesign. Just to confirm, the project covers 5 primary storefront pages (Home, Catalog, Product Detail, About, Contact), basic Stripe checkout, and importing up to 50 product items from your CSV.
+[01/09/2026, 10:15:40] Priya Sharma (Aura Retail): Hi Jordan! Yes, that looks completely aligned with our budget. We have our product catalog ready in CSV format, and standard Stripe checkout works great for our launch.
+[01/09/2026, 10:22:05] Jordan Lee (Developer): Perfect! We will also include responsive mobile layouts and up to 2 design revision rounds. Any advanced features like loyalty programs, custom ERP syncs, or multi-currency will be kept out of scope for MVP.
+[01/09/2026, 10:30:10] Priya Sharma (Aura Retail): Agreed! Let us get started with the design phase.

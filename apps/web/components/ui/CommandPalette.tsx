@@ -71,7 +71,7 @@ export function CommandPalette({
   const pages = [
     { label: 'Dashboard', href: '/app/dashboard', icon: LayoutDashboard },
     { label: 'All Projects', href: '/app/projects', icon: FolderKanban },
-    { label: 'New Analysis', href: '/app/projects/new', icon: FolderPlus },
+    { label: 'New Analysis', href: '/app/analysis/new', icon: Sparkles },
     { label: 'Activity Feed', href: '/app/activity', icon: Activity },
     { label: 'Profile Settings', href: '/app/settings/profile', icon: Settings },
   ];
@@ -80,7 +80,7 @@ export function CommandPalette({
 
   const actions = [
     {
-      label: 'Analyze New Project',
+      label: 'Analyse New Project',
       description: 'Run Bedrock AI scope analysis on chat transcripts',
       keywords: 'analyze new project create upload scope transcript',
       icon: Sparkles,
@@ -115,7 +115,7 @@ export function CommandPalette({
       keywords: 'load benchmark sample thread demo conversation test',
       icon: FolderPlus,
       iconClass: 'bg-warning/10 text-warning border-warning/20',
-      action: () => navigate('/app/projects/new?sample=benchmark'),
+      action: () => navigate('/app/analysis/new?sample=benchmark'),
     },
     {
       label: 'View All Projects',
@@ -214,39 +214,6 @@ export function CommandPalette({
             </div>
           )}
 
-          {filteredProjects.length > 0 && (
-            <div>
-              <p className="px-2 py-1 font-bold text-[10px] uppercase tracking-wider text-muted-foreground">
-                Projects ({filteredProjects.length})
-              </p>
-              <div className="space-y-0.5">
-                {filteredProjects.map((p) => (
-                  <button
-                    key={p.id}
-                    type="button"
-                    onClick={() => navigate(`/app/projects/${p.id}/overview`)}
-                    className="flex w-full items-center gap-2.5 rounded-lg px-3 py-2 text-left text-sm text-foreground transition-colors hover:bg-muted focus:outline-none"
-                  >
-                    <FolderKanban className="h-4 w-4 text-info" />
-                    <div className="flex-1 min-w-0">
-                      <p className="truncate font-semibold text-foreground">{p.name}</p>
-                      <p className="truncate text-xs text-muted-foreground">{p.clientName}</p>
-                    </div>
-                    {p.isLocalOnly ? (
-                      <span className="text-[10px] text-warning bg-warning/10 px-1.5 py-0.5 rounded border border-warning/20">
-                        Local
-                      </span>
-                    ) : (
-                      <span className="text-[10px] text-success bg-success/10 px-1.5 py-0.5 rounded border border-success/20">
-                        Cloud
-                      </span>
-                    )}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
-
           {filteredPages.length > 0 && (
             <div>
               <p className="px-2 py-1 font-bold text-[10px] uppercase tracking-wider text-muted-foreground">
@@ -271,9 +238,9 @@ export function CommandPalette({
             </div>
           )}
 
-          {filteredActions.length === 0 && filteredProjects.length === 0 && filteredPages.length === 0 && (
+          {filteredActions.length === 0 && filteredPages.length === 0 && (
             <div className="py-8 text-center text-sm text-muted-foreground">
-              No matching commands or projects found.
+              No matching commands or actions found.
             </div>
           )}
         </div>

@@ -141,10 +141,17 @@ export function WorkspaceShell({
   const brand = (
     <div className="flex items-center justify-between px-5 py-4 border-b border-border/40">
       <div className="flex items-center gap-3">
-        <ALXOGlyph size={38} />
+        <ALXOGlyph size={36} />
         <div className="leading-tight">
-          <p className="text-base font-bold tracking-[0.15em] text-foreground">ALXO</p>
-          <p className="text-[11px] font-medium text-muted-foreground">
+          <span className="inline-flex items-baseline text-foreground font-['Outfit',var(--font-inter),sans-serif]">
+            <span className="text-xl font-bold tracking-[-0.04em] lowercase leading-none text-foreground">
+              alxo
+            </span>
+            <sup className="text-[9px] font-semibold text-foreground/75 tracking-normal ml-0.5 relative -top-1.5 select-none">
+              ™
+            </sup>
+          </span>
+          <p className="text-[11px] font-medium text-muted-foreground mt-0.5">
             {accentLabel}
             {role === 'ADMIN' && <span className="ml-1 text-info">· Admin</span>}
           </p>
@@ -180,12 +187,6 @@ export function WorkspaceShell({
           </button>
         }
       >
-        <DropdownMenuItem
-          label="Settings"
-          onSelect={() => router.push(role === 'ADMIN' ? '/admin/settings' : '/app/settings/profile')}
-        >
-          <Settings className="h-4 w-4" /> Settings
-        </DropdownMenuItem>
         <DropdownMenuItem
           label="Sign out"
           danger

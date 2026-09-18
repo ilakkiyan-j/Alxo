@@ -13,7 +13,7 @@ test.describe('Analysis → Ledger → Change Order E2E', () => {
 
   test('should analyze the benchmark thread, open the ledger, and generate a change order', async ({ page }) => {
     // Build a project
-    await page.goto('/app/projects/new');
+    await page.goto('/app/analysis/new');
     await page.getByLabel('Project name').fill('Acme Website');
     await page.getByLabel('Client / company').fill('Acme Corp');
     await page.getByLabel('Original baseline scope').fill(SAMPLE_SCOPE);

@@ -1,0 +1,3 @@
+[05/09/2026, 11:30:00] Dr. Vikram Patel (PulseCare): Hi Jordan, reviewing our contract summary for the PulseCare Telehealth MVP. We are locking in patient registration, doctor profile listings, appointment booking calendar, and 1-on-1 video calling via Jitsi SDK.
+[05/09/2026, 11:42:18] Jordan Lee (Developer): Hi Dr. Vikram! Yes, that is correct. The agreed budget covers the Flutter app for iOS and Android with Jitsi integration. Advanced medical data integrations like Apple HealthKit or E-Prescription generators are excluded from this initial build.
+[05/09/2026, 11:50:05] Dr. Vikram Patel (PulseCare): Understood! Let us proceed with building the patient booking flow first.

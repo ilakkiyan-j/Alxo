@@ -3,12 +3,13 @@
 import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { UserRound, SlidersHorizontal, ShieldCheck } from 'lucide-react';
+import { UserRound, Cloud, SlidersHorizontal, ShieldCheck } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { PageHeader } from '@/components/PageHeader';
 
 const TABS = [
   { label: 'Profile', href: '/app/settings/profile', icon: UserRound },
+  { label: 'AWS Cloud & Health', href: '/app/settings/cloud', icon: Cloud },
   { label: 'Preferences', href: '/app/settings/preferences', icon: SlidersHorizontal },
   { label: 'Security', href: '/app/settings/security', icon: ShieldCheck },
 ];
@@ -22,7 +23,7 @@ export default function SettingsLayout({ children }: { children: React.ReactNode
 
       <nav
         aria-label="Settings sections"
-        className="flex w-fit max-w-full gap-1 overflow-x-auto rounded-lg border border-border bg-muted/50 p-1"
+        className="flex w-full max-w-full gap-1 overflow-x-auto whitespace-nowrap scroll-smooth rounded-lg border border-border bg-muted/50 p-1 select-none"
       >
         {TABS.map((tab) => {
           const active = pathname === tab.href;

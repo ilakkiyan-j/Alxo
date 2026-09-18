@@ -1,0 +1,16 @@
+From: Rohan Mehta <rohan@quizwise-edu.com>
+To: Jordan Lee <jordan@designstudio.com>
+Date: 15 Sep 2026 13:20:00 +0530
+Subject: Admin Portal Requirement for QuizWise Launch
+
+Hi Jordan,
+
+Our investor review is scheduled for next Tuesday. They emphasized that we cannot launch a mobile quiz app without a comprehensive web-based Admin Control Panel.
+
+The admin portal needs to allow our content team to add/edit quiz categories, monitor student completion analytics, view high-score leaderboards, and export user data to CSV.
+
+Please let us know when the admin web portal will be ready for testing before our investor meeting.
+
+Best regards,
+Rohan Mehta
+Founder & CEO, QuizWise Education

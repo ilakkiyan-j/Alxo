@@ -83,8 +83,8 @@ export default function AnalysisTabPage({ params }: { params: { projectId: strin
 
       <div className="flex justify-end">
         <Button variant="outline" asChild>
-          <Link href={`/app/projects/new`}>
-            Re-run with updated scope <ArrowRight className="h-4 w-4" />
+          <Link href="/app/analysis/new">
+            Re-run with updated scope <ArrowRight className="h-4 w-4 ml-1" />
           </Link>
         </Button>
       </div>

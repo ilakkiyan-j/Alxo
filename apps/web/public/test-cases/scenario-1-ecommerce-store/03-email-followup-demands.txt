@@ -1,0 +1,14 @@
+From: Priya Sharma <priya@auraretail.com>
+To: Jordan Lee <jordan@designstudio.com>
+Date: 14 Sep 2026 16:45:00 +0530
+Subject: Launch Requirements - Multi-Currency & Language Toggle
+
+Hi Jordan,
+
+Following up on our launch timeline for next week. Our leadership team reviewed the store build today and noted that we need multi-currency support (USD, EUR, and GBP conversion alongside INR) and a French/Spanish language toggle across all 5 pages before we can go live.
+
+Since the pages are already built, we expect these toggles to be included in the remaining development phase before launch. Please confirm when this will be pushed to the staging server.
+
+Best regards,
+Priya Sharma
+Managing Director, Aura Retail Ltd
