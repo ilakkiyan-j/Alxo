@@ -1,6 +1,7 @@
 {
   "name": "scope-creep-ledger",
   "version": "0.1.0",
+  "license": "MIT",
   "private": true,
   "description": "Cumulative scope-tracking ledger for freelancers and small agencies",
   "workspaces": [

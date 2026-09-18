@@ -11,13 +11,6 @@ Pre-seeded accounts available in the dev & live environment.
 
 One-click demo entry is available on the sign-in page. Demo password change is disabled.
 
-## Admin Account
-
-| Field    | Value                 |
-| -------- | --------------------- |
-| Email    | admin@scopecreep.io   |
-| Password | Admin123!             |
-
 ## Provisioned User Accounts
 
 | Name             | Email                  | Password     |

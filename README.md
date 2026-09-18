@@ -3,7 +3,7 @@
 <div align="center">
 
 <a href="https://main.dhbgp6utbowvg.amplifyapp.com/" target="_blank" rel="noopener noreferrer">
-  <img src="alxo_logo.png" alt="ALXO Logo" width="160" />
+  <img src="apps/web/public/alxo_logo.png" alt="ALXO Logo" width="160" />
 </a>
 
 # ALXO
@@ -18,6 +18,7 @@
 [![Next.js](https://img.shields.io/badge/Next.js-14.2_App_Router-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Playwright](https://img.shields.io/badge/Playwright-E2E_25%2F25_Passing-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 <br />
 
@@ -38,7 +39,6 @@ ALXO is fully deployed and production-ready on **AWS Amplify Cloud Infrastructur
 | Role | Email | Password | Access Rights |
 | :--- | :--- | :--- | :--- |
 | **Demo Account** *(Recommended)* | `demo@scopecreep.io` | `Demo123!` | Full workspace, ledger analysis, change order export |
-| **Admin Account** | `admin@scopecreep.io` | `Admin123!` | User management, system metrics, deployment status |
 | **Provisioned User** | `jordan@designstudio.com` | `Jordan123!` | Standard project workspace access |
 
 > 💡 **Quick Access**: The live Sign-In page includes **1-Click Instant Demo Login** buttons for frictionless evaluation.
@@ -172,13 +172,13 @@ Alxo/
 │       │   └── aws-architecture/          # Interactive live cloud topology showcase
 │       └── public/
 │           ├── test-cases/                 # 15 complete real-world benchmark suites
-│           └── alxo_logo.png               # Brand icon & metadata assets
+│           ├── alxo_logo.png               # ALXO brand icon & UI assets
+│           └── arixen_logo.png             # Team Arixen insignia
 ├── docs/
 │   ├── DEMO_CREDENTIALS.md                 # Evaluator sign-in instructions & roles
 │   └── aws/                                # AWS deployment guides & build specs
 ├── sample-data/                            # Reference conversation threads & agreements
-├── arixen_logo.png                         # Team Arixen official insignia
-├── alxo_logo.png                           # ALXO official brand mark
+├── LICENSE                                 # MIT open-source license
 └── package.json                            # Workspace dependencies & root scripts
 ```
 
@@ -220,7 +220,7 @@ npx playwright test
 
 <div align="center">
 
-<img src="arixen_logo.png" alt="Team Arixen Logo" width="120" />
+<img src="apps/web/public/arixen_logo.png" alt="Team Arixen Logo" width="120" />
 
 ### **Engineered by Team Arixen**
 *Built for Hackathon Presentation*
@@ -237,4 +237,7 @@ npx playwright test
 
 ## 📄 License & Attribution
 
-Copyright © 2026 **Team Arixen**. Developed for Hackathon evaluation. All rights reserved.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+Copyright © 2026 **Team Arixen** (Ilakkiyan J, Manikandan E, Anshika P). All rights reserved.
+
