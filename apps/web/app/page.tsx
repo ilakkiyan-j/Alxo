@@ -11,14 +11,16 @@ import {
   Cloud,
   FileSearch,
   FileText,
+  Menu,
   MessageSquareText,
   Moon,
   Scale,
   Sparkles,
   Sun,
+  X,
   Zap,
 } from 'lucide-react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, AnimatePresence, useMotionValue, useSpring } from 'framer-motion';
 import { useAuth } from '@/context/AuthContext';
 import { Button } from '@/components/ui';
 import { ALXOLogo } from '@/components/brand';
@@ -112,14 +114,15 @@ function DemoButton({ compact = false, id }: { compact?: boolean; id?: string })
 
 function Navbar() {
   const { isDarkMode, toggleTheme } = useAuth();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   return (
     <header className="fixed top-0 z-40 w-full border-b border-border/80 bg-background/80 backdrop-blur-xl">
       <div className="mx-auto flex h-[72px] max-w-7xl items-center px-4 sm:px-6 lg:px-8">
         <Link href="/" aria-label="ALXO home">
-          <ALXOLogo size={44} />
+          <ALXOLogo size={40} />
         </Link>
-        <nav className="ml-12 hidden gap-7 text-sm font-medium text-muted-foreground md:flex">
+        <nav className="ml-10 hidden gap-6 text-sm font-medium text-muted-foreground md:flex">
           {[
             { href: '#flow', label: 'The flow' },
             { href: '#showcase', label: 'Showcase' },
@@ -142,7 +145,7 @@ function Navbar() {
             AWS Architecture
           </Link>
         </nav>
-        <div className="ml-auto flex items-center gap-3">
+        <div className="ml-auto flex items-center gap-2 sm:gap-3">
           <Link
             href="/sign-in"
             className="hidden px-3 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors sm:block"
@@ -158,8 +161,63 @@ function Navbar() {
             {isDarkMode ? <Sun className="h-4 w-4 text-warning" /> : <Moon className="h-4 w-4" />}
           </button>
           <DemoButton compact id="nav-demo-btn" />
+          <button
+            type="button"
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+            className="rounded-lg p-2 text-muted-foreground hover:bg-muted hover:text-foreground transition-colors md:hidden"
+          >
+            {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile navigation slide-over drawer */}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            className="border-b border-border/80 bg-background/95 backdrop-blur-2xl md:hidden overflow-hidden"
+          >
+            <div className="flex flex-col gap-3 px-5 py-4">
+              {[
+                { href: '#flow', label: 'Chapter 01 · The flow' },
+                { href: '#showcase', label: 'Chapter 02 · Showcase' },
+                { href: '#ledger', label: 'Chapter 03 · The ledger' },
+                { href: '#value', label: 'Chapter 04 · The value' },
+              ].map(({ href, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setMobileOpen(false)}
+                  className="rounded-lg px-3 py-2 text-sm font-semibold text-foreground hover:bg-muted hover:text-brand-accent transition-colors"
+                >
+                  {label}
+                </a>
+              ))}
+              <div className="my-1 border-t border-border/60" />
+              <Link
+                href="/aws-architecture"
+                onClick={() => setMobileOpen(false)}
+                className="flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-primary hover:bg-muted hover:text-brand-accent transition-colors"
+              >
+                <Cloud className="h-4 w-4 text-brand-accent animate-pulse-dot" />
+                Live AWS Architecture Showcase →
+              </Link>
+              <Link
+                href="/sign-in"
+                onClick={() => setMobileOpen(false)}
+                className="rounded-lg px-3 py-2 text-sm font-semibold text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+              >
+                Sign In to ALXO
+              </Link>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }
@@ -243,7 +301,7 @@ export default function LandingPage() {
         <main>
           {/* ── Hero Section (full viewport) ─────────────────────── */}
           <section
-            className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden"
+            className="relative flex min-h-screen flex-col justify-center overflow-hidden pt-24 lg:pt-16 pb-12"
             aria-label="Hero"
           >
             {/* 3D background scene + CSS glow orbs */}
@@ -252,106 +310,175 @@ export default function LandingPage() {
               onLoaded={handleSceneLoaded}
             />
 
-            {/* DOM content overlay */}
-            <div className="relative z-10 mx-auto w-full max-w-5xl px-4 pt-24 text-center sm:px-6 lg:px-8">
-              {/* Badges */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="mb-8 inline-flex flex-wrap items-center justify-center gap-2"
-              >
-                <span className="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-card/80 px-3.5 py-1.5 text-xs font-semibold text-brand-accent backdrop-blur shadow-xs">
-                  <Sparkles className="h-3.5 w-3.5" />
-                  Scope intelligence for independent teams
-                </span>
-                <Link
-                  href="/aws-architecture"
-                  className="inline-flex items-center gap-2 rounded-full border border-brand-accent/40 bg-card/80 px-3.5 py-1.5 text-xs font-semibold text-brand-accent hover:border-brand-accent hover:bg-card shadow-glow transition-all"
-                >
-                  <Cloud className="h-3.5 w-3.5 animate-pulse-dot" />
-                  Live AWS Architecture Showcase →
-                </Link>
-              </motion.div>
-
-              {/* Headline */}
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
-                className="mx-auto max-w-4xl text-5xl font-extrabold leading-[0.96] tracking-[-0.055em] text-foreground sm:text-6xl lg:text-7xl"
-                data-gsap="hero-line"
-              >
-                Stop doing extra work for free.
-                <br />
-                <span className="bg-brand-gradient bg-clip-text text-transparent">
-                  Your agreement should too.
-                </span>
-              </motion.h1>
-
-              {/* Sub-headline */}
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.75, duration: 0.6 }}
-                className="mx-auto mt-7 max-w-2xl text-base leading-7 text-muted-foreground sm:text-lg"
-                data-gsap="hero-sub"
-              >
-                ALXO turns scattered client conversations into a calm, evidence-backed case for work that wasn't part of the plan.
-              </motion.p>
-
-              {/* CTAs */}
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.95, duration: 0.6 }}
-                className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
-                data-gsap="hero-cta"
-              >
-                <DemoButton id="hero-demo-btn" />
-                <MagneticButton>
-                  <Link href="/request-access">
-                    <Button
-                      variant="outline"
-                      size="lg"
-                      className="group border-border/80 bg-card/60 text-foreground hover:bg-muted"
+            {/* DOM content overlay - 2-Column Split Grid */}
+            <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-12">
+                {/* Left Column: Typography, Badges, CTAs, and Stats */}
+                <div className="flex flex-col items-center text-center lg:col-span-7 lg:items-start lg:text-left">
+                  {/* Badges */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.6 }}
+                    className="mb-6 flex flex-wrap items-center justify-center gap-2 lg:justify-start"
+                  >
+                    <span className="inline-flex items-center gap-2 rounded-full border border-brand-accent/30 bg-card/80 px-3.5 py-1.5 text-xs font-semibold text-brand-accent backdrop-blur shadow-xs">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      Scope intelligence for independent teams
+                    </span>
+                    <Link
+                      href="/aws-architecture"
+                      className="inline-flex items-center gap-2 rounded-full border border-brand-accent/40 bg-card/80 px-3.5 py-1.5 text-xs font-semibold text-brand-accent hover:border-brand-accent hover:bg-card shadow-glow transition-all"
                     >
-                      Request access
-                      <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                    </Button>
-                  </Link>
-                </MagneticButton>
-              </motion.div>
+                      <Cloud className="h-3.5 w-3.5 animate-pulse-dot" />
+                      Live AWS Architecture Showcase →
+                    </Link>
+                  </motion.div>
 
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 1.2 }}
-                className="mt-4 text-xs text-muted-foreground"
-              >
-                No credit card · Demo data is ready to explore
-              </motion.p>
+                  {/* Headline */}
+                  <motion.h1
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
+                    className="text-4xl font-extrabold leading-[1.02] tracking-[-0.045em] text-foreground sm:text-5xl lg:text-6xl text-center lg:text-left max-w-2xl"
+                    data-gsap="hero-line"
+                  >
+                    Stop doing extra work for free.
+                    <br />
+                    <span className="bg-brand-gradient bg-clip-text text-transparent">
+                      Your agreement should too.
+                    </span>
+                  </motion.h1>
 
-              {/* Stats bar */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.4, duration: 0.6 }}
-                className="mx-auto mt-16 grid max-w-3xl grid-cols-3 border-y border-border/80 bg-card/60 backdrop-blur-md py-5 text-center text-xs sm:text-sm"
-              >
-                <div>
-                  <strong className="block text-foreground">Every request</strong>
-                  <span className="text-muted-foreground">linked to source</span>
+                  {/* Sub-headline */}
+                  <motion.p
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.75, duration: 0.6 }}
+                    className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg text-center lg:text-left"
+                    data-gsap="hero-sub"
+                  >
+                    ALXO turns scattered client conversations into a calm, evidence-backed case for work that wasn't part of the plan.
+                  </motion.p>
+
+                  {/* CTAs */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.95, duration: 0.6 }}
+                    className="mt-8 flex flex-col items-center gap-3 sm:flex-row lg:items-start"
+                    data-gsap="hero-cta"
+                  >
+                    <DemoButton id="hero-demo-btn" />
+                    <MagneticButton>
+                      <Link href="/request-access">
+                        <Button
+                          variant="outline"
+                          size="lg"
+                          className="group border-border/80 bg-card/60 text-foreground hover:bg-muted"
+                        >
+                          Request access
+                          <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                        </Button>
+                      </Link>
+                    </MagneticButton>
+                  </motion.div>
+
+                  <motion.p
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 1.2 }}
+                    className="mt-3 text-xs text-muted-foreground text-center lg:text-left"
+                  >
+                    No credit card · Demo data is ready to explore
+                  </motion.p>
+
+                  {/* Mobile & Tablet Stacked Visual Cards Showcase (screens < lg) */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.1, duration: 0.6 }}
+                    className="mt-8 flex flex-col gap-3.5 w-full max-w-xl lg:hidden text-left"
+                  >
+                    {/* Card 1: Client Chat Request */}
+                    <div className="rounded-2xl border border-brand-accent/40 bg-card/90 p-4 shadow-card backdrop-blur-md">
+                      <div className="flex items-center justify-between border-b border-border/60 pb-2">
+                        <div className="flex items-center gap-2">
+                          <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand-accent/20 text-brand-accent font-bold text-[11px]">
+                            SC
+                          </span>
+                          <div>
+                            <p className="text-xs font-semibold text-foreground">Sarah Chen (Client)</p>
+                            <p className="text-[10px] text-muted-foreground">Slack thread · 2:14 PM</p>
+                          </div>
+                        </div>
+                        <span className="rounded-full bg-brand-accent/15 px-2 py-0.5 font-mono text-[10px] font-medium text-brand-accent">
+                          New Request
+                        </span>
+                      </div>
+                      <p className="mt-2.5 text-xs leading-relaxed text-foreground/90">
+                        “Can we add dark mode and responsive navbar to this phase as well?”
+                      </p>
+                      <div className="mt-2.5 flex items-center justify-between font-mono text-[10px] text-muted-foreground border-t border-border/40 pt-2">
+                        <span>Original scope: Light mode</span>
+                        <span className="font-semibold text-brand-accent">+6 hrs estimated</span>
+                      </div>
+                    </div>
+
+                    {/* Card 2: ALXO Scope Ledger Verified Summary */}
+                    <div className="rounded-2xl border border-primary/40 bg-card/90 p-4 shadow-card backdrop-blur-md">
+                      <div className="flex items-center justify-between border-b border-border/60 pb-2">
+                        <div className="flex items-center gap-2">
+                          <Sparkles className="h-4 w-4 text-primary" />
+                          <p className="text-xs font-bold text-foreground">ALXO Scope Ledger</p>
+                        </div>
+                        <span className="flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-success">
+                          <Check className="h-3 w-3" />
+                          Verified
+                        </span>
+                      </div>
+                      <div className="mt-2 space-y-1.5 text-xs">
+                        <div className="flex items-center justify-between rounded-lg bg-muted/60 p-1.5 border border-border/50">
+                          <span className="text-foreground text-[11px]">Dark mode theme toggle</span>
+                          <span className="font-mono text-xs font-semibold text-primary">+$360.00</span>
+                        </div>
+                        <div className="flex items-center justify-between rounded-lg bg-muted/60 p-1.5 border border-border/50">
+                          <span className="text-foreground text-[11px]">Responsive mobile nav</span>
+                          <span className="font-mono text-xs font-semibold text-primary">+$180.00</span>
+                        </div>
+                      </div>
+                      <div className="mt-2.5 flex items-center justify-between border-t border-border/60 pt-2 text-xs">
+                        <span className="font-semibold text-muted-foreground text-[11px]">Recovered Scope Value</span>
+                        <span className="font-mono font-bold text-foreground text-sm">+$540.00</span>
+                      </div>
+                    </div>
+                  </motion.div>
+
+                  {/* Stats bar */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.4, duration: 0.6 }}
+                    className="mt-10 grid w-full max-w-xl grid-cols-3 rounded-2xl border border-border/80 bg-card/70 backdrop-blur-md p-4 text-center sm:text-left text-xs sm:text-sm shadow-xs"
+                  >
+                    <div className="pr-2 sm:pr-3">
+                      <strong className="block text-foreground font-semibold">Every request</strong>
+                      <span className="text-muted-foreground text-[11px] sm:text-xs">linked to source</span>
+                    </div>
+                    <div className="border-x border-border/80 px-2 sm:px-3">
+                      <strong className="block text-foreground font-semibold">Every number</strong>
+                      <span className="text-muted-foreground text-[11px] sm:text-xs">calculated in code</span>
+                    </div>
+                    <div className="pl-2 sm:pl-3">
+                      <strong className="block text-foreground font-semibold">Every ask</strong>
+                      <span className="text-muted-foreground text-[11px] sm:text-xs">ready to send</span>
+                    </div>
+                  </motion.div>
                 </div>
-                <div className="border-x border-border/80">
-                  <strong className="block text-foreground">Every number</strong>
-                  <span className="text-muted-foreground">calculated in code</span>
-                </div>
-                <div>
-                  <strong className="block text-foreground">Every ask</strong>
-                  <span className="text-muted-foreground">ready to send</span>
-                </div>
-              </motion.div>
+
+                {/* Right Column: Dedicated Visual Slot for 3D Floating Cards Showcase */}
+                <div className="relative hidden lg:block lg:col-span-5 h-[520px] w-full pointer-events-none" aria-hidden="true" />
+              </div>
             </div>
 
             {/* Scroll cue */}

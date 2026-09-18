@@ -1,0 +1,14 @@
+Jira Ticket: CF-402 - Backend Architecture Review
+Date: 14 Sep 2026
+
+[14/09/2026, 10:15:00] Alex Mercer (CTO):
+Jordan, looking at the monolithic REST API structure, our DevOps advisor insists we break the backend down into 4 decoupled microservices (Auth Service, Billing Service, Notification Service, Analytics Service) using RabbitMQ message queues and Docker Kubernetes manifests before production.
+
+[14/09/2026, 10:30:45] Jordan Lee (Lead Developer):
+Alex, decomposing a monolithic API into a distributed microservice cluster with RabbitMQ message brokers, gRPC inter-service communication, and Kubernetes deployment charts is an enterprise infrastructure overhaul. Our contract explicitly specified a Node.js/PostgreSQL monolithic REST service.
+
+[14/09/2026, 10:42:10] Alex Mercer (CTO):
+We also need SOC2 Type II audit logging enabled across all database transactions, storing immutable audit logs in an isolated AWS CloudWatch log group. Can we include this in the sprint?
+
+[14/09/2026, 10:55:00] Jordan Lee (Lead Developer):
+SOC2 immutable audit log compliance and microservice decomposition require substantial architecture engineering. I will issue a change order detailing the hours required for Kubernetes microservice refactoring and audit logging infrastructure.

@@ -12,9 +12,9 @@ test.beforeEach(async ({ page }) => {
 
 test.describe('Project Creation & File Staging E2E', () => {
   test('should render the new project form with staged upload flow', async ({ page }) => {
-    await page.goto('/app/projects/new');
+    await page.goto('/app/analysis/new');
 
-    await expect(page.getByRole('heading', { name: 'New Project' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /New Analysis|New Project/i })).toBeVisible();
     await expect(page.getByLabel('Project name')).toBeVisible();
     await expect(page.getByLabel('Client / company')).toBeVisible();
     await expect(page.getByLabel('Hourly Rate')).toBeVisible();
@@ -26,7 +26,7 @@ test.describe('Project Creation & File Staging E2E', () => {
   });
 
   test('should load the benchmark sample thread into staging', async ({ page }) => {
-    await page.goto('/app/projects/new');
+    await page.goto('/app/analysis/new');
 
     await page.getByRole('button', { name: 'Load benchmark sample thread' }).click();
 
@@ -36,7 +36,7 @@ test.describe('Project Creation & File Staging E2E', () => {
   });
 
   test('should stage an uploaded file and show the upload & analyze confirm button', async ({ page }) => {
-    await page.goto('/app/projects/new');
+    await page.goto('/app/analysis/new');
 
     await page.setInputFiles('input[type="file"]', {
       name: 'chat-export.txt',
@@ -49,7 +49,7 @@ test.describe('Project Creation & File Staging E2E', () => {
   });
 
   test('should require scope before analysis is possible', async ({ page }) => {
-    await page.goto('/app/projects/new');
+    await page.goto('/app/analysis/new');
 
     // No files staged yet → analyze disabled
     await expect(page.getByRole('button', { name: /Add conversation files to analyze/i })).toBeDisabled();

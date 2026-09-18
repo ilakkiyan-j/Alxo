@@ -1,0 +1,4 @@
+[15/09/2026, 17:10:05] Marcus Vance (Nexus Global): Jordan! Urgent update for our partner presentation on Monday. Our board wants an interactive 3D WebGL product configurator on the homepage hero section where users can rotate a 3D globe and customize lighting shaders in real-time.
+[15/09/2026, 17:22:40] Jordan Lee (Developer): Marcus, 3D WebGL shader customization and Three.js canvas development requires custom 3D modeling, WebGL rendering, and performance optimization. Our contract explicitly excluded 3D graphics and custom web app development.
+[15/09/2026, 17:30:15] Marcus Vance (Nexus Global): We really need this for the presentation. We figured since it's on the homepage it could be included under our standard website development fee.
+[15/09/2026, 17:42:00] Jordan Lee (Developer): Custom WebGL 3D development is a separate specialty requiring approximately 40-50 additional development hours. I will issue a change order estimating the additional effort.

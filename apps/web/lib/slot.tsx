@@ -11,12 +11,14 @@ type SlotProps = React.HTMLAttributes<HTMLElement> & {
  * className onto it. Used to compose buttons/focusables (e.g. <Button asChild>).
  */
 export function Slot({ children, className, ...props }: SlotProps) {
-  if (React.isValidElement(children)) {
-    const child = children as React.ReactElement<SlotProps>;
-    return React.cloneElement(child, {
-      className: [className, child.props.className].filter(Boolean).join(' '),
+  const childrenArray = React.Children.toArray(children);
+  const validChild = childrenArray.find(React.isValidElement) as React.ReactElement<SlotProps> | undefined;
+
+  if (validChild) {
+    return React.cloneElement(validChild, {
       ...props,
+      className: [className, validChild.props.className].filter(Boolean).join(' '),
     });
   }
-  return null;
+  return <>{children}</>;
 }

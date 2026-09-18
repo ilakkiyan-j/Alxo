@@ -1,0 +1,8 @@
+{
+  "projectName": "CloudFlow SaaS Backend API",
+  "clientName": "CloudFlow Technologies",
+  "role": "Web / Software Developer",
+  "hourlyRate": 5000,
+  "currency": "INR",
+  "originalScope": "Develop Node.js / PostgreSQL REST API with JWT user authentication.\nIntegrate Stripe Billing API for monthly and annual subscription plans.\nProvide CRUD endpoints for user dashboard and webhook handlers for payment events.\nExcludes GraphQL migration, real-time WebSocket infrastructure, and Enterprise SAML/Okta SSO."
+}

@@ -1,0 +1,3 @@
+[03/09/2026, 11:00:15] Alex Mercer (CloudFlow CTO): Jordan, confirming our backend development scope for CloudFlow. We are building a REST API in Node.js/PostgreSQL with JWT authentication and Stripe checkout/subscription webhooks.
+[03/09/2026, 11:15:20] Jordan Lee (Developer): Hi Alex, confirmed! We will implement standard CRUD endpoints for your web dashboard and handle Stripe subscription billing events. Advanced architectures like GraphQL resolvers, WebSockets, or Okta SAML SSO are out of scope for this release.
+[03/09/2026, 11:22:45] Alex Mercer (CloudFlow CTO): Sounds solid. REST API and Stripe webhooks are all we need for launch.

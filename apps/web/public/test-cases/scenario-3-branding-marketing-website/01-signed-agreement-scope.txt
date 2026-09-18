@@ -1,0 +1,3 @@
+[02/09/2026, 09:30:10] Marcus Vance (Nexus Global): Hi Jordan, sending over the signed agreement for the Nexus Corporate Brand Site. To confirm, you will convert our 8 finalized Figma design pages into Webflow code with contact forms and Google Analytics tracking.
+[02/09/2026, 09:45:22] Jordan Lee (Developer): Hi Marcus, received! The agreed timeline includes building out the 8 approved pages and up to 2 design revision rounds. Please make sure all final copy and asset graphics are uploaded to Google Drive.
+[02/09/2026, 09:55:00] Marcus Vance (Nexus Global): Perfect! Our team will provide all text copy. Let's aim for launch in 3 weeks.
