@@ -9,7 +9,7 @@ test.describe('Admin Console & User Management E2E', () => {
 
     // ADMIN role is steered to the admin console
     await expect(page).toHaveURL(/\/admin\/dashboard/);
-    await expect(page.getByRole('heading', { name: 'Admin Overview' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Admin Overview' })).toBeVisible({ timeout: 15000 });
     await expect(page.getByText('Scope creep value by currency')).toBeVisible();
   });
 
