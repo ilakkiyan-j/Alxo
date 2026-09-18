@@ -1,6 +1,6 @@
-# ALXO — Test Credentials
+# ALXO — Test Credentials & Team Arixen Contacts
 
-Pre-seeded accounts available in the dev environment.
+Pre-seeded accounts available in the dev & live environment.
 
 ## Demo Account
 
@@ -34,3 +34,13 @@ Welcome123!
 ```
 
 The user is expected to change this on first login.
+
+---
+
+## 👥 Team Arixen Contacts
+
+| Role | Name | GitHub Handle | Email |
+| :--- | :--- | :--- | :--- |
+| **Team Lead & Sole Backend Engineer** | Ilakkiyan J | [@ilakkiyan-j](https://github.com/ilakkiyan-j) | `ilakkiyanj03@gmail.com` |
+| **Frontend Developer** | Manikandan E | [@Manikandan-e56](https://github.com/Manikandan-e56) | `emanigandan58@gmail.com` |
+| **QA Docs & UI Design Support** | Anshika P | [@anishka-009](https://github.com/anishka-009) | `anshikapal9450@gmail.com` |
