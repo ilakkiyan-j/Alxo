@@ -1,0 +1,13 @@
+Subject: URGENT: Additional Security Requirements for Portal Launch
+
+Hi Team,
+
+In addition to the HIPAA audit logger and FHIR EHR integration discussed on Slack, our executive security board requires:
+1. Native Biometric Face-ID / Touch-ID authentication support on iOS and Android browsers.
+2. Dynamic Multi-Facility Hospital Routing to automatically route appointment requests based on patient geo-location and specialist availability across 14 hospital branches.
+
+We expect these features to be included in the initial launch phase without delaying our planned go-live date.
+
+Best,
+Dr. Robert Vance, CTO
+MedVanguard Health

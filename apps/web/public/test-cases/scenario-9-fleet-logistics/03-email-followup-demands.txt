@@ -1,0 +1,13 @@
+Subject: Urgent Hardware Telematics & Fuel Reporting Additions
+
+Hi Team,
+
+Before we launch TrackSwift to our 150 drivers next month, please add:
+1. IoT OBD-II Hardware Telemetry Parser to ingest live engine temperature, tire pressure, and brake wear diagnostics.
+2. Predictive Fuel Consumption Analytics Engine to forecast monthly fuel spending per driver and flag excessive idling.
+
+Please ensure these features are part of the initial delivery milestone.
+
+Best regards,
+Vikram Singh, Operations Director
+Global Logistics Co

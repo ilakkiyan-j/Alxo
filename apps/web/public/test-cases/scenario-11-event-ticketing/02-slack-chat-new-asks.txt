@@ -1,0 +1,8 @@
+Karan Johar [04:10 PM]:
+Hey team! General Admission isn't enough for our upcoming stadium concert. We need an Interactive Stadium Seat Picker Canvas where users can click on specific VIP seats, view 360-degree stage angles, and select row seats in real time!
+
+Developer [04:15 PM]:
+Building a 2D/3D SVG stadium seat selection engine with real-time seat locking via Redis WebSockets is a major feature expansion from simple general admission tickets.
+
+Karan Johar [04:20 PM]:
+Also, we need Dynamic Demand Pricing algorithms (Uber surge pricing style) that raise ticket prices automatically as ticket inventory drops below 20%.

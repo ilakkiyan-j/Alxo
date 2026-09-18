@@ -1,0 +1,13 @@
+Subject: Additional Features Request - EstateVision Launch
+
+Hi Team,
+
+To ensure our launch marketing campaign succeeds, we need the following added to the site before launch:
+1. Automated Twilio SMS Gateway to send instant SMS alerts to property agents whenever a high-net-worth buyer submits a lead.
+2. Virtual Staging Toggle allowing visitors to switch room furniture colors on the property listing photos dynamically.
+
+Please confirm these additions are included in our active phase.
+
+Thanks,
+Marcus Thorne, Managing Director
+Apex Realty Group

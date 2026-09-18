@@ -1,0 +1,8 @@
+{
+  "projectName": "TrackSwift Fleet Portal",
+  "clientName": "Global Logistics Co",
+  "role": "Full Stack Engineer",
+  "hourlyRate": 4200,
+  "currency": "INR",
+  "originalScope": "Vehicle CRUD management dashboard, driver assignment list, static route map display, and CSV vehicle maintenance log export."
+}

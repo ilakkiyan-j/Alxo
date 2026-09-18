@@ -1,0 +1,13 @@
+Subject: Regulatory Compliance & Automated Execution Demands
+
+Hi Team,
+
+To support our fund's Q4 audit, please add:
+1. Automated SEC 13F Compliance & Tax Gain/Loss Harvesting Module to output IRS tax forms automatically.
+2. Interactive Order Execution Hook connecting directly to Interactive Brokers FIX protocol gateway to place automated buy/sell orders.
+
+Please ensure these are active before our quarterly audit.
+
+Best regards,
+David Chen, Managing Director
+QuantEdge Hedge Fund

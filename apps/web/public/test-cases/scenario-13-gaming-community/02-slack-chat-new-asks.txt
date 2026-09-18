@@ -1,0 +1,8 @@
+Alex Mercer [08:15 PM]:
+Yo team! Static schedule tables won't cut it. We need an Embedded Twitch & YouTube Live Stream Player with synchronized live chat overlay right on the homepage hero section!
+
+Developer [08:20 PM]:
+Integrating live streaming video embeds with Twitch API authentication and chat iframe sync was not in our static schedule table agreement.
+
+Alex Mercer [08:25 PM]:
+Also, we need an Automated Tournament Elimination Bracket Generator (single & double elimination) where captains can enter match scores to auto-advance teams in real time!

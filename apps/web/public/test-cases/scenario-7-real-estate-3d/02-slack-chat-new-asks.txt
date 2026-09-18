@@ -1,0 +1,8 @@
+Marcus Thorne [02:15 PM]:
+Hey guys! Photos look nice, but our competitors are using 3D Virtual Tours. We need to integrate full Matterport WebGL 3D virtual tour players into all 10 property pages so buyers can walk through the house virtually.
+
+Developer [02:20 PM]:
+Matterport 3D embeds require custom SDK integration, model rendering setup, and camera position event handlers. That's outside our 10 static page scope.
+
+Marcus Thorne [02:25 PM]:
+Also, please add a live interactive Mortgage Calculator on each listing with real-time interest rate feeds from HDFC and ICICI APIs.

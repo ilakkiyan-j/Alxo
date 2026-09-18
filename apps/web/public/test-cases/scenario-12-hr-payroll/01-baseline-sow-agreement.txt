@@ -1,0 +1,14 @@
+Subject: SOW Agreement - PeoplePulse HR System
+
+Hi Team,
+
+Confirming our agreed SOW for PeoplePulse:
+- Employee Directory CRUD (add/view/update employee details)
+- Simple leave request form with approval manager notification
+- Monthly PDF paystub generation from provided gross salary inputs
+- Department listing admin views
+- Timeline: 5 weeks. Budget: Rs. 2,40,000.
+
+Regards,
+Sunita Rao, VP Human Resources
+Apex Global Enterprises

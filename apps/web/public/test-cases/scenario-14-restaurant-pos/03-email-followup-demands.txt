@@ -1,0 +1,13 @@
+Subject: Mandatory Online Delivery Aggregator Integrations
+
+Hi Team,
+
+To launch DineFast across our 6 bistro locations next month, we need:
+1. Zomato & Swiggy Delivery Aggregator Webhook Integration to automatically ingest incoming online delivery orders straight into our kitchen POS queue.
+2. Inventory Ingredient Depletion Module that auto-deducts grams of cheese and sauce per pizza ordered.
+
+Please ensure these are ready for go-live.
+
+Best,
+Chef Marco Rossi, Owner
+Gourmet Bistro Chain

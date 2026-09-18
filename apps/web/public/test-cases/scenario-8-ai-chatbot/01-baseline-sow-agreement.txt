@@ -1,0 +1,13 @@
+Subject: SOW Confirmation - OmniBot Support Widget
+
+Hi Team,
+
+Confirming our SOW for OmniBot:
+- Rule-based decision tree chatbot widget with 20 pre-scripted FAQ flows
+- Fallback link to open Zendesk tickets
+- Responsive floating chat widget UI component
+- Timeline: 3 weeks. Budget: Rs. 1,50,000.
+
+Regards,
+Priya Sharma, Head of Support
+OmniTech Solutions

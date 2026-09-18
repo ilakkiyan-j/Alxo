@@ -1,0 +1,8 @@
+Chef Marco [01:20 PM]:
+Ciao team! We want to eliminate waiter queues. We need a Self-Service Touchscreen Kiosk App (McDonald's style) for customers to place orders directly on 24-inch floor tablets!
+
+Developer [01:25 PM]:
+Building a standalone self-service customer ordering kiosk interface with card reader terminal integrations is a distinct application from our waiter iPad order entry app.
+
+Chef Marco [01:30 PM]:
+Also, we need a Kitchen Display System (KDS) for cooks with bump bars and prep timer alarms (Green to Red as orders get late) for our kitchen stations.

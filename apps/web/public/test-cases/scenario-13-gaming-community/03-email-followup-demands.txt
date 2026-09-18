@@ -1,0 +1,13 @@
+Subject: Web3 Integration Requirements for NexusStrike
+
+Hi Team,
+
+Our guild sponsor insists we add Web3 features before the upcoming tournament:
+1. MetaMask & Phantom Wallet Login enabling gamers to sign in with their crypto wallet.
+2. Automated Solana / ERC-20 Token Payout Engine to automatically distribute prize money to tournament winning team wallets.
+
+Please confirm these features are being built for launch.
+
+Best regards,
+Alex Mercer, Guild Captain
+Nexus Gaming Guild

@@ -1,0 +1,13 @@
+Subject: Urgent Resale Marketplace Request
+
+Hi Team,
+
+To prevent scalping on PassPass, we require:
+1. Secondary Peer-to-Peer Ticket Resale Marketplace allowing users to list and resell purchased tickets directly on our platform with automated escrow payment payouts.
+2. Apple Wallet & Google Wallet NFC pass integration for contactless venue entry.
+
+Please implement these before our stadium ticket sales launch next Friday.
+
+Best regards,
+Karan Johar, Product Lead
+LiveVibe Events

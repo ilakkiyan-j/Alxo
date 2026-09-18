@@ -2,7 +2,7 @@
 
 | AWS Service | Product Purpose | Status | Configured | Tested | Notes / Resource Name |
 |---|---|---|---|---|---|
-| **AWS Amplify** | Web Hosting & CI/CD | ✅ Active | Yes | Yes | `https://master.d2ctutlbtt1yhj.amplifyapp.com/` |
+| **AWS Amplify** | Web Hosting & CI/CD | ✅ Active | Yes | Yes | `https://main.dhbgp6utbowvg.amplifyapp.com/` |
 | **Amazon Bedrock** | AI Message Classification | ✅ Active | Yes | Yes | `anthropic.claude-3-haiku-20240307-v1:0` (`ap-southeast-2`) |
 | **Amazon S3** | Raw Conversation Storage | ✅ Active | Yes | Yes | `scope-creep-ledger-conversations-dev` |
 | **Amazon DynamoDB** | Project & Ledger Data | ✅ Active | Yes | Yes | `scope-creep-ledger-projects-dev` & `items-dev` |

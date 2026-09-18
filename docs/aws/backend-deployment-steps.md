@@ -156,7 +156,7 @@ Configures live environment variables in AWS Amplify to switch from local mock m
 Once the deployment completes:
 
 1. Open your live application URL:
-   `https://master.d2ctutlbtt1yhj.amplifyapp.com/`
+   `https://main.dhbgp6utbowvg.amplifyapp.com/`
 2. Click **"⚡ Load Benchmark Demo Thread"**.
 3. Click **"Analyze Scope & Generate Ledger"**.
 4. Verify results:

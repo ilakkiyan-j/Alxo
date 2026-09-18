@@ -1,0 +1,14 @@
+Subject: SOW Confirmation - DineFast POS System
+
+Hi Team,
+
+Confirming our SOW for DineFast POS:
+- iPad web interface for waiters to punch in table orders
+- Bluetooth thermal receipt printing driver integration
+- Menu item pricing editor
+- Daily end-of-day sales summary report
+- Timeline: 4 weeks. Budget: Rs. 1,44,000.
+
+Regards,
+Chef Marco Rossi, Owner
+Gourmet Bistro Chain

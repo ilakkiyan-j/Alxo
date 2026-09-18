@@ -1,0 +1,14 @@
+Subject: SOW Confirmation - TrackSwift Fleet Portal
+
+Hi Team,
+
+Confirming signed SOW for TrackSwift:
+- Admin dashboard to add/edit/delete delivery trucks and trailers
+- Driver assignment table
+- Static route map preview showing warehouse locations
+- CSV export for vehicle maintenance logs
+- Timeline: 5 weeks. Budget: Rs. 2,10,000.
+
+Regards,
+Vikram Singh, Operations Director
+Global Logistics Co

@@ -1,0 +1,8 @@
+Nikhil Mehta [11:05 AM]:
+Hey guys! Web scanning is done, but our board wants a full Internal Physical Network Penetration Test. Can you guys send an engineer to physically breach our HQ WiFi network and test internal servers?
+
+Security Engineer [11:10 AM]:
+Physical red-team penetration testing requires dedicated onsite engineers, physical access authorization, and network equipment. That is completely out of scope for a web app vulnerability scan.
+
+Nikhil Mehta [11:15 AM]:
+Also, we need you to launch a simulated Email Phishing Campaign against all 250 FinSecure employees to test employee security awareness.

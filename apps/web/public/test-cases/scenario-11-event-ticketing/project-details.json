@@ -1,0 +1,8 @@
+{
+  "projectName": "PassPass Event Ticketing Platform",
+  "clientName": "LiveVibe Events",
+  "role": "Frontend Developer",
+  "hourlyRate": 3200,
+  "currency": "INR",
+  "originalScope": "Event details listing page, standard ticket purchase checkout via Razorpay, PDF email receipt generation with QR code, and basic admin sales counter."
+}

@@ -1,0 +1,8 @@
+Vikram Singh [03:40 PM]:
+Team, static map previews are not useful. We need Live Real-Time GPS Telematics Tracking over WebSockets updating vehicle positions on Mapbox every 3 seconds!
+
+Developer [03:45 PM]:
+Real-time WebSocket streaming, vehicle geo-fencing alerts, and live map position interpolation were explicitly excluded from the static route map SOW.
+
+Vikram Singh [03:50 PM]:
+Also, we need an Automated Driver Route Optimization Engine using Dijkstra / Traveling Salesperson algorithms to re-route drivers around traffic jams automatically.

@@ -1,0 +1,14 @@
+Subject: SOW Confirmation - QuantEdge Dashboard
+
+Hi Team,
+
+Confirming signed SOW for QuantEdge Asset Dashboard:
+- Portfolio asset allocation pie chart component
+- Historical fund performance line chart
+- Manual CSV transaction upload parser
+- Balance summary table
+- Timeline: 6 weeks. Budget: Rs. 3,90,000.
+
+Regards,
+David Chen, Managing Director
+QuantEdge Hedge Fund

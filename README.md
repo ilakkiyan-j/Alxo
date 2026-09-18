@@ -2,168 +2,239 @@
 
 <div align="center">
 
-<img src="arixen_logo.png" alt="Team Arixen Logo" width="220" />
+<a href="https://main.dhbgp6utbowvg.amplifyapp.com/" target="_blank" rel="noopener noreferrer">
+  <img src="alxo_logo.png" alt="ALXO Logo" width="160" />
+</a>
+
+# ALXO
+### *“Catch the work hiding between the lines.”*
+
+**Built with precision by Team Arixen**
+
 <br />
-<img src="alxo_logo.png" alt="ALXO Logo" width="450" />
 
-### *"Catch the work hiding between the lines."*
+[![AWS Amplify](https://img.shields.io/badge/AWS_Amplify-Live_Demo-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://main.dhbgp6utbowvg.amplifyapp.com/)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-Claude_3_Haiku-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/bedrock/)
+[![Next.js](https://img.shields.io/badge/Next.js-14.2_App_Router-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Playwright](https://img.shields.io/badge/Playwright-E2E_25%2F25_Passing-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev/)
 
-**Built by Team Arixen**
+<br />
 
-[![Next.js](https://img.shields.io/badge/Next.js-14.2-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
-[![AWS Amplify](https://img.shields.io/badge/AWS_Amplify-Deployed-FF9900?style=for-the-badge&logo=amazonaws)](https://master.d2ctutlbtt1yhj.amplifyapp.com/)
-[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-Claude_3-232F3E?style=for-the-badge&logo=amazonaws)](https://aws.amazon.com/bedrock/)
-[![Playwright](https://img.shields.io/badge/Playwright-E2E_25/25_Passing-2EAD33?style=for-the-badge&logo=playwright)](https://playwright.dev/)
-
-[**🚀 Launch Live Demo**](https://master.d2ctutlbtt1yhj.amplifyapp.com/) • [**🔑 Demo Credentials**](docs/DEMO_CREDENTIALS.md) • [**🧪 15 Benchmark Test Cases**](apps/web/public/test-cases/)
+[**🚀 Launch Live Demo**](https://main.dhbgp6utbowvg.amplifyapp.com/) • [**🔑 Judge Credentials**](#-judge-fast-track--evaluator-credentials) • [**☁️ AWS Cloud Architecture**](https://main.dhbgp6utbowvg.amplifyapp.com/aws-architecture) • [**🧪 15 Benchmark Test Cases**](#-15-curated-real-world-benchmark-scenarios) • [**👥 Team Arixen**](#-team-arixen--credits--roles)
 
 </div>
 
 ---
 
-## 👥 Team Arixen — Credits & Roles
+## ⚡ Judge Fast-Track & Evaluator Credentials
 
-ALXO is designed and engineered by **Team Arixen**.
+ALXO is fully deployed and production-ready on **AWS Amplify Cloud Infrastructure**.
 
-| Member Name | Role & Responsibilities | GitHub Handle | Contact Email |
-| :--- | :--- | :--- | :--- |
-| **Ilakkiyan J** | **Team Lead & Sole Backend Engineer**<br>*(Architecture, API Specs, AWS Persistence, Bedrock Engine, E2E Suite)* | [@ilakkiyan-j](https://github.com/ilakkiyan-j) | `ilakkiyanj03@gmail.com` |
-| **Manikandan E** | **Frontend Developer**<br>*(Glassmorphic UI Components, Currency Engine, React State)* | [@Manikandan-e56](https://github.com/Manikandan-e56) | `emanigandan58@gmail.com` |
-| **Anshika P** | **QA Docs & UI Design Support**<br>*(Product Specifications, User Stories, UI Layout Support)* | [@anishka-009](https://github.com/anishka-009) | `anshikapal9450@gmail.com` |
+> **Live Deployment URL**: [**https://main.dhbgp6utbowvg.amplifyapp.com/**](https://main.dhbgp6utbowvg.amplifyapp.com/)
 
----
-
-## 🌟 Overview
-
-**ALXO** is an enterprise-grade SaaS platform built for agencies, software consultants, and freelancers to eliminate unbilled work. By continuously parsing client communication channels (email exports, Slack threads, WhatsApp logs), ALXO automatically detects scope creep using **Amazon Bedrock Claude 3**, logs line-item items into an authoritative **Scope Creep Ledger**, and generates legally binding, deterministic **Change Orders** with zero manual friction.
-
----
-
-## 🚀 Live Demo & Judge Credentials
-
-The application is fully deployed and accessible live on **AWS Amplify Cloud Infrastructure**.
-
-- **Live URL**: [https://master.d2ctutlbtt1yhj.amplifyapp.com/](https://master.d2ctutlbtt1yhj.amplifyapp.com/)
-
-### Pre-Seeded Judge Accounts
+### Pre-Seeded Evaluator Accounts
 
 | Role | Email | Password | Access Rights |
 | :--- | :--- | :--- | :--- |
-| **Demo Account** | `demo@scopecreep.io` | `Demo123!` | Full workspace, ledger analysis, change order export |
+| **Demo Account** *(Recommended)* | `demo@scopecreep.io` | `Demo123!` | Full workspace, ledger analysis, change order export |
 | **Admin Account** | `admin@scopecreep.io` | `Admin123!` | User management, system metrics, deployment status |
 | **Provisioned User** | `jordan@designstudio.com` | `Jordan123!` | Standard project workspace access |
 
-> *Note: One-click fast authentication buttons are available on the live Sign-In page for instant evaluator access.*
+> 💡 **Quick Access**: The live Sign-In page includes **1-Click Instant Demo Login** buttons for frictionless evaluation.
+
+### ⏱️ 60-Second Evaluation Walkthrough
+
+1. Open [**https://main.dhbgp6utbowvg.amplifyapp.com/**](https://main.dhbgp6utbowvg.amplifyapp.com/) and click **"Open Demo Workspace"**.
+2. Navigate to **"New Scope Analysis"** (`/app/analysis/new`) and click **"⚡ Load Benchmark Demo Thread"** (or choose any scenario from the [15 Test Cases](#-15-curated-real-world-benchmark-scenarios)).
+3. Click **"Analyze Scope & Generate Ledger"** to watch **Amazon Bedrock Claude 3** classify messages against the baseline in real time.
+4. Review the **Scope Creep Ledger** with confidence scores, line-item costs, and message citations.
+5. Click **"Generate Change Order"** to review the deterministic legal document with complete financial impacts and export it as a formal change order.
 
 ---
 
-## ✨ Key Features
+## 🌟 Overview & Problem Statement
 
-1. **AI Scope Creep Classifier**:
-   - Analyzes raw client conversation threads (`.txt`, `.csv`, `.json`).
-   - Powered by **Amazon Bedrock Claude 3 Haiku** with strict confidence scoring (`CONFIDENCE_THRESHOLD = 0.70`).
-   - Categorizes out-of-scope requests, extra deliverables, and design revisions.
+### The Problem
+Agencies, software consultancies, and freelancers lose **15% to 30% of their billable revenue** to unbilled work. Clients frequently make casual requests across disparate communication channels (Slack threads, WhatsApp chats, email chains) saying: *"Can we quickly add dark mode?"*, *"Could you also connect this to our ERP?"*, or *"Just one more round of revisions."* 
 
-2. **Authoritative Scope Creep Ledger**:
-   - Real-time tabular tracking of scope additions across all projects.
-   - Line-item cost estimates, status tracking (`PENDING`, `APPROVED`, `REJECTED`), and audit trails.
+Without an automated audit trail, manual reconciliation is tedious, confrontational, and frequently conceded for free.
 
-3. **Deterministic Change Order Generator**:
-   - Generates formal PDF/digital Change Orders complete with project baselines, revised scope breakdown, timeline adjustments, and total price impact.
-
-4. **Multi-Currency Engine**:
-   - Instant localization across major global currencies: **USD ($)**, **EUR (€)**, **GBP (£)**, **CAD ($)**, **AUD ($)**, **JPY (¥)**, and **INR (₹)**.
-
-5. **3D Glassmorphic Interface**:
-   - Modern dark-mode UI powered by CSS glassmorphism, fluid micro-interactions, responsive design, and dynamic financial charts.
-
-6. **AWS Cloud Diagnostics Console**:
-   - Live system health monitoring across 6 AWS services: **Cognito**, **Amplify**, **S3**, **DynamoDB**, **Lambda**, and **Bedrock**.
+### The ALXO Solution
+**ALXO** turns messy client conversations into an authoritative, evidence-backed record of additional work. Powered by **Amazon Bedrock Claude 3 Haiku**, ALXO:
+1. Ingests raw conversation exports (`.txt`, `.csv`, `.json`).
+2. Compares every customer message against the original signed baseline agreement.
+3. Automatically categorizes additions, assigns confidence scores, and estimates required hours.
+4. Produces a verifiable **Scope Creep Ledger** and generates deterministic, client-ready **Change Orders** with zero manual friction.
 
 ---
 
-## 🧪 15 Real-World Test Cases Benchmark Suite
+## ✨ Key Capabilities & Architectural Features
 
-ALXO includes a pre-packaged suite of 15 comprehensive real-world client communication scenarios located in [`apps/web/public/test-cases/`](apps/web/public/test-cases/).
+### 1. 🤖 AI Scope Creep Classifier (Amazon Bedrock)
+- Powered by **Anthropic Claude 3 Haiku** hosted on **Amazon Bedrock** (`ap-southeast-2`).
+- Rigorous prompt engineering with a deterministic confidence threshold (`CONFIDENCE_THRESHOLD = 0.70`).
+- Differentiates between clarification of existing scope vs. bona fide scope expansion, extra deliverables, and revision cycle overruns.
 
-| # | Scenario Title | Domain | Test Conversation File |
-| :--- | :--- | :--- | :--- |
-| **01** | E-Commerce Mobile App Scope Creep | Mobile Development | `01-mobile-app/` |
-| **02** | Brand Identity & Motion Design | Creative Design | `02-brand-identity/` |
-| **03** | Cloud Migration & DevOps Pipeline | Infrastructure | `03-cloud-migration/` |
-| **04** | SaaS Billing Engine Integration | Fintech | `04-saas-billing/` |
-| **05** | Custom CRM Data Pipelines | Enterprise Software | `05-custom-crm/` |
-| **06** | Healthcare Portal HIPAA Compliance | Healthcare IT | `06-healthcare-portal/` |
-| **07** | Real Estate Listing 3D Virtual Tours | PropTech | `07-real-estate-3d/` |
-| **08** | AI Chatbot Customer Support Workflow | Conversational AI | `08-ai-chatbot/` |
-| **09** | EdTech Learning Management System | EdTech | `09-edtech-lms/` |
-| **10** | Logistics Fleet Management System | Logistics / IoT | `10-fleet-logistics/` |
-| **11** | Cyber Security Penetration Testing | Security | `11-cyber-security/` |
-| **12** | Event Ticketing Web Application | Ticketing / SaaS | `12-event-ticketing/` |
-| **13** | HR Payroll Integration Pipeline | Enterprise HR | `13-hr-payroll/` |
-| **14** | Gaming Community Dashboard | Web3 / Gaming | `14-gaming-community/` |
-| **15** | Restaurant Point-of-Sale Ecosystem | Retail POS | `15-restaurant-pos/` |
+### 2. 📊 Authoritative Scope Creep Ledger
+- Centralized tracking interface for all scope modifications across active projects.
+- Line-item state management: `PENDING`, `APPROVED`, `REJECTED`.
+- Complete audit trail linking every single dollar amount directly to the client's original quote and timestamp.
+
+### 3. 📄 Deterministic Change Order Generator
+- One-click transformation of verified ledger items into legally binding, audit-ready Change Orders.
+- Automatically calculates baseline scope delta, hour additions, blended rates, timeline adjustments, and total price impact.
+- Export ready for client digital signing and invoicing.
+
+### 4. 💱 Multi-Currency Global Financial Engine
+- Real-time localized financial calculations supporting 7 major global currencies:
+  - **USD ($)**, **EUR (€)**, **GBP (£)**, **CAD ($)**, **AUD ($)**, **JPY (¥)**, and **INR (₹)**.
+- Formats financial values dynamically with region-accurate decimal precision and symbol placement.
+
+### 5. 🎨 3D Glassmorphic Interface & Dark Mode
+- Engineered with modern CSS glassmorphism, responsive data grids, smooth GSAP micro-interactions, and accessible typography.
+- Native theme switching with persistent dark-mode and light-mode states.
+
+### 6. 🩺 AWS Cloud Diagnostics Console
+- Real-time cloud health telemetry monitoring 6 core AWS services: **AWS Amplify**, **Amazon Bedrock**, **Amazon DynamoDB**, **Amazon S3**, **Amazon Cognito**, and **AWS Lambda**.
+- Dedicated interactive architecture diagram page at `/aws-architecture`.
+
+---
+
+## 🧪 15 Curated Real-World Benchmark Scenarios
+
+ALXO includes a complete benchmark suite of **15 industry-specific real-world test scenarios** located in [`apps/web/public/test-cases/`](apps/web/public/test-cases/). Each folder contains baseline contracts, client conversation threads with intentional scope creep, and exact copy-paste form values.
+
+| # | Scenario Title | Industry Domain | Hourly Rate | Test Case Directory |
+| :-: | :--- | :--- | :--- | :--- |
+| **01** | **E-Commerce Storefront Redesign** | Retail / E-Commerce | `3,500 INR/hr` | [`scenario-1-ecommerce-store`](apps/web/public/test-cases/scenario-1-ecommerce-store/) |
+| **02** | **Telehealth MVP Mobile App** | Healthcare / Telemed | `4,000 INR/hr` | [`scenario-2-telehealth-mobile-app`](apps/web/public/test-cases/scenario-2-telehealth-mobile-app/) |
+| **03** | **Corporate Branding & Marketing Website** | Creative / Branding | `2,500 INR/hr` | [`scenario-3-branding-marketing-website`](apps/web/public/test-cases/scenario-3-branding-marketing-website/) |
+| **04** | **SaaS Backend & Billing API Integration** | Fintech / SaaS | `5,000 INR/hr` | [`scenario-4-saas-backend-api`](apps/web/public/test-cases/scenario-4-saas-backend-api/) |
+| **05** | **EdTech Learning Quiz App** | EdTech / E-Learning | `3,000 INR/hr` | [`scenario-5-edtech-quiz-app`](apps/web/public/test-cases/scenario-5-edtech-quiz-app/) |
+| **06** | **Healthcare Patient Portal HIPAA Compliance** | Healthcare IT | `4,500 INR/hr` | [`scenario-6-healthcare-portal`](apps/web/public/test-cases/scenario-6-healthcare-portal/) |
+| **07** | **Real Estate 3D Virtual Tours** | PropTech / 3D | `3,800 INR/hr` | [`scenario-7-real-estate-3d`](apps/web/public/test-cases/scenario-7-real-estate-3d/) |
+| **08** | **AI Chatbot Customer Support System** | Conversational AI / RAG | `5,000 INR/hr` | [`scenario-8-ai-chatbot`](apps/web/public/test-cases/scenario-8-ai-chatbot/) |
+| **09** | **Logistics Fleet Management System** | IoT / Fleet Logistics | `4,200 INR/hr` | [`scenario-9-fleet-logistics`](apps/web/public/test-cases/scenario-9-fleet-logistics/) |
+| **10** | **Cyber Security Penetration Testing** | Cyber Security | `6,000 INR/hr` | [`scenario-10-cyber-security`](apps/web/public/test-cases/scenario-10-cyber-security/) |
+| **11** | **Event Ticketing Web Application** | EventTech / Ticketing | `3,200 INR/hr` | [`scenario-11-event-ticketing`](apps/web/public/test-cases/scenario-11-event-ticketing/) |
+| **12** | **HR Payroll Integration Pipeline** | Enterprise HR | `4,800 INR/hr` | [`scenario-12-hr-payroll`](apps/web/public/test-cases/scenario-12-hr-payroll/) |
+| **13** | **Gaming Community Dashboard** | Web3 / Gaming | `3,000 INR/hr` | [`scenario-13-gaming-community`](apps/web/public/test-cases/scenario-13-gaming-community/) |
+| **14** | **Restaurant Point-of-Sale Ecosystem** | Retail POS | `3,600 INR/hr` | [`scenario-14-restaurant-pos`](apps/web/public/test-cases/scenario-14-restaurant-pos/) |
+| **15** | **Financial Analytics & Portfolio Dashboard** | Quantitative Finance | `6,500 INR/hr` | [`scenario-15-financial-analytics`](apps/web/public/test-cases/scenario-15-financial-analytics/) |
 
 ---
 
 ## 🏗️ System Architecture & AWS Infrastructure
 
-```
-                   +----------------------------------+
-                   |       User Browser / Client      |
-                   +----------------------------------+
-                                     |
-                                     v
-                   +----------------------------------+
-                   |        AWS Amplify Cloud         |
-                   |   Next.js 14 Web & API Router    |
-                   +----------------------------------+
-                                     |
-       +-----------------------------+-----------------------------+
-       |                             |                             |
-       v                             v                             v
-+--------------+              +--------------+              +--------------+
-| Amazon S3    |              | DynamoDB     |              | Amazon       |
-| Raw Files &  |              | Projects &   |              | Bedrock      |
-| Exports      |              | Ledger Items |              | Claude 3     |
-+--------------+              +--------------+              +--------------+
+```mermaid
+flowchart TD
+    subgraph Client["🖥️ User Browser"]
+        UI["Next.js 14 Glassmorphic UI<br/>(Tailwind CSS + GSAP)"]
+        AuthClient["Session Auth Client<br/>(Pre-seeded Judge Tokens)"]
+    end
+
+    subgraph AWSAmplify["⚡ AWS Amplify Cloud"]
+        SSR["Next.js Server-Side Engine & Edge Router"]
+        ServerActions["Server Actions & Route Handlers<br/>(/api/analysis, /api/ledger, /api/change-orders)"]
+    end
+
+    subgraph AWSServices["☁️ AWS Cloud Infrastructure"]
+        Bedrock["🤖 Amazon Bedrock<br/>(Claude 3 Haiku · ap-southeast-2)"]
+        S3["🪣 Amazon S3<br/>(Raw Conversation Threads & Transcripts)"]
+        DynamoDB["🗄️ Amazon DynamoDB<br/>(Projects & Scope Ledger Items)"]
+        CloudWatch["📈 Amazon CloudWatch<br/>(Telemetry & Health Logging)"]
+    end
+
+    UI -->|HTTPS / WSS| SSR
+    SSR --> ServerActions
+    ServerActions -->|AI Ingestion & Classification| Bedrock
+    ServerActions -->|Thread Upload & Storage| S3
+    ServerActions -->|Ledger State & Change Orders| DynamoDB
+    ServerActions -->|Diagnostics Telemetry| CloudWatch
 ```
 
 ---
 
-## 🛠️ Local Development & Quick Start
+## 📁 Repository Structure
+
+```text
+Alxo/
+├── apps/
+│   └── web/                                # Next.js 14 App Router application
+│       ├── app/
+│       │   ├── (auth)/sign-in/             # One-click judge auth & user sign-in
+│       │   ├── (workspace)/app/            # Protected workspace & dashboard
+│       │   │   ├── analysis/               # Thread upload & Bedrock analysis flow
+│       │   │   ├── ledger/                 # Authoritative Scope Creep Ledger
+│       │   │   └── change-orders/          # Deterministic Change Order generator
+│       │   ├── admin/diagnostics/          # 6-service AWS cloud health monitor
+│       │   └── aws-architecture/          # Interactive live cloud topology showcase
+│       └── public/
+│           ├── test-cases/                 # 15 complete real-world benchmark suites
+│           └── alxo_logo.png               # Brand icon & metadata assets
+├── docs/
+│   ├── DEMO_CREDENTIALS.md                 # Evaluator sign-in instructions & roles
+│   └── aws/                                # AWS deployment guides & build specs
+├── sample-data/                            # Reference conversation threads & agreements
+├── arixen_logo.png                         # Team Arixen official insignia
+├── alxo_logo.png                           # ALXO official brand mark
+└── package.json                            # Workspace dependencies & root scripts
+```
+
+---
+
+## 🛠️ Local Development & Quickstart
 
 ### Prerequisites
 - Node.js `18.x` or `20.x`
-- npm `9.x`+
+- npm `9.x` or higher
 
-### Setup Instructions
+### Installation & Setup
 
 ```bash
-# 1. Clone Repository
+# 1. Clone the repository
 git clone https://github.com/ilakkiyan-j/ScopeCreepDetector.git
 cd ScopeCreepDetector
 
-# 2. Install Workspace Dependencies
+# 2. Install workspace dependencies
 npm install
 
-# 3. Launch Development Server
+# 3. Start local development server
 npm run dev
-# Next.js web application will be accessible at http://localhost:3000
+# The web application will launch at http://localhost:3000
 ```
 
-### Running Automated Test Suite
+### 🧪 Running Automated E2E Tests
 
-ALXO includes a complete Playwright E2E test suite with **25 passing tests**.
+ALXO is backed by a Playwright end-to-end test suite with **25/25 passing tests**.
 
 ```bash
-# Run End-to-End Playwright Tests
+# Run the automated Playwright test suite
 npx playwright test
 ```
 
 ---
 
+## 👥 Team Arixen — Credits & Roles
+
+<div align="center">
+
+<img src="arixen_logo.png" alt="Team Arixen Logo" width="120" />
+
+### **Engineered by Team Arixen**
+*Built for Hackathon Presentation*
+
+</div>
+
+| Member Name | Role & Core Responsibilities | GitHub Profile | Contact Email |
+| :--- | :--- | :--- | :--- |
+| **Ilakkiyan J** | **Team Lead & Sole Backend Engineer**<br>• System architecture & API specifications<br>• AWS Cloud infrastructure (Amplify, Bedrock, DynamoDB, S3)<br>• Bedrock Claude 3 prompt engineering & classifier engine<br>• Automated 25-scenario Playwright E2E test suite | [@ilakkiyan-j](https://github.com/ilakkiyan-j) | `ilakkiyanj03@gmail.com` |
+| **Manikandan E** | **Frontend Developer**<br>• Glassmorphic UI design system & responsive views<br>• Multi-currency dynamic calculation engine<br>• Interactive Scope Creep Ledger state management | [@Manikandan-e56](https://github.com/Manikandan-e56) | `emanigandan58@gmail.com` |
+| **Anshika P** | **QA Docs & UI Design Support**<br>• Product functional specifications & user stories<br>• 15 benchmark test scenario documentation<br>• UI layout QA & usability testing | [@anishka-009](https://github.com/anishka-009) | `anshikapal9450@gmail.com` |
+
+---
+
 ## 📄 License & Attribution
 
-Designed & Developed for Hackathon Presentation by **Team Arixen**. All rights reserved.
+Copyright © 2026 **Team Arixen**. Developed for Hackathon evaluation. All rights reserved.

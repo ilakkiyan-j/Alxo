@@ -1,0 +1,13 @@
+Subject: Mandatory Bot Scope Adjustments
+
+Hi Team,
+
+To support our international customers, please implement:
+1. Real-time Multi-Language Translation supporting 12 languages (Spanish, French, German, Japanese, Hindi, etc.) using Google Translate API.
+2. WebSocket Live Agent Handover Dashboard so support agents can seamlessly take over bot conversations in real-time.
+
+Please ensure these are integrated into the current sprint deliverable.
+
+Thanks,
+Priya Sharma, Head of Support
+OmniTech Solutions

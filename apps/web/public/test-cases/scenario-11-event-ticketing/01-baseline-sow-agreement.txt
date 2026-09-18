@@ -1,0 +1,14 @@
+Subject: SOW Confirmation - PassPass Event Ticketing Platform
+
+Hi Team,
+
+We are excited to confirm our SOW for PassPass:
+- General Admission ticket purchase page for concerts
+- Razorpay payment checkout gateway integration
+- Automated PDF ticket email delivery with unique QR codes
+- Admin sales counter dashboard showing total tickets sold
+- Timeline: 4 weeks. Budget: Rs. 1,28,000.
+
+Best regards,
+Karan Johar, Product Lead
+LiveVibe Events

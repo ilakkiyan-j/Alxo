@@ -1,0 +1,13 @@
+Subject: SOW Confirmation - ShieldLock Security Audit
+
+Hi Team,
+
+Confirming our SOW for the web security audit:
+- Web application vulnerability scan against OWASP Top 10 vulnerabilities
+- Executive Summary PDF report detailing risk severity
+- Single 30-minute debrief call with engineering lead
+- Timeline: 1 week. Fixed Fee: Rs. 1,20,000.
+
+Best regards,
+Nikhil Mehta, CISO
+FinSecure Capital

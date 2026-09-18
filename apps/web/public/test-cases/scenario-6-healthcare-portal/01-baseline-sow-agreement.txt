@@ -1,0 +1,15 @@
+Subject: SOW Confirmation - MedVanguard Patient Portal
+
+Hi Team,
+
+We are confirming the signed Statement of Work for the MedVanguard Patient Portal.
+Project Scope:
+- Patient registration form with validation
+- Static appointment scheduling view for booking available time slots
+- PDF lab results viewer
+- Standard SSL encryption and basic patient profile page
+- Timeline: 6 weeks. Total Budget: Rs. 2,70,000.
+
+Regards,
+Dr. Robert Vance, CTO
+MedVanguard Health

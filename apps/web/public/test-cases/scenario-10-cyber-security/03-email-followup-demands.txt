@@ -1,0 +1,13 @@
+Subject: Additional Re-testing Rounds & SOC2 Presentation
+
+Hi Team,
+
+Following up on our web audit:
+1. Our dev team will patch findings in batches over the next month. We require 3 full re-testing scan rounds included at no additional cost.
+2. We require your lead security auditor to prepare and present a custom slide deck to our Board of Directors for our SOC2 Type II compliance review.
+
+Please confirm these steps are covered.
+
+Best regards,
+Nikhil Mehta, CISO
+FinSecure Capital

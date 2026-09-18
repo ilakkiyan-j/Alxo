@@ -1,0 +1,8 @@
+Priya Sharma [11:30 AM]:
+Hi team! Static decision trees won't satisfy our customers. We want the bot to use Retrieval-Augmented Generation (RAG) over Pinecone to index 500 PDF technical product manuals and generate generative AI responses via Anthropic Claude API!
+
+Developer [11:35 AM]:
+RAG vector pipelines require embeddings generation, chunking algorithms, vector DB indexing, and prompt engineering. That's a full AI platform build, far beyond a 20-rule decision tree.
+
+Priya Sharma [11:40 AM]:
+We also need automatic Sentiment Analysis on incoming customer messages to alert account managers on Slack if a customer sounds angry.

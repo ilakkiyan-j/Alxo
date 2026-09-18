@@ -1,0 +1,8 @@
+{
+  "projectName": "PeoplePulse HR & Payroll System",
+  "clientName": "Apex Global Enterprises",
+  "role": "Backend Developer",
+  "hourlyRate": 4800,
+  "currency": "INR",
+  "originalScope": "Employee directory CRUD, basic annual leave request management workflow, monthly PDF paystub generator, and admin department views."
+}
