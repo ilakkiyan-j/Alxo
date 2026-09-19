@@ -386,7 +386,7 @@ export function NewProjectForm() {
               />
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="client-name">Client name</Label>
+              <Label htmlFor="client-name">Client / company</Label>
               <Input
                 id="client-name"
                 required
