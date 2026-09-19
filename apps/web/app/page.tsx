@@ -432,7 +432,11 @@ export default function LandingPage() {
                           <Sparkles className="h-4 w-4 text-primary" />
                           <p className="text-xs font-bold text-foreground">ALXO Scope Ledger</p>
                         </div>
-                        <span className="flex items-center gap-1 rounded-full bg-success/15 px-2 py-0.5 font-mono text-[10px] font-semibold text-success">
+                        <span className="flex items-center gap-1.5 rounded-full bg-success/15 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-success shadow-xs">
+                          <span className="relative flex h-1.5 w-1.5">
+                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-success opacity-75" />
+                            <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-success" />
+                          </span>
                           <Check className="h-3 w-3" />
                           Verified
                         </span>
@@ -440,16 +444,16 @@ export default function LandingPage() {
                       <div className="mt-2 space-y-1.5 text-xs">
                         <div className="flex items-center justify-between rounded-lg bg-muted/60 p-1.5 border border-border/50">
                           <span className="text-foreground text-[11px]">Dark mode theme toggle</span>
-                          <span className="font-mono text-xs font-semibold text-primary">+$360.00</span>
+                          <span className="font-mono text-xs font-semibold text-primary">+₹12,000</span>
                         </div>
                         <div className="flex items-center justify-between rounded-lg bg-muted/60 p-1.5 border border-border/50">
                           <span className="text-foreground text-[11px]">Responsive mobile nav</span>
-                          <span className="font-mono text-xs font-semibold text-primary">+$180.00</span>
+                          <span className="font-mono text-xs font-semibold text-primary">+₹6,000</span>
                         </div>
                       </div>
                       <div className="mt-2.5 flex items-center justify-between border-t border-border/60 pt-2 text-xs">
                         <span className="font-semibold text-muted-foreground text-[11px]">Recovered Scope Value</span>
-                        <span className="font-mono font-bold text-foreground text-sm">+$540.00</span>
+                        <span className="font-mono font-bold text-foreground text-sm tracking-tight">+₹18,000</span>
                       </div>
                     </div>
                   </motion.div>

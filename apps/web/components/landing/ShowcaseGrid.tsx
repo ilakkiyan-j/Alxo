@@ -80,7 +80,7 @@ function LedgerThumbnail() {
         </g>
       ))}
       <rect x="30" y="155" width="80" height="7" rx="3" className="fill-success/60" />
-      <text x="122" y="162" fontSize="8" className="fill-success font-medium" fontFamily="system-ui">+$690.00</text>
+      <text x="122" y="162" fontSize="8" className="fill-success font-medium" fontFamily="system-ui">+₹18,000</text>
     </svg>
   );
 }
@@ -105,7 +105,7 @@ function LedgerThumbnailActive() {
       <rect x="30" y="155" width="0" height="7" rx="3" className="fill-success">
         <animate attributeName="width" values="0;80;80" dur="1.5s" fill="freeze" />
       </rect>
-      <text x="122" y="162" fontSize="8" className="fill-success font-semibold" fontFamily="system-ui">+$690.00</text>
+      <text x="122" y="162" fontSize="8" className="fill-success font-semibold" fontFamily="system-ui">+₹18,000</text>
     </svg>
   );
 }
@@ -163,7 +163,7 @@ function ChangeOrderThumbnail() {
         </g>
       ))}
       <rect x="54" y="150" width="172" height="1" className="fill-border" />
-      <text x="54" y="165" fontSize="9" className="fill-success font-semibold" fontFamily="system-ui">Total: $690</text>
+      <text x="54" y="165" fontSize="9" className="fill-success font-semibold" fontFamily="system-ui">Total: ₹18,000</text>
       <rect x="170" y="155" width="58" height="18" rx="4" className="fill-success/20 stroke-success/60" strokeWidth="1" />
       <text x="183" y="167" fontSize="8" className="fill-success font-medium" fontFamily="system-ui">Send →</text>
     </svg>
@@ -186,7 +186,7 @@ function ChangeOrderThumbnailActive() {
         </g>
       ))}
       <rect x="54" y="150" width="172" height="1" className="fill-border" />
-      <text x="54" y="165" fontSize="9" className="fill-success font-semibold" fontFamily="system-ui">Total: $690</text>
+      <text x="54" y="165" fontSize="9" className="fill-success font-semibold" fontFamily="system-ui">Total: ₹18,000</text>
       <rect x="170" y="155" width="58" height="18" rx="4" className="fill-success/35 stroke-success" strokeWidth="1">
         <animate attributeName="fill-opacity" values="0.3;0.6;0.3" dur="1.5s" repeatCount="indefinite" />
       </rect>
