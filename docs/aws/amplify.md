@@ -24,7 +24,7 @@ An AWS Amplify App linked to your GitHub repository or deployed via AWS CLI in r
 9. **Environment Variables**:
    Add environment variables in Amplify Console -> App settings -> Environment variables:
    - `AWS_REGION` = `ap-southeast-2`
-   - `BEDROCK_MODEL_ID` = `anthropic.claude-3-haiku-20240307-v1:0` (or `us.anthropic.claude-3-5-haiku-20241022-v1:0`)
+   - `BEDROCK_MODEL_ID` = `anthropic.claude-haiku-4-5-20251001-v1:0`
    - `CONFIDENCE_THRESHOLD` = `0.70`
 10. Click **Save and deploy**.
 

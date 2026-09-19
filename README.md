@@ -14,7 +14,7 @@
 <br />
 
 [![AWS Amplify](https://img.shields.io/badge/AWS_Amplify-Live_Demo-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white)](https://main.dhbgp6utbowvg.amplifyapp.com/)
-[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-Claude_3_Haiku-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/bedrock/)
+[![Amazon Bedrock](https://img.shields.io/badge/Amazon_Bedrock-Claude_Haiku_4.5-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)](https://aws.amazon.com/bedrock/)
 [![Next.js](https://img.shields.io/badge/Next.js-14.2_App_Router-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Playwright](https://img.shields.io/badge/Playwright-E2E_25%2F25_Passing-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)](https://playwright.dev/)
@@ -47,7 +47,7 @@ ALXO is fully deployed and production-ready on **AWS Amplify Cloud Infrastructur
 
 1. Open [**https://main.dhbgp6utbowvg.amplifyapp.com/**](https://main.dhbgp6utbowvg.amplifyapp.com/) and click **"Open Demo Workspace"**.
 2. Navigate to **"New Scope Analysis"** (`/app/analysis/new`) and click **"⚡ Load Benchmark Demo Thread"** (or choose any scenario from the [15 Test Cases](#-15-curated-real-world-benchmark-scenarios)).
-3. Click **"Analyze Scope & Generate Ledger"** to watch **Amazon Bedrock Claude 3** classify messages against the baseline in real time.
+3. Click **"Analyze Scope & Generate Ledger"** to watch **Amazon Bedrock Claude Haiku 4.5** classify messages against the baseline in real time.
 4. Review the **Scope Creep Ledger** with confidence scores, line-item costs, and message citations.
 5. Click **"Generate Change Order"** to review the deterministic legal document with complete financial impacts and export it as a formal change order.
 
@@ -61,7 +61,7 @@ Agencies, software consultancies, and freelancers lose **15% to 30% of their bil
 Without an automated audit trail, manual reconciliation is tedious, confrontational, and frequently conceded for free.
 
 ### The ALXO Solution
-**ALXO** turns messy client conversations into an authoritative, evidence-backed record of additional work. Powered by **Amazon Bedrock Claude 3 Haiku**, ALXO:
+**ALXO** turns messy client conversations into an authoritative, evidence-backed record of additional work. Powered by **Amazon Bedrock Claude Haiku 4.5**, ALXO:
 1. Ingests raw conversation exports (`.txt`, `.csv`, `.json`).
 2. Compares every customer message against the original signed baseline agreement.
 3. Automatically categorizes additions, assigns confidence scores, and estimates required hours.
@@ -72,7 +72,7 @@ Without an automated audit trail, manual reconciliation is tedious, confrontatio
 ## ✨ Key Capabilities & Architectural Features
 
 ### 1. 🤖 AI Scope Creep Classifier (Amazon Bedrock)
-- Powered by **Anthropic Claude 3 Haiku** hosted on **Amazon Bedrock** (`ap-southeast-2`).
+- Powered by **Anthropic Claude Haiku 4.5** hosted on **Amazon Bedrock** (`ap-southeast-2`).
 - Rigorous prompt engineering with a deterministic confidence threshold (`CONFIDENCE_THRESHOLD = 0.70`).
 - Differentiates between clarification of existing scope vs. bona fide scope expansion, extra deliverables, and revision cycle overruns.
 
@@ -140,7 +140,7 @@ flowchart TD
     end
 
     subgraph AWSServices["☁️ AWS Cloud Infrastructure"]
-        Bedrock["🤖 Amazon Bedrock<br/>(Claude 3 Haiku · ap-southeast-2)"]
+        Bedrock["🤖 Amazon Bedrock<br/>(Claude Haiku 4.5 · ap-southeast-2)"]
         S3["🪣 Amazon S3<br/>(Raw Conversation Threads & Transcripts)"]
         DynamoDB["🗄️ Amazon DynamoDB<br/>(Projects & Scope Ledger Items)"]
         CloudWatch["📈 Amazon CloudWatch<br/>(Telemetry & Health Logging)"]
@@ -229,7 +229,7 @@ npx playwright test
 
 | Member Name | Role & Core Responsibilities | GitHub Profile | Contact Email |
 | :--- | :--- | :--- | :--- |
-| **Ilakkiyan J** | **Team Lead & Sole Backend Engineer**<br>• System architecture & API specifications<br>• AWS Cloud infrastructure (Amplify, Bedrock, DynamoDB, S3)<br>• Bedrock Claude 3 prompt engineering & classifier engine<br>• Automated 25-scenario Playwright E2E test suite | [@ilakkiyan-j](https://github.com/ilakkiyan-j) | `ilakkiyanj03@gmail.com` |
+| **Ilakkiyan J** | **Team Lead & Sole Backend Engineer**<br>• System architecture & API specifications<br>• AWS Cloud infrastructure (Amplify, Bedrock, DynamoDB, S3)<br>• Bedrock Claude Haiku 4.5 prompt engineering & classifier engine<br>• Automated 25-scenario Playwright E2E test suite | [@ilakkiyan-j](https://github.com/ilakkiyan-j) | `ilakkiyanj03@gmail.com` |
 | **Manikandan E** | **Frontend Developer**<br>• Glassmorphic UI design system & responsive views<br>• Multi-currency dynamic calculation engine<br>• Interactive Scope Creep Ledger state management | [@Manikandan-e56](https://github.com/Manikandan-e56) | `emanigandan58@gmail.com` |
 | **Anshika P** | **QA Docs & UI Design Support**<br>• Product functional specifications & user stories<br>• 15 benchmark test scenario documentation<br>• UI layout QA & usability testing | [@anishka-009](https://github.com/anishka-009) | `anshikapal9450@gmail.com` |
 

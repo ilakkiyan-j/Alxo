@@ -434,7 +434,7 @@ export function NewProjectForm() {
                   autoFocus
                 />
                 <p className="text-[11px] text-muted-foreground mt-1">
-                  Amazon Bedrock Claude 3 tailors scope evaluation specifically to this custom role definition.
+                  Amazon Bedrock Claude Haiku 4.5 tailors scope evaluation specifically to this custom role definition.
                 </p>
               </div>
             )}

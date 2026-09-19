@@ -44,7 +44,7 @@ async function runAwsAudit() {
     console.error('❌ DynamoDB Scan Error:', err.message);
   }
 
-  console.log('\n--- 2. Testing Bedrock Claude 3 Haiku AI Classifier ---');
+  console.log('\n--- 2. Testing Bedrock Claude Haiku 4.5 AI Classifier ---');
   try {
     const { classifyMessages } = await import('../../analyze/src/classifier');
     const results = await classifyMessages(
@@ -54,7 +54,7 @@ async function runAwsAudit() {
       'Homepage redesign only.',
       { mockMode: false }
     );
-    console.log('✅ Bedrock Claude 3 Haiku Classification Result:');
+    console.log('✅ Bedrock Claude Haiku 4.5 Classification Result:');
     console.log(JSON.stringify(results, null, 2));
   } catch (err: any) {
     console.error('❌ Bedrock AI Error:', err.message);

@@ -8,7 +8,7 @@ This step-by-step master guide walks you through setting up all backend AWS clou
 - [x] **Frontend**: AWS Amplify (`ap-southeast-2`) — Already deployed!
 - [x] **Storage**: Amazon S3 bucket (`scope-creep-ledger-conversations-dev`)
 - [x] **Database**: Amazon DynamoDB tables (`scope-creep-ledger-projects-dev` & `scope-creep-ledger-items-dev`)
-- [x] **AI Model**: Amazon Bedrock (Anthropic Claude 3 Haiku / Claude 3.5 Haiku)
+- [x] **AI Model**: Amazon Bedrock (Anthropic Claude Haiku 4.5)
 - [ ] **Permissions**: IAM Policies
 - [ ] **Environment Variables**: Configure Amplify env vars to switch from offline mock to live AWS cloud execution
 
@@ -61,7 +61,7 @@ Analyzes client messages against baseline scope agreements and drafts change-ord
 1. Change region in top right corner to **`us-east-1` (N. Virginia)** or **`us-west-2` (Oregon)**.
 2. Search for **Bedrock** in AWS Console.
 3. In left navigation, click **Playgrounds** -> **Text**.
-4. Select **Anthropic** -> **Claude 3 Haiku** (or **Claude 3.5 Haiku**).
+4. Select **Anthropic** -> **Claude Haiku 4.5**.
 5. If AWS displays a quick one-time form asking for use-case details (Company Name / Intended Use), fill it out and click submit.
 6. Test a quick prompt in Playground to confirm model response.
 
@@ -137,7 +137,7 @@ Configures live environment variables in AWS Amplify to switch from local mock m
 | Key | Value | Description |
 | :--- | :--- | :--- |
 | `APP_AWS_REGION` | `us-east-1` | AWS region where Bedrock, S3, & DynamoDB reside |
-| `BEDROCK_MODEL_ID` | `anthropic.claude-3-haiku-20240307-v1:0` | Anthropic Claude model ID |
+| `BEDROCK_MODEL_ID` | `anthropic.claude-haiku-4-5-20251001-v1:0` | Anthropic Claude Haiku 4.5 model ID |
 | `S3_BUCKET_NAME` | `scope-creep-ledger-conversations-dev` | Target S3 bucket name |
 | `DYNAMODB_PROJECTS_TABLE` | `scope-creep-ledger-projects-dev` | Projects table name |
 | `DYNAMODB_LEDGER_TABLE` | `scope-creep-ledger-items-dev` | Ledger items table name |

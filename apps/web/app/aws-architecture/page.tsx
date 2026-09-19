@@ -50,7 +50,7 @@ const ARCH_NODES = [
   { id: 'amplify', label: 'AWS Amplify', sublabel: 'Edge Hosting & CDN', icon: Globe, color: 'text-pink-400', bg: 'bg-pink-500/10 border-pink-500/30' },
   { id: 'cognito', label: 'Amazon Cognito', sublabel: 'Identity & Tokens', icon: Shield, color: 'text-purple-400', bg: 'bg-purple-500/10 border-purple-500/30' },
   { id: 'lambda',  label: 'AWS Lambda', sublabel: 'API Serverless Routes', icon: Zap, color: 'text-orange-400', bg: 'bg-orange-500/10 border-orange-500/30' },
-  { id: 'bedrock', label: 'Amazon Bedrock', sublabel: 'Claude 3 Haiku AI', icon: Cpu, color: 'text-warning', bg: 'bg-warning/10 border-warning/30' },
+  { id: 'bedrock', label: 'Amazon Bedrock', sublabel: 'Claude Haiku 4.5 AI', icon: Cpu, color: 'text-warning', bg: 'bg-warning/10 border-warning/30' },
   { id: 'dynamo',  label: 'Amazon DynamoDB', sublabel: 'Projects · Ledger', icon: Database, color: 'text-success', bg: 'bg-success/10 border-success/30' },
   { id: 's3',      label: 'Amazon S3', sublabel: 'Raw Archives & PDFs', icon: HardDrive, color: 'text-info', bg: 'bg-info/10 border-info/30' },
 ] as const;
@@ -98,7 +98,7 @@ const AWS_SERVICES = [
     color: 'text-warning',
     bg: 'bg-warning/10 border-warning/25',
     role: 'AI Classification Engine',
-    description: 'Classifies every message in a client conversation as "original scope" or "scope creep" using Claude 3 Haiku. Extracts estimated hours, costs, and requesters from raw unstructured text.',
+    description: 'Classifies every message in a client conversation as "original scope" or "scope creep" using Claude Haiku 4.5. Extracts estimated hours, costs, and requesters from raw unstructured text.',
     metric: '~18 messages analysed per project • avg 2.3s response',
   },
   {
@@ -337,7 +337,7 @@ export default function PublicAWSArchitecturePage() {
                 { label: 'Hosting', value: 'Amplify', sub: 'Edge CDN' },
                 { label: 'Compute', value: 'Lambda', sub: 'Serverless' },
                 { label: 'Auth', value: 'Cognito', sub: 'ap-southeast-2' },
-                { label: 'AI Engine', value: 'Bedrock', sub: 'Claude 3' },
+                { label: 'AI Engine', value: 'Bedrock', sub: 'Haiku 4.5' },
                 { label: 'Database', value: 'DynamoDB', sub: '3 tables' },
                 { label: 'Storage', value: 'S3', sub: 'Archives' },
               ].map((stat) => (

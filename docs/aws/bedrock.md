@@ -1,7 +1,7 @@
 # Amazon Bedrock Service Guide
 
 ## 1. Why We Need It
-Scope Creep Ledger needs to analyze complex human conversations and compare them against an agreed project scope contract. Client messages are informal, messy, and context-dependent. Amazon Bedrock provides foundation AI models (like Claude 3 Haiku/Sonnet) that can understand natural language intent, judge scope boundaries, and estimate required extra effort.
+Scope Creep Ledger needs to analyze complex human conversations and compare them against an agreed project scope contract. Client messages are informal, messy, and context-dependent. Amazon Bedrock provides foundation AI models (like Claude Haiku 4.5) that can understand natural language intent, judge scope boundaries, and estimate required extra effort.
 
 ## 2. What It Does
 Amazon Bedrock is a fully managed AWS service that offers high-performing foundation models via a unified API. In our application:
@@ -21,15 +21,15 @@ Amazon Bedrock is a fully managed AWS service that offers high-performing founda
 2. Set your console region to `us-east-1` (N. Virginia) or `us-west-2` (Oregon).
 3. Search for **Bedrock** in the top search bar and open the Amazon Bedrock console.
 4. In the left navigation menu under **Foundation models**, click **Model catalog** or **Playgrounds** -> **Text**.
-5. Select **Anthropic** -> **Claude 3 Haiku** (or **Claude 3.5 Haiku**).
+5. Select **Anthropic** -> **Claude Haiku 4.5**.
 6. If AWS displays a one-time prompt asking for use-case details (Company Name / Intended Use), fill out the short form and submit.
 7. You can test a quick prompt in the Playground to verify model response.
 
 ## 5. Configuration
 In your `.env` file (copied from `.env.example`):
 ```env
-AWS_REGION=us-east-1
-BEDROCK_MODEL_ID=anthropic.claude-3-haiku-20240307-v1:0
+AWS_REGION=ap-southeast-2
+BEDROCK_MODEL_ID=anthropic.claude-haiku-4-5-20251001-v1:0
 ```
 
 ## 6. IAM / Permissions

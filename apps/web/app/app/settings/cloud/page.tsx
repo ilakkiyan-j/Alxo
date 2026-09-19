@@ -66,7 +66,7 @@ export default function CloudHealthSettingsPage() {
                   <Zap className="h-3.5 w-3.5 text-warning" /> Amazon Bedrock AI
                 </span>
                 <span className="text-[11px] font-semibold text-success flex items-center gap-1">
-                  <CheckCircle2 className="h-3 w-3" /> Claude 3 Haiku Active
+                  <CheckCircle2 className="h-3 w-3" /> Claude Haiku 4.5 Active
                 </span>
               </div>
               <p className="text-[11px] text-muted-foreground">High-throughput scope drift analysis engine</p>

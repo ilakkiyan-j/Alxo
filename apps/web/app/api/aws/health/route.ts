@@ -7,7 +7,7 @@ import { NextResponse } from 'next/server';
  * - AWS Amplify (Hosting & Edge Distribution)
  * - AWS Lambda (Serverless Route Handler Execution)
  * - Amazon Cognito (User Identity & Auth Pools)
- * - Amazon Bedrock (ListFoundationModels / Claude 3 Haiku)
+ * - Amazon Bedrock (ListFoundationModels / Claude Haiku 4.5)
  * - Amazon DynamoDB (DescribeTable on projects table)
  * - Amazon S3 (HeadBucket on conversations bucket)
  */
@@ -182,7 +182,7 @@ async function pingBedrock(): Promise<ServiceHealth> {
       latency_ms: latency,
       region: DEFAULT_REGION,
       regionLabel: getRegionLabel(DEFAULT_REGION),
-      detail: 'Claude 3 Haiku (anthropic.claude-3-haiku)',
+      detail: 'Claude Haiku 4.5 (anthropic.claude-haiku-4-5)',
     };
   } catch (err: any) {
     const isAuth = err?.message?.includes('not authorized') || err?.name === 'AccessDeniedException';
@@ -194,7 +194,7 @@ async function pingBedrock(): Promise<ServiceHealth> {
       region: DEFAULT_REGION,
       regionLabel: getRegionLabel(DEFAULT_REGION),
       detail: isAuth
-        ? 'AWS Endpoint Active · Claude 3 Haiku AI Model'
+        ? 'AWS Endpoint Active · Claude Haiku 4.5 AI Model'
         : err?.message?.slice(0, 80),
     };
   }
