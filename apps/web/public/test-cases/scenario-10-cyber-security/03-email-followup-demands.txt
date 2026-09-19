@@ -1,13 +1,18 @@
-Subject: Additional Re-testing Rounds & SOC2 Presentation
+From: Nikhil Mehta <nmehta@finsecure.capital>
+To: Maya Rao <maya@shieldlock.security>
+Date: 15 Sep 2026 15:30:00 +0530
+Subject: Mandatory Board Requirements - SAST Code Audit, Retesting & Board Deck
 
-Hi Team,
+Hi Maya,
 
-Following up on our web audit:
-1. Our dev team will patch findings in batches over the next month. We require 3 full re-testing scan rounds included at no additional cost.
-2. We require your lead security auditor to prepare and present a custom slide deck to our Board of Directors for our SOC2 Type II compliance review.
+Thank you for your initial progress update on the web vulnerability scan. Our Chief Risk Officer and Board of Directors met this morning and mandated that before we can sign off on audit completion:
 
-Please confirm these steps are covered.
+1. Static Code Analysis (SAST): Conduct a comprehensive source code security review across all 15 private microservices GitHub repositories, flagging SQL injection, hardcoded secrets, and JWT flaw patterns.
+2. Three Full Rounds of Remediation Re-Testing: Re-execute the complete penetration testing suite after each engineering bug fix sprint over the next 45 days.
+3. Executive Board Presentation Deck: Prepare a 25-slide executive presentation and deliver a 45-minute live briefing directly to the Board Audit & Risk Committee on October 5th.
+
+We expect these activities to be completed under the existing engagement budget. Please confirm your availability for the board presentation.
 
 Best regards,
-Nikhil Mehta, CISO
-FinSecure Capital
+Nikhil Mehta
+Chief Information Security Officer, FinSecure Capital

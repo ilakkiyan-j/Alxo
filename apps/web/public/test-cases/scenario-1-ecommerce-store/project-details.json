@@ -1,7 +1,7 @@
 {
   "projectName": "Aura Shop Storefront Redesign",
   "clientName": "Aura Retail Ltd",
-  "role": "Web / Software Developer",
+  "role": "E-Commerce Full-Stack Architect",
   "hourlyRate": 3500,
   "currency": "INR",
   "originalScope": "Design and develop a 5-page custom storefront (Home, Catalog, Product Detail, About, Contact).\nIntegrate standard Stripe checkout and import 50 client-provided products via CSV.\nIncludes responsive mobile layout and up to 2 design revision rounds.\nExcludes custom loyalty programs, multi-currency conversion, and ERP integrations."

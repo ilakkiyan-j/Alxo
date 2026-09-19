@@ -1,15 +1,16 @@
 From: Rohan Mehta <rohan@quizwise-edu.com>
 To: Jordan Lee <jordan@designstudio.com>
 Date: 15 Sep 2026 13:20:00 +0530
-Subject: Admin Portal Requirement for QuizWise Launch
+Subject: Admin Portal, LMS Classroom Sync & Voice Quiz Requirements
 
 Hi Jordan,
 
-Our investor review is scheduled for next Tuesday. They emphasized that we cannot launch a mobile quiz app without a comprehensive web-based Admin Control Panel.
+Our investor review is scheduled for next Tuesday. They emphasized that we cannot launch a mobile quiz app without the following core components:
+1. Comprehensive Web-Based Admin Control Panel: A full React/Node dashboard allowing our editorial team to add/edit questions, moderate user-submitted flashcards, monitor student engagement analytics, and export performance reports to CSV.
+2. Google Classroom & Canvas LMS Integration: Enabling schools to import classroom rosters and sync test scores straight back into teacher gradebooks.
+3. Audio Voice-Over Quiz Mode: An accessibility feature with text-to-speech question reading and microphone speech recognition to assess foreign language pronunciation accuracy.
 
-The admin portal needs to allow our content team to add/edit quiz categories, monitor student completion analytics, view high-score leaderboards, and export user data to CSV.
-
-Please let us know when the admin web portal will be ready for testing before our investor meeting.
+Please confirm these features are prioritized so we can demonstrate them in our investor demo.
 
 Best regards,
 Rohan Mehta

@@ -1,12 +1,13 @@
-Subject: Web3 Integration Requirements for NexusStrike
+Subject: Web3 Integration & Community Features for NexusStrike
 
 Hi Team,
 
-Our guild sponsor insists we add Web3 features before the upcoming tournament:
-1. MetaMask & Phantom Wallet Login enabling gamers to sign in with their crypto wallet.
-2. Automated Solana / ERC-20 Token Payout Engine to automatically distribute prize money to tournament winning team wallets.
+Our guild sponsor insists we implement the following core features before next month's major championship:
+1. MetaMask & Phantom Non-Custodial Wallet Authentication with cryptographic signature verification so players can sign in with their Web3 wallets.
+2. Automated Smart Contract Token Prize Payout Engine (supporting Solana SPL and Polygon ERC-20 tokens) to automatically disburse prize pool escrow to winning team wallets upon match verification.
+3. Community Anti-Cheat Tribunal & Clip Review Portal with community video playback, timestamped cheating reports, and peer-weighted voting algorithms.
 
-Please confirm these features are being built for launch.
+Please confirm these features are being built for the launch next week.
 
 Best regards,
 Alex Mercer, Guild Captain

@@ -1,8 +1,14 @@
 Sunita Rao [10:30 AM]:
-Hi team! Our global corporate leadership announced we must sync PeoplePulse directly with Workday and SAP SuccessFactors APIs so employee hiring and termination events auto-reconcile bi-directionally!
+Hi team! Our global corporate leadership just announced that we must sync PeoplePulse directly with Workday and SAP SuccessFactors APIs so employee hiring and termination events auto-reconcile bi-directionally every hour!
 
 Developer [10:35 AM]:
-Building enterprise SAP and Workday OAuth 2.0 connector pipelines with field mapping reconciliation is an enterprise integration project far beyond basic internal employee CRUD.
+Building enterprise SAP and Workday OAuth 2.0 connector pipelines with bidirectional conflict resolution is an enterprise integration project far beyond basic internal employee CRUD.
 
 Sunita Rao [10:40 AM]:
-Also, we need a Multi-Country Tax Deduction Calculator supporting US W-2, UK PAYE, and Indian TDS tax brackets to auto-compute net pay for remote employees in 8 countries.
+Also, we need a Multi-Jurisdiction Tax Engine supporting US W-2, UK PAYE, and Indian TDS tax brackets to auto-compute net pay and generate statutory tax schedules for remote employees across 8 countries.
+
+Developer [10:45 AM]:
+Statutory multi-country tax compliance requires external tax rules engines and continuous legal formula updates, which is entirely outside our agreed scope.
+
+Sunita Rao [11:15 AM]:
+One more thing for the plant facilities: the operations director wants Biometric RFID & Geofenced Mobile Punch Clock integration with automated shift overtime rounding rules and biometric fraud spoofing alerts. We need this ready for the trial next week!

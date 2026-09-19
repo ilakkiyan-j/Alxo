@@ -1,8 +1,8 @@
 {
   "projectName": "OmniBot AI Support System",
   "clientName": "OmniTech Solutions",
-  "role": "AI / Backend Developer",
+  "role": "AI & Machine Learning Engineer",
   "hourlyRate": 5000,
   "currency": "INR",
-  "originalScope": "Pre-scripted decision tree rule chatbot widget, static FAQ matching, Zendesk ticket URL generation, and basic chat widget UI styling."
+  "originalScope": "Pre-scripted decision tree rule chatbot widget, 20 canned FAQ flows, Zendesk ticket URL link, and basic chat widget UI styling."
 }

@@ -108,8 +108,20 @@ async function runBedrockClassification(
 
   // Load system prompt and user prompt template from /ai/prompts/
   const promptsDir = path.join(__dirname, '../../../ai/prompts');
+  const ROLE_LABELS: Record<string, string> = {
+    'web-dev': 'Web / Software Developer',
+    'ui-ux': 'UI/UX & Product Designer',
+    'copywriter': 'Copywriter & Content Strategist',
+    'video-editor': 'Video Editor & Motion Designer',
+    'consultant': 'Consultant / Marketer',
+    'security': 'Cyber Security Engineer',
+    'devops': 'Cloud & DevOps Specialist',
+    'ai-engineer': 'AI & Machine Learning Engineer',
+    'mobile-dev': 'Mobile App Developer',
+    'full-stack': 'Full-Stack Developer',
+  };
+  const roleContext = ROLE_LABELS[options.freelancerRole || ''] || options.freelancerRole || 'Web / Software Developer';
   const rawSystemPrompt = fs.readFileSync(path.join(promptsDir, 'classification-system.md'), 'utf-8');
-  const roleContext = options.freelancerRole || 'web-dev';
   const systemPrompt = rawSystemPrompt.replace('{{FREELANCER_ROLE}}', roleContext);
   const userPromptTemplate = fs.readFileSync(path.join(promptsDir, 'classification-user.md'), 'utf-8');
 

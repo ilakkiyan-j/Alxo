@@ -1,13 +1,18 @@
-Subject: Regulatory Compliance & Automated Execution Demands
+From: Vikram Singhania <vsinghania@quantedge.capital>
+To: Aryan Nair <aryan@quantstack.io>
+Date: 14 Sep 2026 17:15:00 +0530
+Subject: Mandatory Compliance & Trading Engine Requirements for Q4 Go-Live
 
-Hi Team,
+Hi Aryan,
 
-To support our fund's Q4 audit, please add:
-1. Automated SEC 13F Compliance & Tax Gain/Loss Harvesting Module to output IRS tax forms automatically.
-2. Interactive Order Execution Hook connecting directly to Interactive Brokers FIX protocol gateway to place automated buy/sell orders.
+Following our executive risk committee meeting today, our fund requires the following modules integrated before our Q4 LP investor presentation:
 
-Please ensure these are active before our quarterly audit.
+1. SEC Regulatory Tax Generator: Automated XML and PDF generation for SEC Form 13F institutional holdings reports and quarterly Form 10-Q disclosures.
+2. Algorithmic Trading Strategy Backtesting Engine: A quantitative backtesting simulation suite that computes Sharpe Ratio, maximum drawdown, and slippage modeling over 10 years of historical tick data.
+3. Automated LP Capital Call & Dividend Distribution System: Automated capital call notice generation and quarterly distribution statements dispatch with digital signature verification.
+
+Given that the core portfolio views are already in place, these institutional modules must be included in our scheduled deployment window next week.
 
 Best regards,
-David Chen, Managing Director
-QuantEdge Hedge Fund
+Vikram Singhania, CFA
+Chief Investment Officer, QuantEdge Asset Management

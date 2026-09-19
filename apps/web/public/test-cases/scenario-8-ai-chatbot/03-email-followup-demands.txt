@@ -1,13 +1,18 @@
-Subject: Mandatory Bot Scope Adjustments
+From: Priya Sharma <psharma@omnitech.io>
+To: Karan Singh <karan@ailogic.studio>
+Date: 12 Sep 2026 18:00:00 +0530
+Subject: Product Requirements Update - Voice Input, Sentiment Webhooks & SLA Analytics
 
-Hi Team,
+Hi Karan,
 
-To support our international customers, please implement:
-1. Real-time Multi-Language Translation supporting 12 languages (Spanish, French, German, Japanese, Hindi, etc.) using Google Translate API.
-2. WebSocket Live Agent Handover Dashboard so support agents can seamlessly take over bot conversations in real-time.
+Following our strategy meeting today, our VP of Customer Experience has approved the rollout of OmniBot with the following mandatory requirements:
 
-Please ensure these are integrated into the current sprint deliverable.
+1. Voice-to-Text & Speech Synthesis: Enable customers to speak questions directly via browser microphone with Whisper speech-to-text, and generate natural audio responses via TTS.
+2. Sentiment Analysis & Churn Detection: Real-time sentiment scoring on every customer message. If negative sentiment exceeds 80%, fire automated urgent webhooks to our internal Slack #customer-retention channel and tag the contact in HubSpot.
+3. Support SLA Benchmarking Dashboard: Executive web dashboard displaying median bot resolution time, containment rate percentage, and CSAT customer satisfaction scores.
 
-Thanks,
-Priya Sharma, Head of Support
-OmniTech Solutions
+Since these modules expand the capabilities of the widget you are already constructing, we expect them to be delivered before the end of the month. Please confirm your deployment roadmap.
+
+Best regards,
+Priya Sharma
+Head of Support Operations, OmniTech Solutions

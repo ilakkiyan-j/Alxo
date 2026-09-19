@@ -16,13 +16,19 @@ export type VerificationStatus =
   | 'review_required'
   | 'rejected';
 
-/** Freelancer role / industry specialization for tailored scope rules */
+/** Freelancer role / industry specialization for tailored scope rules (presets + custom role strings) */
 export type FreelancerRole =
   | 'web-dev'
   | 'ui-ux'
   | 'copywriter'
   | 'video-editor'
-  | 'consultant';
+  | 'consultant'
+  | 'security'
+  | 'devops'
+  | 'ai-engineer'
+  | 'mobile-dev'
+  | 'full-stack'
+  | (string & {});
 
 /** Normalized chronological message parsed from conversation export */
 export interface ChatMessage {

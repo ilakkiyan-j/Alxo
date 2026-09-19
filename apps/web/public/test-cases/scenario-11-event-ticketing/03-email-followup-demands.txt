@@ -1,13 +1,18 @@
-Subject: Urgent Resale Marketplace Request
+From: Aditya Roy <aroy@livevibe.events>
+To: Ananya Sen <ananya@eventstack.dev>
+Date: 16 Sep 2026 18:00:00 +0530
+Subject: Critical Festival Release Requirements - Apple Wallet, RFID Sync & VIP Lottery
 
-Hi Team,
+Hi Ananya,
 
-To prevent scalping on PassPass, we require:
-1. Secondary Peer-to-Peer Ticket Resale Marketplace allowing users to list and resell purchased tickets directly on our platform with automated escrow payment payouts.
-2. Apple Wallet & Google Wallet NFC pass integration for contactless venue entry.
+Following up on our headline arena tour meeting today. In addition to the interactive seat map and surge pricing discussed on Slack, our festival producers require:
 
-Please implement these before our stadium ticket sales launch next Friday.
+1. Apple Wallet & Google Wallet NFC Passes: Generate cryptographic `.pkpass` and Google Wallet contactless admission passes with dynamic concert schedule push updates.
+2. Onsite Turnstile RFID Wristband Sync: Real-time synchronization API to pair ticket barcodes with physical RFID festival wristbands at onsite venue check-in booths.
+3. Artist VIP Backstage Lottery Engine: Automated weighted lottery draw system for premium ticket holders to win backstage artist meet-and-greet access.
+
+Since the ticketing portal is already architected, we expect these modules delivered ahead of next week's general on-sale. Please confirm the delivery schedule.
 
 Best regards,
-Karan Johar, Product Lead
-LiveVibe Events
+Aditya Roy
+Festival Director, LiveVibe Events

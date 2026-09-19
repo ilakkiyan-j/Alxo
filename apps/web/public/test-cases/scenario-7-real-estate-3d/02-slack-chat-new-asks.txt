@@ -1,8 +1,6 @@
-Marcus Thorne [02:15 PM]:
-Hey guys! Photos look nice, but our competitors are using 3D Virtual Tours. We need to integrate full Matterport WebGL 3D virtual tour players into all 10 property pages so buyers can walk through the house virtually.
-
-Developer [02:20 PM]:
-Matterport 3D embeds require custom SDK integration, model rendering setup, and camera position event handlers. That's outside our 10 static page scope.
-
-Marcus Thorne [02:25 PM]:
-Also, please add a live interactive Mortgage Calculator on each listing with real-time interest rate feeds from HDFC and ICICI APIs.
+[08/09/2026, 11:12:00] Sameer Deshmukh (Apex Realty): Hi Jordan! The static property photos and description cards look sharp. However, our luxury sales director demands that buyers can walk through high-end villas using an interactive Matterport 3D WebGL virtual tour directly inside the listing page! Can you embed and configure this?
+[08/09/2026, 11:28:15] Jordan Lee (3D Visualizer / Developer): Hi Sameer, integrating WebGL 3D tour embeds with custom hot-spots, floor plan switching, and full-screen camera controls requires specialized 3D canvas optimization. That was explicitly excluded in our 20-photo static gallery SOW.
+[08/09/2026, 11:35:40] Sameer Deshmukh (Apex Realty): Also, buyers are asking for an interactive Mortgage & Amortization Calculator with real-time interest rate feeds from HDFC and SBI to calculate monthly EMI installments dynamically.
+[08/09/2026, 11:46:10] Jordan Lee (3D Visualizer / Developer): An interactive financial EMI calculator with banking API rate sync is custom fintech calculation logic outside our agreed photography showcase scope.
+[08/09/2026, 12:02:00] Sameer Deshmukh (Apex Realty): Can you also add a Virtual Interior Staging AI toggle so buyers can switch between 'Unfurnished' and 'Modern Luxury Furniture' rendered in real-time?
+[08/09/2026, 12:15:30] Jordan Lee (3D Visualizer / Developer): Real-time generative AI room staging requires AI image synthesis pipeline integration. That is a substantial new feature.

@@ -1,13 +1,17 @@
 From: Priya Sharma <priya@auraretail.com>
 To: Jordan Lee <jordan@designstudio.com>
 Date: 14 Sep 2026 16:45:00 +0530
-Subject: Launch Requirements - Multi-Currency & Language Toggle
+Subject: Launch Requirements - Multi-Currency, Abandoned Cart & Social Commerce
 
 Hi Jordan,
 
-Following up on our launch timeline for next week. Our leadership team reviewed the store build today and noted that we need multi-currency support (USD, EUR, and GBP conversion alongside INR) and a French/Spanish language toggle across all 5 pages before we can go live.
+Following up on our launch timeline for next week. Our leadership team reviewed the store build today and noted four critical additions required before we can go live:
+1. Multi-Currency Conversion (USD, EUR, and GBP auto-geolocated real-time FX conversion alongside INR).
+2. Multi-Language Localization Toggle (French, Spanish, and German translations across all storefront pages).
+3. Automated Abandoned Cart SMS & WhatsApp Recovery Campaign webhook integration (sending customized coupon recovery links within 30 minutes of cart drop-off).
+4. Social Commerce Catalog Synchronization (two-way inventory and checkout catalog feed sync directly into Instagram Shop and TikTok Shop).
 
-Since the pages are already built, we expect these toggles to be included in the remaining development phase before launch. Please confirm when this will be pushed to the staging server.
+Since the foundation is already completed, we expect these items to be bundled into the current delivery sprint. Please confirm when these will be live on staging.
 
 Best regards,
 Priya Sharma

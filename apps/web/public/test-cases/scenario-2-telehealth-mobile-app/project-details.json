@@ -1,7 +1,7 @@
 {
   "projectName": "PulseCare Telehealth Mobile App",
   "clientName": "PulseCare Health Inc",
-  "role": "Web / Software Developer",
+  "role": "Telehealth Mobile Systems Architect",
   "hourlyRate": 4000,
   "currency": "INR",
   "originalScope": "Develop iOS and Android mobile app MVP for patient appointment booking and profile management.\nIntegrate Jitsi video SDK for direct 1-on-1 doctor consultation calls.\nIncludes patient login, doctor search, and appointment scheduling calendar.\nExcludes Apple HealthKit integration, automated PDF prescriptions, and insurance validation."

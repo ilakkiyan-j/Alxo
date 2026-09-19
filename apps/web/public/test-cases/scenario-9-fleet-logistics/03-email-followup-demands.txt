@@ -1,13 +1,18 @@
-Subject: Urgent Hardware Telematics & Fuel Reporting Additions
+From: Harish Verma <hverma@globallogistics.co>
+To: Vikram Sethi <vikram@iotstack.io>
+Date: 17 Sep 2026 14:00:00 +0530
+Subject: Mandatory Fleet Launch Requirements - Fuel Tax, Driver Video Scoring & PTT Audio
 
-Hi Team,
+Hi Vikram,
 
-Before we launch TrackSwift to our 150 drivers next month, please add:
-1. IoT OBD-II Hardware Telemetry Parser to ingest live engine temperature, tire pressure, and brake wear diagnostics.
-2. Predictive Fuel Consumption Analytics Engine to forecast monthly fuel spending per driver and flag excessive idling.
+Following our quarterly fleet safety committee meeting, our executive operations board has mandated the following modules before our 200-truck rollout:
 
-Please ensure these features are part of the initial delivery milestone.
+1. Automated IFTA Fuel Tax Engine: Automatically compute quarterly interstate fuel tax liabilities by cross-referencing GPS border crossings with fuel receipts.
+2. AI Driver Safety Scoring: In-cab dashcam video telemetry scoring that automatically logs harsh braking, rapid acceleration, and lane departure violations into driver safety reports.
+3. Push-to-Talk (PTT) Audio Stream: Real-time half-duplex walkie-talkie audio stream connecting dispatchers to driver tablet hardware over WebRTC.
+
+Since these modules integrate with the fleet management portal you are currently finalizing, we expect them to be delivered before the end of the month. Please confirm your deployment plan.
 
 Best regards,
-Vikram Singh, Operations Director
-Global Logistics Co
+Harish Verma
+Director of Fleet Operations, Global Logistics Co

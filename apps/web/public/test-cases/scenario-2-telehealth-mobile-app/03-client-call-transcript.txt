@@ -9,3 +9,7 @@ Attendees: Dr. Vikram Patel (PulseCare), Jordan Lee (Lead Developer)
 [00:05:10] Dr. Vikram Patel: Also, for the doctor's calendar, we cannot use standard time slots. We need a dynamic AI-driven schedule optimization algorithm that automatically adjusts consultation duration based on patient symptoms. We assume this is included in the scheduling setup.
 
 [00:06:30] Jordan Lee: AI schedule optimization algorithms and dynamic slot recalculation were explicitly listed as out of scope in our initial agreement. I will prepare an itemized change order with cost estimates for both insurance verification and AI scheduling.
+
+[00:08:45] Dr. Vikram Patel: One more critical safety mandate from our medical advisory board: An Emergency SOS Dispatch Service. If a patient's self-reported triage score indicates acute cardiac or stroke symptoms during intake, the app must trigger automated phone SMS dispatch to the nearest hospital ER along with GPS coordinates. We need this live for compliance.
+
+[00:10:12] Jordan Lee: Real-time emergency medical dispatch with GPS geofencing carries severe regulatory and liability requirements that require dedicated emergency telephony infrastructure. We must treat this as a standalone critical system add-on.

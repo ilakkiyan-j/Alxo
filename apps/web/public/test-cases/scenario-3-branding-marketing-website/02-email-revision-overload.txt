@@ -1,13 +1,17 @@
 From: Marcus Vance <marcus@nexusglobal.com>
 To: Jordan Lee <jordan@designstudio.com>
 Date: 11 Sep 2026 14:20:00 +0530
-Subject: Updated Layout Feedback - Revision Round 5 & Blog Content
+Subject: Updated Layout Feedback - Revision Round 5, Blog Content & HubSpot Sync
 
 Hi Jordan,
 
-Our CEO reviewed the site build yesterday and decided we need a complete layout redesign for the Homepage and About Us page (this will be revision round 5). Attached are new wireframes with entirely new color schemes and font structures.
+Our CEO reviewed the site build yesterday and decided we need a complete layout redesign for the Homepage, Services, and About Us pages (this will be revision round 5). Attached are new wireframes with entirely new dark-mode color schemes and font structures.
 
-Also, our content team hasn't written the 10 blog articles for the Insights section yet. Can your team draft those 10 articles on enterprise management and upload them into the CMS before Friday?
+In addition, our marketing team requires two immediate inclusions:
+1. Writing 10 thought-leadership blog articles: Our content team hasn't written the articles for the Insights section. Can your team research and draft those 10 articles on enterprise AI governance and upload them into the CMS before Friday?
+2. Enterprise HubSpot CRM & Lead Scoring Sync: Every form submission must automatically push contact records into HubSpot with custom lifecycle stages, UTM attribution parameters, and trigger automated sales drip campaigns.
+
+Since we are nearing our launch date, please prioritize these items immediately.
 
 Thanks,
 Marcus Vance

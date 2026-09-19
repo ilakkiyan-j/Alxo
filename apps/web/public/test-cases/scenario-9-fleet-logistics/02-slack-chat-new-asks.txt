@@ -1,8 +1,6 @@
-Vikram Singh [03:40 PM]:
-Team, static map previews are not useful. We need Live Real-Time GPS Telematics Tracking over WebSockets updating vehicle positions on Mapbox every 3 seconds!
-
-Developer [03:45 PM]:
-Real-time WebSocket streaming, vehicle geo-fencing alerts, and live map position interpolation were explicitly excluded from the static route map SOW.
-
-Vikram Singh [03:50 PM]:
-Also, we need an Automated Driver Route Optimization Engine using Dijkstra / Traveling Salesperson algorithms to re-route drivers around traffic jams automatically.
+[15/09/2026, 08:45:10] Harish Verma (Global Logistics): Morning team! The static truck schedule table works, but our fleet operations command center cannot run on static schedules. We need real-time OBD-II IoT telemetry streaming live vehicle speed, engine diagnostics, coolant temp, and fuel level every 5 seconds over WebSockets!
+[15/09/2026, 09:02:30] Vikram Sethi (IoT Fleet Engineer): Hi Harish, real-time OBD-II telematics streaming requires IoT MQTT/WebSocket ingestion pipelines, time-series database (TimescaleDB / InfluxDB) setup, and live telemetry rendering. That is advanced IoT infrastructure, far beyond our SOW of a daily vehicle schedule table.
+[15/09/2026, 09:14:00] Harish Verma (Global Logistics): Also, our dispatchers need dynamic multi-stop AI route optimization that recalculates driver routes in real time based on live Google Maps traffic congestion and weather hazards.
+[15/09/2026, 09:28:45] Vikram Sethi (IoT Fleet Engineer): Traveling salesperson algorithm with live traffic API recalculation is a complex optimization service outside our agreed baseline.
+[15/09/2026, 09:40:15] Harish Verma (Global Logistics): Can we also add geofencing boundary violation alerts that send instant SMS to dispatchers whenever a truck deviates more than 500 meters from its designated route?
+[15/09/2026, 09:55:00] Vikram Sethi (IoT Fleet Engineer): Real-time polygon geofencing calculations on streaming GPS coordinates require background spatial workers. I will log this for an additional scope order.

@@ -1,8 +1,6 @@
-Nikhil Mehta [11:05 AM]:
-Hey guys! Web scanning is done, but our board wants a full Internal Physical Network Penetration Test. Can you guys send an engineer to physically breach our HQ WiFi network and test internal servers?
-
-Security Engineer [11:10 AM]:
-Physical red-team penetration testing requires dedicated onsite engineers, physical access authorization, and network equipment. That is completely out of scope for a web app vulnerability scan.
-
-Nikhil Mehta [11:15 AM]:
-Also, we need you to launch a simulated Email Phishing Campaign against all 250 FinSecure employees to test employee security awareness.
+[12/09/2026, 11:05:14] Nikhil Mehta (FinSecure CISO): Hey team! Automated web scanning is wrapping up nicely, but our audit committee wants a full Onsite Physical Red-Team Network Penetration Test. Can you guys send an engineer to physically breach our Mumbai HQ WiFi network and test internal subnet servers?
+[12/09/2026, 11:15:30] Maya Rao (Security Engineer): Hi Nikhil, physical red-team penetration testing requires dedicated onsite presence, legal authorization letters, and specialized RF/network hardware. Our agreed SOW is strictly limited to remote OWASP Top 10 automated web vulnerability scanning.
+[12/09/2026, 11:22:45] Nikhil Mehta (FinSecure CISO): Also, our board wants us to launch a simulated Email Spear-Phishing Campaign targeting all 250 FinSecure employees with custom phishing landing pages to calculate our human susceptibility score.
+[12/09/2026, 11:34:10] Maya Rao (Security Engineer): Phishing simulation campaigns require custom domain provisioning, template drafting, campaign scheduling, and HR compliance tracking. That represents separate advisory work outside our baseline scope.
+[12/09/2026, 11:42:00] Nikhil Mehta (FinSecure CISO): Can you also author custom AWS GuardDuty and CloudWatch threat detection rules for our production Kubernetes clusters to detect credential exfiltration in real time?
+[12/09/2026, 11:55:20] Maya Rao (Security Engineer): Cloud SIEM rule authoring and GuardDuty remediation playbooks are cloud engineering deliverables. I will log these as additional items for a change order.

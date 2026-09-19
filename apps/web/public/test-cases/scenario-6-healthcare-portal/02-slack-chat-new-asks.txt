@@ -1,8 +1,6 @@
-Dr. Robert Vance [10:14 AM]:
-Hey team, our compliance team insists we cannot go live without a comprehensive HIPAA Immutable Audit Logging Engine that logs every single database read/write event with encrypted timestamping. Can we add this into the build?
-
-Developer [10:18 AM]:
-That requires building an audit streaming service and immutable storage pipeline. That wasn't in our baseline SOW.
-
-Dr. Robert Vance [10:22 AM]:
-Also, our medical director wants real-time HL7 / FHIR EHR integration with Epic and Cerner so lab results auto-sync directly instead of manual PDF uploads. Please prioritize this for launch.
+[14/09/2026, 10:14:22] Dr. Robert Vance (MedVanguard CTO): Hey team! We had our compliance committee audit this morning. They insist we cannot go live without a comprehensive HIPAA Immutable Audit Logging Engine that cryptographically hashes and logs every single patient database read/write access event. Can we add this into the build?
+[14/09/2026, 10:25:10] Alex Mercer (Healthcare Consultant): Hi Dr. Vance, our agreed baseline SOW explicitly covered patient registration, appointment scheduling, and static lab result viewing. An immutable cryptographic audit streaming pipeline requires dedicated Kafka/Kinesis streams, tamper-proof storage, and compliance reporting. That is a significant architectural addition.
+[14/09/2026, 10:32:45] Dr. Robert Vance (MedVanguard CTO): Also, our medical director wants real-time bidirectional HL7 / FHIR EHR integration with Epic and Cerner systems so doctor diagnostic notes and lab blood panels auto-sync automatically instead of manual PDF uploads. Please prioritize this for launch.
+[14/09/2026, 10:48:12] Alex Mercer (Healthcare Consultant): HL7/FHIR EHR interoperability with Epic and Cerner requires custom HL7 v2/v3 parsers, OAuth2 SMART-on-FHIR client registration, and medical data schema mapping. This is outside our baseline scope.
+[14/09/2026, 11:05:30] Dr. Robert Vance (MedVanguard CTO): While we are at it, patients are demanding WebRTC encrypted peer-to-peer video consultation directly inside the portal so doctors can conduct virtual clinic visits. Can we add virtual exam rooms before next week?
+[14/09/2026, 11:18:40] Alex Mercer (Healthcare Consultant): WebRTC peer-to-peer encrypted video rooms with turn/stun servers and recording archives was not part of the patient portal contract. I will prepare a scope change order for this.

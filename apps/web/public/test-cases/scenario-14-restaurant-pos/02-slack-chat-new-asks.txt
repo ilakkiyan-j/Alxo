@@ -1,8 +1,14 @@
 Chef Marco [01:20 PM]:
-Ciao team! We want to eliminate waiter queues. We need a Self-Service Touchscreen Kiosk App (McDonald's style) for customers to place orders directly on 24-inch floor tablets!
+Ciao team! We want to eliminate waiter queues at all 6 locations. We need a Self-Service Touchscreen Kiosk App (McDonald's style) for customers to place orders directly on 24-inch floor-mounted tablets with card reader terminal integrations!
 
 Developer [01:25 PM]:
-Building a standalone self-service customer ordering kiosk interface with card reader terminal integrations is a distinct application from our waiter iPad order entry app.
+Building a standalone self-service customer ordering kiosk interface with payment terminal SDK drivers is a distinct application from our waiter iPad order entry app.
 
 Chef Marco [01:30 PM]:
-Also, we need a Kitchen Display System (KDS) for cooks with bump bars and prep timer alarms (Green to Red as orders get late) for our kitchen stations.
+Also, we need a Multi-Station Kitchen Display System (KDS) for cooks with physical bump bar hardware support, audio alarms, and color-coded prep timers (Green -> Amber -> Red as tickets age) for our grill and salad stations.
+
+Developer [01:35 PM]:
+A multi-station real-time KDS requires websocket ticket routing between multiple screens, which is completely outside our baseline printer scope.
+
+Chef Marco [02:10 PM]:
+Another thing: table turnover is slow on weekends. We need Table-Side QR Code Ordering & Equal/Custom Bill Splitting where dine-in guests can scan a QR code at their table, order drinks, split checks among friends, and pay directly via UPI or Apple Pay without waiting for a waiter.

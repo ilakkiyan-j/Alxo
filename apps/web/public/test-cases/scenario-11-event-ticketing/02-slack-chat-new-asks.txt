@@ -1,8 +1,6 @@
-Karan Johar [04:10 PM]:
-Hey team! General Admission isn't enough for our upcoming stadium concert. We need an Interactive Stadium Seat Picker Canvas where users can click on specific VIP seats, view 360-degree stage angles, and select row seats in real time!
-
-Developer [04:15 PM]:
-Building a 2D/3D SVG stadium seat selection engine with real-time seat locking via Redis WebSockets is a major feature expansion from simple general admission tickets.
-
-Karan Johar [04:20 PM]:
-Also, we need Dynamic Demand Pricing algorithms (Uber surge pricing style) that raise ticket prices automatically as ticket inventory drops below 20%.
+[14/09/2026, 15:10:00] Aditya Roy (LiveVibe Events): Hey team! General admission checkout is working, but our music festival promoter insists we need an Interactive Stadium Seat Selection Canvas where fans can zoom in, select exact row and seat numbers, and lock seats for 10 minutes!
+[14/09/2026, 15:25:30] Ananya Sen (EventTech Engineer): Hi Aditya, an interactive seat map with SVG zooming, distributed seat locking locks (via Redis), and real-time seat availability updates is complex stateful architecture. Our SOW was general admission tickets only without assigned seating.
+[14/09/2026, 15:34:10] Aditya Roy (LiveVibe Events): Also, we want dynamic algorithmic surge pricing that automatically increases ticket prices by 10% for every 500 tickets sold in an hour to maximize concert revenue.
+[14/09/2026, 15:46:00] Ananya Sen (EventTech Engineer): Algorithmic surge pricing requires demand velocity monitoring and automated tier transitions. That is custom pricing logic outside our baseline scope.
+[14/09/2026, 16:02:15] Aditya Roy (LiveVibe Events): Can we also build an official peer-to-peer secondary resale marketplace where fans can safely resell extra tickets with price caps to eliminate black market scalping?
+[14/09/2026, 16:15:20] Ananya Sen (EventTech Engineer): A secondary ticket exchange requires peer-to-peer escrow payouts, fraud verification, and barcode re-generation. I will prepare an itemized scope order for these additions.

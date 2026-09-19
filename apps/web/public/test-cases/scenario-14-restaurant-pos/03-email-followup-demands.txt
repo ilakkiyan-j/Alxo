@@ -1,12 +1,13 @@
-Subject: Mandatory Online Delivery Aggregator Integrations
+Subject: Mandatory Online Delivery Aggregator & Inventory Integrations
 
 Hi Team,
 
-To launch DineFast across our 6 bistro locations next month, we need:
-1. Zomato & Swiggy Delivery Aggregator Webhook Integration to automatically ingest incoming online delivery orders straight into our kitchen POS queue.
-2. Inventory Ingredient Depletion Module that auto-deducts grams of cheese and sauce per pizza ordered.
+To launch DineFast across our 6 bistro locations next month, we need the following systems connected:
+1. Zomato & Swiggy Delivery Aggregator Webhook Integration to automatically ingest incoming online delivery orders straight into our kitchen KDS queue, print kitchen runner slips, and notify third-party delivery drivers when orders are marked ready.
+2. Real-Time Recipe Ingredient Depletion & Automated Vendor Purchase Orders that auto-deducts grams of cheese, pasta, and meat per dish ordered and generates bulk reorders to suppliers when thresholds dip below minimum pars.
+3. Multi-Branch Centralized Menu Management & Dynamic Surge Pricing Engine to push simultaneous menu revisions and scheduled happy-hour discount rules across all 6 bistro branches from one master admin panel.
 
-Please ensure these are ready for go-live.
+Please ensure these are ready for our grand opening next week.
 
 Best,
 Chef Marco Rossi, Owner

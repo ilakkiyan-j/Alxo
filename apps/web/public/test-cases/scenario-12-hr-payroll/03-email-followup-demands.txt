@@ -2,11 +2,12 @@ Subject: Mandatory Payroll Features for Q4 Launch
 
 Hi Team,
 
-To process payroll next month, please implement:
-1. NACHA / ACH Banking Direct Deposit File Generator to output formatted `.ach` files for direct payroll submission to HDFC and Citibank.
-2. 360-Degree Employee Performance Appraisal Module with goal setting, peer reviews, and rating matrix charts.
+To process payroll and executive governance next month, please implement the following items into our sprint:
+1. NACHA / ACH Banking Direct Deposit File Generator with encrypted batch checksum validation to output bank-cleared payment files for direct payroll submission to HDFC and Citibank.
+2. 360-Degree Employee Performance Appraisal & OKR Review Module with customizable question rubrics, peer reviews, manager sign-offs, and 9-box talent rating matrix charts.
+3. Employee Stock Ownership Plan (ESOP) Equity Portal with real-time vesting schedule calculators, tax cliff simulations, and cashless stock option exercise workflows.
 
-Please confirm these additions are included in our current scope.
+Please confirm these additions are included in our current delivery without extending the timeline.
 
 Thanks,
 Sunita Rao, VP Human Resources

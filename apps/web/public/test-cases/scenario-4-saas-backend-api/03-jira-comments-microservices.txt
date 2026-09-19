@@ -12,3 +12,6 @@ We also need SOC2 Type II audit logging enabled across all database transactions
 
 [14/09/2026, 10:55:00] Jordan Lee (Lead Developer):
 SOC2 immutable audit log compliance and microservice decomposition require substantial architecture engineering. I will issue a change order detailing the hours required for Kubernetes microservice refactoring and audit logging infrastructure.
+
+[14/09/2026, 11:30:20] Alex Mercer (CTO):
+Finally, for our tier-1 enterprise customers, we need Multi-Tenant Database Sharding & Read-Replica Routing so enterprise accounts get completely isolated Postgres schemas with automated zero-downtime shard migration. We cannot launch without tenant data isolation.

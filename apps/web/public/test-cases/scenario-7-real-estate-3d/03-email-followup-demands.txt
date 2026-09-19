@@ -1,13 +1,18 @@
-Subject: Additional Features Request - EstateVision Launch
+From: Sameer Deshmukh <sdeshmukh@apexrealty.com>
+To: Jordan Lee <jordan@designstudio.com>
+Date: 10 Sep 2026 16:00:00 +0530
+Subject: Launch Deliverables - Drone Video, Twilio SMS Dispatch & Multi-MLS Sync
 
-Hi Team,
+Hi Jordan,
 
-To ensure our launch marketing campaign succeeds, we need the following added to the site before launch:
-1. Automated Twilio SMS Gateway to send instant SMS alerts to property agents whenever a high-net-worth buyer submits a lead.
-2. Virtual Staging Toggle allowing visitors to switch room furniture colors on the property listing photos dynamically.
+Following up on our luxury penthouse marketing launch scheduled for next week. Our sales leadership requires the following features delivered before the press release:
 
-Please confirm these additions are included in our active phase.
+1. 4K Drone Topography Video Player: An interactive video player with synchronized GPS waypoint markers and elevation overlays for our 50-acre gated estate listings.
+2. Twilio Automated SMS Lead Dispatch: Instant automated SMS alerts dispatched to the nearest on-duty real estate agent within 30 seconds of a buyer submitting an inquiry form.
+3. Multi-MLS Automated Property Feed: Real-time bi-directional synchronization with CREDAI and Indian Property MLS databases so listings update automatically without manual data entry.
 
-Thanks,
-Marcus Thorne, Managing Director
-Apex Realty Group
+We expect these components to be included in our scheduled release. Please confirm when testing will begin.
+
+Best regards,
+Sameer Deshmukh
+VP of Digital Marketing, Apex Realty Group
