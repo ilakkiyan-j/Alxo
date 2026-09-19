@@ -9,8 +9,31 @@ import { formatMoney } from '@scope-creep-ledger/shared';
 import * as fs from 'fs';
 import * as path from 'path';
 
-const DEFAULT_REGION = process.env.APP_AWS_REGION || process.env.AWS_REGION || 'us-east-1';
-const DEFAULT_MODEL_ID = process.env.BEDROCK_MODEL_ID || 'anthropic.claude-3-haiku-20240307-v1:0';
+const DEFAULT_REGION = process.env.APP_AWS_REGION || process.env.AWS_REGION || 'ap-southeast-2';
+const DEFAULT_MODEL_ID = process.env.BEDROCK_MODEL_ID || 'anthropic.claude-haiku-4-5-20251001-v1:0';
+
+function loadPromptFile(filename: string, fallbackContent: string): string {
+  const candidates = [
+    path.join(__dirname, '../../../ai/prompts', filename),
+    path.join(__dirname, '../../../../ai/prompts', filename),
+    path.join(process.cwd(), 'ai/prompts', filename),
+    path.join(process.cwd(), '../ai/prompts', filename),
+    path.join(process.cwd(), '../../ai/prompts', filename),
+    path.join(process.cwd(), 'apps/web/ai/prompts', filename),
+  ];
+
+  for (const p of candidates) {
+    try {
+      if (fs.existsSync(p)) {
+        return fs.readFileSync(p, 'utf-8');
+      }
+    } catch {
+      // continue checking
+    }
+  }
+
+  return fallbackContent;
+}
 
 function getAwsClientOptions(customRegion?: string) {
   const region = customRegion || process.env.APP_AWS_REGION || process.env.AWS_REGION || 'us-east-1';
@@ -131,8 +154,8 @@ async function runBedrockChangeOrder(
     const { BedrockRuntimeClient, InvokeModelCommand } = await import('@aws-sdk/client-bedrock-runtime');
     const client = new BedrockRuntimeClient(getAwsClientOptions(options.region));
 
-    const promptsDir = path.join(__dirname, '../../../ai/prompts');
-    const systemPrompt = fs.readFileSync(path.join(promptsDir, 'change-order-system.md'), 'utf-8');
+    const defaultChangeOrderPrompt = 'You are a professional project manager drafting scope adjustment and change-order emails for clients. Output a polite, clear, structured email itemizing added requests, hours, and cost.';
+    const systemPrompt = loadPromptFile('change-order-system.md', defaultChangeOrderPrompt);
 
     const userPayload = {
       project_name: project.name,
