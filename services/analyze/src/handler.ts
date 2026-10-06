@@ -70,18 +70,17 @@ export async function handleAnalyzeRequest(
       classificationsCount['off-topic']++;
     }
 
-    const matchedMessage = messages.find((m) => m.id === result.messageId);
-    if (!matchedMessage) continue;
-
-    // Check low-confidence items (< threshold)
-    const isLowConfidence = result.confidence < confidenceThreshold;
-
-    if (isLowConfidence) {
-      reviewRequiredCount++;
-    }
-
     // Only new-ask items generate scope-creep ledger entries
     if (result.classification === 'new-ask') {
+      const matchedMessage = messages.find((m) => m.id === result.messageId);
+      if (!matchedMessage) continue;
+
+      const isLowConfidence = result.confidence < confidenceThreshold;
+
+      if (isLowConfidence) {
+        reviewRequiredCount++;
+      }
+
       const estimatedHours = result.estimatedHours ?? 0;
       // Core Principle: Deterministic arithmetic (estimatedHours * hourlyRate)
       const estimatedCost = estimatedHours * hourlyRate;
