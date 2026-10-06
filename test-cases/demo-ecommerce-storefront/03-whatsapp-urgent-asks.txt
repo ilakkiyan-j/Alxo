@@ -1,0 +1,7 @@
+[17/04/2026, 21:15:30] Priya Sharma: Hey Rahul! Sorry for texting late on WhatsApp.
+[17/04/2026, 21:16:45] Priya Sharma: Our CEO just looked at the staging site on his OLED phone. He wants a custom Dark Mode toggle with alternate inverted logo vectors and dark theme palette! Can we quickly push that tomorrow?
+[17/04/2026, 21:25:10] Rahul Verma: Hi Priya, custom dark mode styling across all components and alternate vector icon rendering is an additional theme system. I can prepare an estimate for it.
+[19/04/2026, 18:30:00] Priya Sharma: Also, our mobile team is building an iOS app. Can you create custom REST API authentication endpoints with JWT tokens and FCM push notification webhooks so they can use our backend?
+[19/04/2026, 18:45:20] Rahul Verma: Mobile app API authentication endpoints and push notification dispatchers are custom backend services outside the storefront SOW.
+[21/04/2026, 11:20:15] Priya Sharma: Hey Rahul, not sure if in scope, but could we maybe explore adding subtle parallax motion to the homepage hero if you have spare time?
+[21/04/2026, 11:35:00] Rahul Verma: I will check into that.

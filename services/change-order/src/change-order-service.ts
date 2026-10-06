@@ -15,10 +15,15 @@ const DEFAULT_MODEL_ID = process.env.BEDROCK_MODEL_ID || 'anthropic.claude-haiku
 function loadPromptFile(filename: string, fallbackContent: string): string {
   const candidates = [
     path.join(__dirname, '../../../ai/prompts', filename),
+    path.join(__dirname, '../../../.ai/prompts', filename),
     path.join(__dirname, '../../../../ai/prompts', filename),
+    path.join(__dirname, '../../../../.ai/prompts', filename),
     path.join(process.cwd(), 'ai/prompts', filename),
+    path.join(process.cwd(), '.ai/prompts', filename),
     path.join(process.cwd(), '../ai/prompts', filename),
+    path.join(process.cwd(), '../.ai/prompts', filename),
     path.join(process.cwd(), '../../ai/prompts', filename),
+    path.join(process.cwd(), '../../.ai/prompts', filename),
     path.join(process.cwd(), 'apps/web/ai/prompts', filename),
   ];
 

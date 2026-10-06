@@ -1,0 +1,25 @@
+From: Priya Sharma <priya.sharma@nexusretail.com>
+To: Rahul Verma <rahul@arixenstudio.io>
+Date: 23 Apr 2026 14:30:00 +0530
+Subject: Mandatory Launch Requirements — ERP Synchronization & Global Multi-Currency
+
+Hi Rahul,
+
+Following our executive committee review this morning with our Managing Director, there are three non-negotiable enterprise capabilities required prior to our scheduled production launch next month:
+
+1. Real-Time 2-Way SAP S/4HANA ERP Inventory Sync:
+   We must establish live bidirectional inventory synchronization with our central SAP warehouse server via authenticated SOAP/REST middleware so stock counts reflect in real-time.
+
+2. Multi-Currency Automatic FX Rate Conversion:
+   We require an automated IP-geolocated currency converter displaying prices in USD, EUR, and GBP with daily automated OpenExchangeRates FX updates and multi-currency Razorpay capture.
+
+3. Automated Abandoned Cart Recovery Webhook Engine:
+   Integration with WhatsApp Business Cloud API to trigger dynamic 10% discount recovery links to shoppers who abandon their checkout session after 15 minutes.
+
+Since the core storefront foundation is already deployed on staging, we anticipate these deliverables will be integrated into the final release milestone. Please confirm when these will be ready for UAT testing.
+
+Best regards,
+
+Priya Sharma
+Head of Digital Commerce & Growth
+Nexus Retail Ltd

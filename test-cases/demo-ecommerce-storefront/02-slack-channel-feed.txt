@@ -1,0 +1,12 @@
+[03/04/2026, 09:30:15] Priya Sharma (Nexus PM): Good morning Rahul! We’re setting up the Slack channel for the Nexus Storefront project. Let's do all async sprint updates here.
+[03/04/2026, 09:35:00] Rahul Verma (Lead Developer): Good morning Priya! Sounds great. We’ve started scaffolding the Next.js frontend with Tailwind and Razorpay integration.
+[06/04/2026, 11:20:45] Priya Sharma (Nexus PM): Team just reviewed the wireframes. Looks solid. Quick question: on the Product Detail page, can we add an interactive 360-degree product image rotation viewer with zoom magnifying glass?
+[06/04/2026, 11:40:10] Rahul Verma (Lead Developer): The baseline SOW covers standard image carousels. A 360-degree canvas rotation plugin requires multi-angle asset bundling and WebGL texture rendering.
+[09/04/2026, 15:10:00] Priya Sharma (Nexus PM): Also, our sales director is asking if we can build a Customer Loyalty Rewards Portal with point accrual (10 pts per ₹100 spent), bronze/silver/gold tier badges, and coupon redemptions in the cart?
+[09/04/2026, 15:25:30] Rahul Verma (Lead Developer): That requires custom user ledger databases, point balance logic, and coupon engines. As per section 2.2 of our contract, loyalty portals are excluded from baseline scope.
+[12/04/2026, 10:15:00] Priya Sharma (Nexus PM): Understood! We also need full Google Analytics 4 enhanced e-commerce events and Meta Conversion API webhook tracking set up across all checkout steps.
+[12/04/2026, 10:30:15] Rahul Verma (Lead Developer): Server-side Meta CAPI and GA4 e-commerce tracking are third-party integrations outside the baseline. I will log that.
+[14/04/2026, 14:00:22] Priya Sharma (Nexus PM): We finished reviewing Revision Round 1 for the Catalog. Could we potentially explore grid layout variations on the Product Detail page if time permits?
+[14/04/2026, 14:15:00] Rahul Verma (Lead Developer): I will note that down and check into that.
+[16/04/2026, 17:45:00] Priya Sharma (Nexus PM): Are we still on track for our sprint review on Friday at 3 PM?
+[16/04/2026, 17:48:00] Rahul Verma (Lead Developer): Yes, sprint review is confirmed for Friday at 3 PM IST.

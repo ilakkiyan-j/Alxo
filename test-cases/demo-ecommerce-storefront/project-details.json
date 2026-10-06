@@ -1,0 +1,102 @@
+{
+  "projectName": "Nexus Storefront Redesign",
+  "clientName": "Nexus Retail Ltd",
+  "clientPOC": "Priya Sharma (Head of Digital)",
+  "freelancerName": "Rahul Verma",
+  "role": "Web / Software Developer",
+  "hourlyRate": 2500,
+  "currency": "INR",
+  "originalBudget": 1500000,
+  "files": [
+    "01-contract-baseline-sow.txt",
+    "02-slack-channel-feed.txt",
+    "03-whatsapp-urgent-asks.txt",
+    "04-gmail-executive-demands.txt"
+  ],
+  "expectedRecoveries": {
+    "totalScopeItems": 8,
+    "totalEstimatedHours": 29.5,
+    "totalUnbilledRecovery": 73750,
+    "reviewRequiredItems": [
+      {
+        "channel": "Slack",
+        "quote": "Could we potentially explore grid layout variations on the Product Detail page if time permits?",
+        "confidence": 0.64,
+        "hours": 1.5,
+        "status": "review_required"
+      },
+      {
+        "channel": "WhatsApp",
+        "quote": "not sure if in scope, but could we maybe explore adding subtle parallax motion...",
+        "confidence": 0.64,
+        "hours": 1.5,
+        "status": "review_required"
+      }
+    ],
+    "breakdown": [
+      {
+        "channel": "Slack",
+        "deliverable": "Customer Loyalty Rewards Portal & Badges",
+        "hours": 4.5,
+        "cost": 11250,
+        "confidence": 0.93
+      },
+      {
+        "channel": "Slack",
+        "deliverable": "360-degree Interactive Product Rotation Canvas",
+        "hours": 3.0,
+        "cost": 7500,
+        "confidence": 0.92
+      },
+      {
+        "channel": "Slack",
+        "deliverable": "GA4 Enhanced E-Commerce & Meta CAPI Webhooks",
+        "hours": 2.5,
+        "cost": 6250,
+        "confidence": 0.92
+      },
+      {
+        "channel": "Slack",
+        "deliverable": "Product Detail Grid Layout Exploration (Review Required)",
+        "hours": 1.5,
+        "cost": 3750,
+        "confidence": 0.64
+      },
+      {
+        "channel": "WhatsApp",
+        "deliverable": "Dark Mode Theme Toggle & Inverted Logo Vectors",
+        "hours": 2.0,
+        "cost": 5000,
+        "confidence": 0.85
+      },
+      {
+        "channel": "WhatsApp",
+        "deliverable": "Mobile App REST API Auth & Push Endpoints",
+        "hours": 3.5,
+        "cost": 8750,
+        "confidence": 0.93
+      },
+      {
+        "channel": "WhatsApp",
+        "deliverable": "Homepage Parallax Motion Exploration (Review Required)",
+        "hours": 1.5,
+        "cost": 3750,
+        "confidence": 0.64
+      },
+      {
+        "channel": "Gmail",
+        "deliverable": "Live 2-Way SAP S/4HANA ERP Inventory Sync",
+        "hours": 8.0,
+        "cost": 20000,
+        "confidence": 0.93
+      },
+      {
+        "channel": "Gmail",
+        "deliverable": "Multi-Currency Geolocated FX Conversion (USD/EUR/GBP)",
+        "hours": 3.0,
+        "cost": 7500,
+        "confidence": 0.93
+      }
+    ]
+  }
+}

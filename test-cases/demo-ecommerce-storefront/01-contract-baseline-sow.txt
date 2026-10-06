@@ -1,0 +1,44 @@
+================================================================================
+                    STATEMENT OF WORK (SOW) AGREEMENT
+                    PROJECT: NEXUS STOREFRONT REDESIGN
+================================================================================
+CLIENT: Nexus Retail Ltd (POC: Priya Sharma, Head of Digital)
+DEVELOPER: Rahul Verma / Lead Full-Stack Architect
+DATE: 01 April 2026
+HOURLY BILLING RATE: ₹2,500 INR / Hour
+AGREED BASELINE BUDGET: ₹1,500,000 INR (600 Total Planned Hours)
+ESTIMATED TIMELINE: 6 Weeks
+
+1. AGREED BASELINE DELIVERABLES (IN-SCOPE):
+--------------------------------------------------------------------------------
+1.1 Four (4) core responsive storefront pages:
+    - Home Page (Hero banner, featured categories, customer testimonials)
+    - Product Catalog (Category filtering, price sort, grid/list view)
+    - Product Detail Page (Image gallery, variant selector, specifications)
+    - Contact Us Page (Inquiry form with email notification)
+1.2 Standard Razorpay payment gateway integration (hosted checkout modal).
+1.3 Responsive mobile-friendly UI layout for standard smartphones & tablets.
+1.4 Initial product catalog import (up to 100 products from client CSV file).
+1.5 One (1) consolidated design and copy revision round post-initial demo.
+
+2. EXPLICIT CONTRACT EXCLUSIONS (OUT-OF-SCOPE):
+--------------------------------------------------------------------------------
+2.1 Custom enterprise ERP inventory synchronization (e.g., SAP, Oracle, NetSuite).
+2.2 Customer loyalty reward points portal, tier badges, and wallet ledger.
+2.3 Multi-currency automatic geolocated real-time FX conversion (USD/EUR/GBP).
+2.4 Custom standalone mobile application backend API / OAuth push endpoints.
+2.5 Third-party marketing automation webhooks (Meta Pixel, Google Analytics 4, TikTok Shop).
+2.6 Additional revision passes exceeding the single agreed revision round.
+2.7 Dark mode custom iconography or alternate vector theme variations.
+
+3. REVISION & SCOPE CHANGE POLICY:
+--------------------------------------------------------------------------------
+Any additional deliverables, structural revisions exceeding Round 1, or third-party 
+integrations requested during development will be documented, estimated, and billed 
+via a formal Change Order Addendum at the standard contractual rate of ₹2,500/hr.
+
+================================================================================
+CONFIRMED & ACCEPTED BY:
+Client Signature: Priya Sharma (Nexus Retail Ltd) — 01/04/2026
+Developer Signature: Rahul Verma (Lead Architect) — 01/04/2026
+================================================================================

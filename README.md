@@ -103,25 +103,25 @@ Without an automated audit trail, manual reconciliation is tedious, confrontatio
 
 ## 🧪 15 Curated Real-World Benchmark Scenarios
 
-ALXO includes a complete benchmark suite of **15 industry-specific real-world test scenarios** located in [`apps/web/public/test-cases/`](apps/web/public/test-cases/). Each folder contains baseline contracts, client conversation threads with intentional scope creep, and exact copy-paste form values.
+ALXO includes a complete benchmark suite of **15 industry-specific real-world test scenarios** located in [`apps/web/public/test-cases/`](apps/web/public/test-cases). Each folder contains baseline contracts, client conversation threads with intentional scope creep, and exact copy-paste form values.
 
 | # | Scenario Title | Industry Domain | Hourly Rate | Test Case Directory |
 | :-: | :--- | :--- | :--- | :--- |
-| **01** | **E-Commerce Storefront Redesign** | Retail / E-Commerce | `3,500 INR/hr` | [`scenario-1-ecommerce-store`](apps/web/public/test-cases/scenario-1-ecommerce-store/) |
-| **02** | **Telehealth MVP Mobile App** | Healthcare / Telemed | `4,000 INR/hr` | [`scenario-2-telehealth-mobile-app`](apps/web/public/test-cases/scenario-2-telehealth-mobile-app/) |
-| **03** | **Corporate Branding & Marketing Website** | Creative / Branding | `2,500 INR/hr` | [`scenario-3-branding-marketing-website`](apps/web/public/test-cases/scenario-3-branding-marketing-website/) |
-| **04** | **SaaS Backend & Billing API Integration** | Fintech / SaaS | `5,000 INR/hr` | [`scenario-4-saas-backend-api`](apps/web/public/test-cases/scenario-4-saas-backend-api/) |
-| **05** | **EdTech Learning Quiz App** | EdTech / E-Learning | `3,000 INR/hr` | [`scenario-5-edtech-quiz-app`](apps/web/public/test-cases/scenario-5-edtech-quiz-app/) |
-| **06** | **Healthcare Patient Portal HIPAA Compliance** | Healthcare IT | `4,500 INR/hr` | [`scenario-6-healthcare-portal`](apps/web/public/test-cases/scenario-6-healthcare-portal/) |
-| **07** | **Real Estate 3D Virtual Tours** | PropTech / 3D | `3,800 INR/hr` | [`scenario-7-real-estate-3d`](apps/web/public/test-cases/scenario-7-real-estate-3d/) |
-| **08** | **AI Chatbot Customer Support System** | Conversational AI / RAG | `5,000 INR/hr` | [`scenario-8-ai-chatbot`](apps/web/public/test-cases/scenario-8-ai-chatbot/) |
-| **09** | **Logistics Fleet Management System** | IoT / Fleet Logistics | `4,200 INR/hr` | [`scenario-9-fleet-logistics`](apps/web/public/test-cases/scenario-9-fleet-logistics/) |
-| **10** | **Cyber Security Penetration Testing** | Cyber Security | `6,000 INR/hr` | [`scenario-10-cyber-security`](apps/web/public/test-cases/scenario-10-cyber-security/) |
-| **11** | **Event Ticketing Web Application** | EventTech / Ticketing | `3,200 INR/hr` | [`scenario-11-event-ticketing`](apps/web/public/test-cases/scenario-11-event-ticketing/) |
-| **12** | **HR Payroll Integration Pipeline** | Enterprise HR | `4,800 INR/hr` | [`scenario-12-hr-payroll`](apps/web/public/test-cases/scenario-12-hr-payroll/) |
-| **13** | **Gaming Community Dashboard** | Web3 / Gaming | `3,000 INR/hr` | [`scenario-13-gaming-community`](apps/web/public/test-cases/scenario-13-gaming-community/) |
-| **14** | **Restaurant Point-of-Sale Ecosystem** | Retail POS | `3,600 INR/hr` | [`scenario-14-restaurant-pos`](apps/web/public/test-cases/scenario-14-restaurant-pos/) |
-| **15** | **Financial Analytics & Portfolio Dashboard** | Quantitative Finance | `6,500 INR/hr` | [`scenario-15-financial-analytics`](apps/web/public/test-cases/scenario-15-financial-analytics/) |
+| **01** | **E-Commerce Storefront Redesign** | Retail / E-Commerce | `3,500 INR/hr` | [`scenario-1-ecommerce-store`](apps/web/public/test-cases/scenario-1-ecommerce-store) |
+| **02** | **Telehealth MVP Mobile App** | Healthcare / Telemed | `4,000 INR/hr` | [`scenario-2-telehealth-mobile-app`](apps/web/public/test-cases/scenario-2-telehealth-mobile-app) |
+| **03** | **Corporate Branding & Marketing Website** | Creative / Branding | `2,500 INR/hr` | [`scenario-3-branding-marketing-website`](apps/web/public/test-cases/scenario-3-branding-marketing-website) |
+| **04** | **SaaS Backend & Billing API Integration** | Fintech / SaaS | `5,000 INR/hr` | [`scenario-4-saas-backend-api`](apps/web/public/test-cases/scenario-4-saas-backend-api) |
+| **05** | **EdTech Learning Quiz App** | EdTech / E-Learning | `3,000 INR/hr` | [`scenario-5-edtech-quiz-app`](apps/web/public/test-cases/scenario-5-edtech-quiz-app) |
+| **06** | **Healthcare Patient Portal HIPAA Compliance** | Healthcare IT | `4,500 INR/hr` | [`scenario-6-healthcare-portal`](apps/web/public/test-cases/scenario-6-healthcare-portal) |
+| **07** | **Real Estate 3D Virtual Tours** | PropTech / 3D | `3,800 INR/hr` | [`scenario-7-real-estate-3d`](apps/web/public/test-cases/scenario-7-real-estate-3d) |
+| **08** | **AI Chatbot Customer Support System** | Conversational AI / RAG | `5,000 INR/hr` | [`scenario-8-ai-chatbot`](apps/web/public/test-cases/scenario-8-ai-chatbot) |
+| **09** | **Logistics Fleet Management System** | IoT / Fleet Logistics | `4,200 INR/hr` | [`scenario-9-fleet-logistics`](apps/web/public/test-cases/scenario-9-fleet-logistics) |
+| **10** | **Cyber Security Penetration Testing** | Cyber Security | `6,000 INR/hr` | [`scenario-10-cyber-security`](apps/web/public/test-cases/scenario-10-cyber-security) |
+| **11** | **Event Ticketing Web Application** | EventTech / Ticketing | `3,200 INR/hr` | [`scenario-11-event-ticketing`](apps/web/public/test-cases/scenario-11-event-ticketing) |
+| **12** | **HR Payroll Integration Pipeline** | Enterprise HR | `4,800 INR/hr` | [`scenario-12-hr-payroll`](apps/web/public/test-cases/scenario-12-hr-payroll) |
+| **13** | **Gaming Community Dashboard** | Web3 / Gaming | `3,000 INR/hr` | [`scenario-13-gaming-community`](apps/web/public/test-cases/scenario-13-gaming-community) |
+| **14** | **Restaurant Point-of-Sale Ecosystem** | Retail POS | `3,600 INR/hr` | [`scenario-14-restaurant-pos`](apps/web/public/test-cases/scenario-14-restaurant-pos) |
+| **15** | **Financial Analytics & Portfolio Dashboard** | Quantitative Finance | `6,500 INR/hr` | [`scenario-15-financial-analytics`](apps/web/public/test-cases/scenario-15-financial-analytics) |
 
 ---
 

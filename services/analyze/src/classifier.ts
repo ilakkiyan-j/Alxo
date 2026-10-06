@@ -45,10 +45,15 @@ function isMockBedrockMode(): boolean {
 function loadPromptFile(filename: string, fallbackContent: string): string {
   const candidates = [
     path.join(__dirname, '../../../ai/prompts', filename),
+    path.join(__dirname, '../../../.ai/prompts', filename),
     path.join(__dirname, '../../../../ai/prompts', filename),
+    path.join(__dirname, '../../../../.ai/prompts', filename),
     path.join(process.cwd(), 'ai/prompts', filename),
+    path.join(process.cwd(), '.ai/prompts', filename),
     path.join(process.cwd(), '../ai/prompts', filename),
+    path.join(process.cwd(), '../.ai/prompts', filename),
     path.join(process.cwd(), '../../ai/prompts', filename),
+    path.join(process.cwd(), '../../.ai/prompts', filename),
     path.join(process.cwd(), 'apps/web/ai/prompts', filename),
   ];
 
@@ -232,12 +237,14 @@ function runMockClassification(
       sender.includes('freelancer') ||
       sender.includes('developer') ||
       sender.includes('jordan') ||
+      sender.includes('rahul') ||
+      sender.includes('verma') ||
       sender === 'alex' ||
       sender.includes('engineer');
 
     // Freelancer explanations are clarifications/updates, not new-ask requests
     if (isFreelancer) {
-      if (text.includes('check into that') || text.includes('log all these')) {
+      if (text.includes('check into that') || text.includes('log all these') || text.includes('note that down') || text.includes('might explore')) {
         return {
           messageId: msg.id,
           classification: 'clarification',
@@ -252,6 +259,23 @@ function runMockClassification(
         confidence: 0.92,
         reason: 'Freelancer explanation or status update regarding project scope boundaries.',
         estimatedHours: null,
+      };
+    }
+
+    // Check ambiguous/exploratory client scope requests (< 0.70 confidence for review queue)
+    if (
+      text.includes('if time permits') ||
+      text.includes('potentially explore') ||
+      text.includes('maybe explore') ||
+      text.includes('not sure if in scope') ||
+      text.includes('spare time')
+    ) {
+      return {
+        messageId: msg.id,
+        classification: 'new-ask',
+        confidence: 0.64, // Flagged for review (< 0.70)
+        reason: 'Ambiguous exploratory scope ask by client requiring manual verification.',
+        estimatedHours: 1.5,
       };
     }
 

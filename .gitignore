@@ -45,5 +45,6 @@ credentials.md
 
 # AI Prompts, UI Audits & OpenCode Configs
 .opencode/
-ai/
+.ai/
 
+docs/
