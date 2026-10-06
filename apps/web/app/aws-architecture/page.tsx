@@ -368,12 +368,7 @@ export default function PublicAWSArchitecturePage() {
         {/* Section 2.5: Architectural Alternatives & Trade-offs */}
         <section className="space-y-4">
           <div>
-            <div className="flex items-center gap-2">
-              <Badge variant="outline" className="border-brand-accent/40 text-brand-accent text-xs">
-                FDE Assignment · System Design Evaluation
-              </Badge>
-            </div>
-            <h2 className="text-xl font-bold text-foreground mt-1">Architectures Considered & Rejected</h2>
+            <h2 className="text-xl font-bold text-foreground">Architectures Considered & Rejected</h2>
             <p className="text-xs text-muted-foreground mt-0.5">
               Comparison of evaluated engineering approaches before selecting the ALXO Modular Hybrid Pipeline.
             </p>
