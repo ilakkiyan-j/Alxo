@@ -10,6 +10,10 @@ export interface AnalysisResult {
   totalEstimatedHours: number;
   totalEstimatedCost: number;
   reviewRequiredCount: number;
+  verifiedHours?: number;
+  reviewHours?: number;
+  verifiedCost?: number;
+  currency?: string;
 }
 
 const STAGES = [
@@ -57,6 +61,14 @@ export function AnalysisProgress({
     return () => window.clearInterval(timer);
   }, [running, status]);
 
+  const verifiedHours =
+    result?.verifiedHours !== undefined
+      ? result.verifiedHours
+      : result
+      ? Math.max(0, result.totalEstimatedHours - (result.reviewHours ?? 0))
+      : 0;
+  const reviewHours = result?.reviewHours ?? 0;
+
   return (
     <div className="space-y-6 p-6">
       {running && (
@@ -80,16 +92,19 @@ export function AnalysisProgress({
           </div>
           <div className="mt-4 grid gap-4 sm:grid-cols-3">
             <div>
-              <p className="text-xs uppercase tracking-wide text-muted-foreground">Creep items</p>
-              <p className="text-2xl font-bold text-foreground">{result.totalScopeCreepItems}</p>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground">Auto-Verified Effort</p>
+              <p className="text-2xl font-bold text-success">{verifiedHours} hrs</p>
+              <p className="text-[11px] text-muted-foreground mt-0.5">High-confidence scope creep</p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wide text-muted-foreground">Additional hours</p>
-              <p className="text-2xl font-bold text-foreground">{result.totalEstimatedHours}</p>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground">Review Queue</p>
+              <p className="text-2xl font-bold text-warning">{result.reviewRequiredCount} pending</p>
+              <p className="text-[11px] text-muted-foreground mt-0.5">+{reviewHours} hrs for your review</p>
             </div>
             <div>
-              <p className="text-xs uppercase tracking-wide text-muted-foreground">Review queue</p>
-              <p className="text-2xl font-bold text-foreground">{result.reviewRequiredCount}</p>
+              <p className="text-xs uppercase tracking-wide text-muted-foreground">Total Flagged</p>
+              <p className="text-2xl font-bold text-foreground">{result.totalScopeCreepItems} items</p>
+              <p className="text-[11px] text-muted-foreground mt-0.5">{result.totalEstimatedHours} hrs potential total</p>
             </div>
           </div>
           <p className="mt-3 text-xs text-muted-foreground">

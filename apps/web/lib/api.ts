@@ -285,25 +285,28 @@ export const api = {
 
   verifyLedgerItem: async (request: VerifyLedgerItemRequest) => {
     const localDetail = getLocalProjectDetail(request.projectId);
+    const targetIds = request.ledgerItemIds || (request.ledgerItemId ? [request.ledgerItemId] : []);
+
+    let updatedLedgerItems: LedgerItem[] = localDetail?.ledgerItems || [];
+    if (updatedLedgerItems.length > 0) {
+      updatedLedgerItems = updatedLedgerItems.map((it) =>
+        targetIds.includes(it.id)
+          ? { ...it, verificationStatus: request.action === 'verify' ? ('verified' as const) : ('rejected' as const) }
+          : it
+      );
+      saveLocalLedger(request.projectId, updatedLedgerItems);
+    }
+
     const enriched: VerifyLedgerItemRequest = {
       ...request,
       fallbackProject: request.fallbackProject || localDetail?.project,
-      fallbackLedgerItems: request.fallbackLedgerItems || localDetail?.ledgerItems,
+      fallbackLedgerItems: updatedLedgerItems.length > 0 ? updatedLedgerItems : request.fallbackLedgerItems,
     };
 
     const res = await json<{ totals: ProjectDetail['totals'] }>('/api/ledger/verify', {
       method: 'POST',
       body: JSON.stringify(enriched),
     });
-
-    if (localDetail && localDetail.ledgerItems) {
-      const updatedItems = localDetail.ledgerItems.map((it) =>
-        it.id === request.ledgerItemId
-          ? { ...it, verificationStatus: request.action === 'verify' ? ('verified' as const) : ('rejected' as const) }
-          : it
-      );
-      saveLocalLedger(request.projectId, updatedItems);
-    }
 
     return res;
   },

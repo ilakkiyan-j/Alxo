@@ -382,6 +382,57 @@ export async function touchProject(projectId: string, userId?: string): Promise<
 }
 
 /**
+ * Updates user verification status for multiple ledger items atomically.
+ */
+export async function verifyLedgerItems(
+  projectId: string,
+  ledgerItemIds: string[],
+  action: 'verify' | 'reject',
+  customEstimatedHours?: number,
+  userId?: string,
+  fallbackItems?: LedgerItem[],
+  fallbackProject?: Project
+): Promise<LedgerItem[]> {
+  if (fallbackProject) {
+    await saveProject(fallbackProject, userId);
+  }
+  if (fallbackItems && fallbackItems.length > 0) {
+    await saveLedgerItems(fallbackItems, userId);
+  }
+
+  let items = await getLedgerItems(projectId, userId);
+  if (items.length === 0 && fallbackItems) {
+    items = [...fallbackItems];
+  }
+
+  const project = (await getProject(projectId, userId)) || fallbackProject;
+  const hourlyRate = project ? project.hourlyRate : 60;
+  const newStatus: VerificationStatus = action === 'verify' ? 'verified' : 'rejected';
+
+  const allUpdatedItems = items.map((item) => {
+    if (ledgerItemIds.includes(item.id)) {
+      const updatedHours =
+        typeof customEstimatedHours === 'number' && customEstimatedHours >= 0
+          ? customEstimatedHours
+          : item.estimatedHours;
+      return {
+        ...item,
+        verificationStatus: newStatus,
+        estimatedHours: updatedHours,
+        estimatedCost: updatedHours * hourlyRate,
+      };
+    }
+    return item;
+  });
+
+  // Save the entire merged ledger back so no prior verified items are lost
+  await saveLedgerItems(allUpdatedItems, userId);
+  await touchProject(projectId, userId);
+
+  return allUpdatedItems.filter((i) => ledgerItemIds.includes(i.id));
+}
+
+/**
  * Updates user verification status for a specific ledger item
  * Allows user to verify or reject low-confidence items or override estimated hours.
  */
@@ -394,53 +445,21 @@ export async function verifyLedgerItem(
   fallbackItems?: LedgerItem[],
   fallbackProject?: Project
 ): Promise<LedgerItem> {
-  if (fallbackProject) {
-    await saveProject(fallbackProject, userId);
-  }
-  if (fallbackItems && fallbackItems.length > 0) {
-    const existing = await getLedgerItems(projectId, userId);
-    if (existing.length === 0) {
-      await saveLedgerItems(fallbackItems, userId);
-    }
-  }
+  const updated = await verifyLedgerItems(
+    projectId,
+    [ledgerItemId],
+    action,
+    customEstimatedHours,
+    userId,
+    fallbackItems,
+    fallbackProject
+  );
 
-  let items = await getLedgerItems(projectId, userId);
-  let targetItem = items.find((i) => i.id === ledgerItemId);
-
-  if (!targetItem && fallbackItems) {
-    targetItem = fallbackItems.find((i) => i.id === ledgerItemId);
-    if (targetItem) {
-      await saveLedgerItems(fallbackItems, userId);
-      items = await getLedgerItems(projectId, userId);
-      targetItem = items.find((i) => i.id === ledgerItemId) || targetItem;
-    }
-  }
-
-  if (!targetItem) {
+  if (updated.length === 0) {
     throw new Error(`Ledger item ${ledgerItemId} not found for project ${projectId}.`);
   }
 
-  const project = (await getProject(projectId, userId)) || fallbackProject;
-  const hourlyRate = project ? project.hourlyRate : 60;
-
-  // Update item properties
-  const newStatus: VerificationStatus = action === 'verify' ? 'verified' : 'rejected';
-  targetItem.verificationStatus = newStatus;
-
-  if (typeof customEstimatedHours === 'number' && customEstimatedHours >= 0) {
-    targetItem.estimatedHours = customEstimatedHours;
-  }
-
-  // Core Principle: Deterministic cost calculation (estimatedHours * hourlyRate)
-  targetItem.estimatedCost = targetItem.estimatedHours * hourlyRate;
-
-  // Save updated item back
-  await saveLedgerItems([targetItem], userId);
-
-  // Verification is recent project activity
-  await touchProject(projectId, userId);
-
-  return targetItem;
+  return updated[0];
 }
 
 /**

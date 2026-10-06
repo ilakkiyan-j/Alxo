@@ -295,11 +295,19 @@ export function NewProjectForm() {
         window.dispatchEvent(new CustomEvent('scope-creep-project-updated'));
       }
 
+      const items = response.summary.ledgerItems || [];
+      const verifiedItems = items.filter((i) => i.verificationStatus === 'verified');
+      const reviewItems = items.filter((i) => i.verificationStatus === 'review_required');
+      const verifiedHours = verifiedItems.reduce((acc, i) => acc + (i.estimatedHours || 0), 0);
+      const reviewHours = reviewItems.reduce((acc, i) => acc + (i.estimatedHours || 0), 0);
+
       setResult({
         totalScopeCreepItems: response.summary.totalScopeCreepItems,
         totalEstimatedHours: response.summary.totalEstimatedHours,
         totalEstimatedCost: response.summary.totalEstimatedCost,
         reviewRequiredCount: response.summary.reviewRequiredCount,
+        verifiedHours: Math.round(verifiedHours * 10) / 10,
+        reviewHours: Math.round(reviewHours * 10) / 10,
       });
       setProjectId(response.projectId);
       setPhase('complete');

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ListOrdered, Info, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { ListOrdered, Info, ArrowUpRight, CheckCircle2, Clock, TrendingUp, ShieldAlert, Check } from 'lucide-react';
 import { useProjectWorkspace } from '@/components/project/ProjectWorkspace';
 import { MetricCard } from '@/components/MetricCard';
 import { Badge, Button, EmptyState } from '@/components/ui';
@@ -11,7 +11,7 @@ import { PageHeader } from '@/components/PageHeader';
 import { LedgerItem } from '@scope-creep-ledger/shared';
 
 export default function LedgerPage() {
-  const { project, ledgerItems, totals, verifyItem, rejectItem } = useProjectWorkspace();
+  const { project, ledgerItems, totals, verifyItem, verifyItems, rejectItem } = useProjectWorkspace();
   const [verifyingAll, setVerifyingAll] = useState(false);
 
   if (!project) return null;
@@ -21,11 +21,11 @@ export default function LedgerPage() {
   const rest = items.filter((it) => it.verificationStatus !== 'review_required');
 
   const handleVerifyAll = async () => {
-    const queueSnapshot = [...reviewQueue];
-    if (queueSnapshot.length === 0) return;
+    if (reviewQueue.length === 0) return;
+    const ids = reviewQueue.map((it) => it.id);
     setVerifyingAll(true);
     try {
-      await Promise.all(queueSnapshot.map((item) => verifyItem(item.id)));
+      await verifyItems(ids, 'verify');
     } catch {
       /* ignore */
     } finally {
@@ -39,19 +39,26 @@ export default function LedgerPage() {
         title="Ledger"
         description="Every flagged request as an evidence-backed line item, ready to verify."
       />
-      <div className="grid gap-4 sm:grid-cols-3">
+      <div className="grid gap-4 grid-cols-2 lg:grid-cols-4">
         <MetricCard
           label="Verified value"
           value={formatMoney(totals?.totalCost ?? 0, project.currency)}
-          hint={`${totals?.totalHours ?? 0} verified hours × ${project.currency} ${project.hourlyRate}/hr`}
+          hint={`${totals?.totalHours ?? 0} hrs × ${formatMoney(project.hourlyRate, project.currency)}/hr`}
           tone="success"
-          icon={<ArrowUpRight className="h-4 w-4" />}
+          icon={<TrendingUp className="h-4 w-4" />}
+        />
+        <MetricCard
+          label="Verified time"
+          value={`${totals?.totalHours ?? 0} hrs`}
+          hint={`${totals?.verifiedCount ?? 0} verified billable item${totals?.verifiedCount === 1 ? '' : 's'}`}
+          icon={<Clock className="h-4 w-4 text-primary" />}
         />
         <MetricCard
           label="Review queue"
           value={totals?.reviewCount ?? 0}
-          hint="Low-confidence items for you to verify or reject"
+          hint="Low-confidence items to verify"
           tone={totals?.reviewCount ? 'warning' : 'default'}
+          icon={<ShieldAlert className="h-4 w-4 text-warning" />}
         />
         <MetricCard
           label="Rejected"
@@ -60,10 +67,12 @@ export default function LedgerPage() {
         />
       </div>
 
-      <div className="rounded-md bg-info/10 px-3 py-2 text-xs text-muted-foreground">
-        <Info className="mr-1.5 inline h-3.5 w-3.5 text-info align-middle" />
-        Verified item hours are multiplied by the project rate in <strong className="text-foreground">deterministic code</strong> — no
-        AI-generated totals. Rejected items are removed from the aggregate.
+      <div className="rounded-md bg-info/10 px-3 py-2 text-xs text-muted-foreground flex items-center gap-2">
+        <Info className="h-4 w-4 text-info shrink-0" />
+        <span>
+          Verified item hours are multiplied by the project rate in <strong className="text-foreground">deterministic code</strong> — zero
+          AI arithmetic hallucination. Rejected items are excluded from totals.
+        </span>
       </div>
 
       {reviewQueue.length > 0 && (

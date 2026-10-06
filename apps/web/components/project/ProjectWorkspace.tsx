@@ -26,6 +26,7 @@ interface ProjectWorkspaceValue {
   reload: () => void;
   updateItemLocal: (itemId: string, patch: Partial<LedgerItem>) => void;
   verifyItem: (itemId: string) => Promise<void>;
+  verifyItems: (itemIds: string[], action?: 'verify' | 'reject') => Promise<void>;
   rejectItem: (itemId: string) => Promise<void>;
 }
 
@@ -46,60 +47,42 @@ export function ProjectProvider({
 }) {
   const { user } = useAuth();
   const ownerId = user?.userId;
-  const { loading, error, reload, updateItem, ...detail } = useProject(projectId, ownerId);
+  const { loading, error, reload, updateItem, updateItems, ...detail } = useProject(projectId, ownerId);
 
-  const verifyItem = async (itemId: string) => {
-    const item = detail.ledgerItems?.find((i) => i.id === itemId);
-    // 1. Instant optimistic state recalculation
-    updateItem(itemId, { verificationStatus: 'verified' });
+  const verifyItems = async (itemIds: string[], action: 'verify' | 'reject' = 'verify') => {
+    if (!itemIds || itemIds.length === 0) return;
+    const newStatus = action === 'verify' ? 'verified' : 'rejected';
+    // 1. Instant optimistic state recalculation for ALL items at once
+    updateItems(itemIds, { verificationStatus: newStatus });
 
     try {
       await api.verifyLedgerItem({
         projectId,
-        ledgerItemId: itemId,
-        action: 'verify',
+        ledgerItemIds: itemIds,
+        action,
         userId: ownerId,
+        fallbackProject: detail.project || undefined,
+        fallbackLedgerItems: detail.ledgerItems || undefined,
       });
       reload();
     } catch (err) {
-      console.warn('[Ledger Verification Warning] Server sync fallback handled:', err);
+      console.warn('[Ledger Batch Verification Warning] Server sync fallback handled:', err);
     }
 
-    if (item) {
-      recordActivity({
-        type: 'item_verified',
-        projectId,
-        projectName: detail.project?.name ?? null,
-        message: `Verified "${item.originalMessage.slice(0, 50)}${item.originalMessage.length > 50 ? '…' : ''}"`,
-      });
-    }
+    recordActivity({
+      type: action === 'verify' ? 'item_verified' : 'item_rejected',
+      projectId,
+      projectName: detail.project?.name ?? null,
+      message: `${action === 'verify' ? 'Verified' : 'Rejected'} ${itemIds.length} scope item${itemIds.length === 1 ? '' : 's'}`,
+    });
+  };
+
+  const verifyItem = async (itemId: string) => {
+    await verifyItems([itemId], 'verify');
   };
 
   const rejectItem = async (itemId: string) => {
-    const item = detail.ledgerItems?.find((i) => i.id === itemId);
-    // 1. Instant optimistic state recalculation
-    updateItem(itemId, { verificationStatus: 'rejected' });
-
-    try {
-      await api.verifyLedgerItem({
-        projectId,
-        ledgerItemId: itemId,
-        action: 'reject',
-        userId: ownerId,
-      });
-      reload();
-    } catch (err) {
-      console.warn('[Ledger Rejection Warning] Server sync fallback handled:', err);
-    }
-
-    if (item) {
-      recordActivity({
-        type: 'item_rejected',
-        projectId,
-        projectName: detail.project?.name ?? null,
-        message: `Rejected "${item.originalMessage.slice(0, 50)}${item.originalMessage.length > 50 ? '…' : ''}"`,
-      });
-    }
+    await verifyItems([itemId], 'reject');
   };
 
   return (
@@ -113,6 +96,7 @@ export function ProjectProvider({
         reload,
         updateItemLocal: updateItem,
         verifyItem,
+        verifyItems,
         rejectItem,
       }}
     >

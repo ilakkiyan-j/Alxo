@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import {
-  verifyLedgerItem,
+  verifyLedgerItems,
   calculateProjectTotals,
 } from '../../../../../../services/ledger/src/ledger-service';
 import { VerifyLedgerItemRequest } from '@scope-creep-ledger/shared';
@@ -8,17 +8,18 @@ import { VerifyLedgerItemRequest } from '@scope-creep-ledger/shared';
 export async function POST(request: Request) {
   try {
     const body: VerifyLedgerItemRequest = await request.json();
+    const itemIds = body.ledgerItemIds || (body.ledgerItemId ? [body.ledgerItemId] : []);
 
-    if (!body.projectId || !body.ledgerItemId || !body.action) {
+    if (!body.projectId || itemIds.length === 0 || !body.action) {
       return NextResponse.json(
-        { error: 'projectId, ledgerItemId, and action are required.' },
+        { error: 'projectId, ledgerItemId(s), and action are required.' },
         { status: 400 }
       );
     }
 
-    await verifyLedgerItem(
+    await verifyLedgerItems(
       body.projectId,
-      body.ledgerItemId,
+      itemIds,
       body.action,
       body.customEstimatedHours,
       body.userId,

@@ -59,7 +59,7 @@ export default function ChangeOrdersPage() {
   const [copiedSubject, setCopiedSubject] = useState(false);
   const [customNote, setCustomNote] = useState('');
   const [showCustomNote, setShowCustomNote] = useState(false);
-  const [viewMode, setViewMode] = useState<ViewMode>('email');
+  const [viewMode, setViewMode] = useState<ViewMode>('split');
   const [isEditingEmail, setIsEditingEmail] = useState(false);
   const [editableEmailBody, setEditableEmailBody] = useState('');
 
@@ -194,7 +194,7 @@ export default function ChangeOrdersPage() {
                     className="gap-2 shadow-sm font-semibold"
                   >
                     <Sparkles className="h-4 w-4" />
-                    {response ? 'Recompile Change Order' : 'Compile Change Order'}
+                    {response ? 'Regenerate Change Order' : 'Generate Change Order'}
                   </Button>
                 </div>
               </div>
@@ -456,9 +456,9 @@ function EmailClientCard({
             <span className="h-3 w-3 rounded-full bg-danger/80 inline-block" />
             <span className="h-3 w-3 rounded-full bg-warning/80 inline-block" />
             <span className="h-3 w-3 rounded-full bg-success/80 inline-block" />
-            <span className="text-xs font-semibold text-muted-foreground ml-2 flex items-center gap-1.5">
-              <Mail className="h-3.5 w-3.5 text-primary" /> Outbound Client Dispatch
-            </span>
+            <h2 className="text-xs font-semibold text-muted-foreground ml-2 flex items-center gap-1.5">
+              <Mail className="h-3.5 w-3.5 text-primary" /> Change Order Email
+            </h2>
           </div>
 
           <div className="flex items-center gap-1">

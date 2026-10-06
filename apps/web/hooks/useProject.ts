@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { Project, LedgerItem } from '@scope-creep-ledger/shared';
-import { api, ProjectDetail, ApiError, getLocalProjectDetail, getLocalProjects } from '@/lib/api';
+import { api, ProjectDetail, ApiError, getLocalProjectDetail, getLocalProjects, saveLocalLedger } from '@/lib/api';
 
 // Module-level in-memory cache to ensure instant UI rendering during section switching
 // Module-level in-memory cache scoped per userId to ensure instant UI rendering without cross-account leakage
@@ -82,11 +82,11 @@ export function useProject(projectId: string, userId?: string) {
     if (projectId) load();
   }, [projectId, load]);
 
-  const updateItem = useCallback(
-    (itemId: string, patch: Partial<LedgerItem>) => {
+  const updateItems = useCallback(
+    (itemIds: string[], patch: Partial<LedgerItem>) => {
       setData((prev) => {
         if (!prev) return prev;
-        const updatedItems = prev.ledgerItems.map((it) => (it.id === itemId ? { ...it, ...patch } : it));
+        const updatedItems = prev.ledgerItems.map((it) => (itemIds.includes(it.id) ? { ...it, ...patch } : it));
         const verified = updatedItems.filter((i) => i.verificationStatus === 'verified');
         const review = updatedItems.filter((i) => i.verificationStatus === 'review_required');
         const rejected = updatedItems.filter((i) => i.verificationStatus === 'rejected');
@@ -108,6 +108,7 @@ export function useProject(projectId: string, userId?: string) {
 
         if (projectId) {
           projectCacheMap.set(projectId, updated);
+          saveLocalLedger(projectId, updatedItems);
         }
         return updated;
       });
@@ -115,5 +116,12 @@ export function useProject(projectId: string, userId?: string) {
     [projectId]
   );
 
-  return { ...data, loading: !data && !error, error, reload: load, updateItem };
+  const updateItem = useCallback(
+    (itemId: string, patch: Partial<LedgerItem>) => {
+      updateItems([itemId], patch);
+    },
+    [updateItems]
+  );
+
+  return { ...data, loading: !data && !error, error, reload: load, updateItem, updateItems };
 }

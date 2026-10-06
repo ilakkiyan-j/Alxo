@@ -174,7 +174,8 @@ export interface AnalyzeResponse {
 /** API Payload: POST /ledger/verify */
 export interface VerifyLedgerItemRequest {
   projectId: string;
-  ledgerItemId: string;
+  ledgerItemId?: string;
+  ledgerItemIds?: string[];
   action: 'verify' | 'reject';
   customEstimatedHours?: number; // Optional user override of hours
   /** Owner of the project (mock auth identity for MVP attribution). */
