@@ -4,6 +4,7 @@ import * as path from 'path';
 
 const DEFAULT_REGION = process.env.APP_AWS_REGION || process.env.AWS_REGION || 'ap-southeast-2';
 const DEFAULT_MODEL_ID = process.env.BEDROCK_MODEL_ID || 'anthropic.claude-haiku-4-5-20251001-v1:0';
+const DEFAULT_TEMPERATURE = parseFloat(process.env.BEDROCK_TEMPERATURE || '0.0');
 const DEFAULT_CONFIDENCE_THRESHOLD = parseFloat(process.env.CONFIDENCE_THRESHOLD || '0.70');
 const DEFAULT_BATCH_SIZE = parseInt(process.env.BATCH_SIZE || '10', 10);
 
@@ -173,7 +174,7 @@ async function runBedrockClassification(
   const payload = {
     anthropic_version: 'bedrock-2023-05-31',
     max_tokens: 2000,
-    temperature: 0.1,
+    temperature: DEFAULT_TEMPERATURE,
     system: systemPrompt,
     messages: [
       {
