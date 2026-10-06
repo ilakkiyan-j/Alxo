@@ -365,6 +365,119 @@ export default function PublicAWSArchitecturePage() {
           </Card>
         </section>
 
+        {/* Section 2.5: Architectural Alternatives & Trade-offs */}
+        <section className="space-y-4">
+          <div>
+            <div className="flex items-center gap-2">
+              <Badge variant="outline" className="border-brand-accent/40 text-brand-accent text-xs">
+                FDE Assignment · System Design Evaluation
+              </Badge>
+            </div>
+            <h2 className="text-xl font-bold text-foreground mt-1">Architectures Considered & Rejected</h2>
+            <p className="text-xs text-muted-foreground mt-0.5">
+              Comparison of evaluated engineering approaches before selecting the ALXO Modular Hybrid Pipeline.
+            </p>
+          </div>
+
+          <div className="grid gap-4 lg:grid-cols-3">
+            {/* Option 1 */}
+            <Card className="border-danger/30 bg-danger/5 shadow-card flex flex-col justify-between">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between gap-2">
+                  <Badge variant="danger" className="text-[10px] font-semibold uppercase tracking-wider">
+                    Rejected Alternative 1
+                  </Badge>
+                  <span className="text-[10px] font-mono text-muted-foreground">Rule-Based</span>
+                </div>
+                <CardTitle className="text-sm font-bold text-foreground mt-2">
+                  Rule-Based NLP & Entity Extraction
+                </CardTitle>
+                <CardDescription className="text-xs text-muted-foreground">
+                  spaCy POS tagging + verb-noun deliverable heuristics
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3 text-xs">
+                <div className="rounded-md bg-background/80 p-2.5 border border-border/50 space-y-1">
+                  <p className="font-semibold text-foreground text-[11px]">Why it seemed attractive:</p>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    Zero LLM API cost, deterministic execution, and ultra-fast &lt;50ms response times.
+                  </p>
+                </div>
+                <div className="rounded-md bg-danger/10 p-2.5 border border-danger/20 space-y-1">
+                  <p className="font-semibold text-danger text-[11px]">Critical Failure Mode:</p>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    <strong>Blind to conversational hedging:</strong> Real clients write <em>&ldquo;not sure if in scope, but could we explore parallax motion...&rdquo;</em>. Rule-based entity parsers miss polite, indirect requests completely.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Option 2 */}
+            <Card className="border-danger/30 bg-danger/5 shadow-card flex flex-col justify-between">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between gap-2">
+                  <Badge variant="danger" className="text-[10px] font-semibold uppercase tracking-wider">
+                    Rejected Alternative 2
+                  </Badge>
+                  <span className="text-[10px] font-mono text-muted-foreground">Monolithic</span>
+                </div>
+                <CardTitle className="text-sm font-bold text-foreground mt-2">
+                  Monolithic End-to-End LLM Prompt
+                </CardTitle>
+                <CardDescription className="text-xs text-muted-foreground">
+                  Single massive prompt (Chat + SOW &rarr; Final Invoice)
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3 text-xs">
+                <div className="rounded-md bg-background/80 p-2.5 border border-border/50 space-y-1">
+                  <p className="font-semibold text-foreground text-[11px]">Why it seemed attractive:</p>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    Single-shot execution, zero pipeline decomposition code, simple prototype implementation.
+                  </p>
+                </div>
+                <div className="rounded-md bg-danger/10 p-2.5 border border-danger/20 space-y-1">
+                  <p className="font-semibold text-danger text-[11px]">Critical Failure Mode:</p>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    <strong>Financial math hallucinations:</strong> LLMs drift on hourly rate arithmetic (e.g. 5.5 hrs &times; ₹2,500 = ₹14,250). Crashes on long 150+ message chats and provides zero human review state.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Winning Option */}
+            <Card className="border-success/40 bg-success/5 shadow-card flex flex-col justify-between ring-1 ring-success/30">
+              <CardHeader className="pb-3">
+                <div className="flex items-center justify-between gap-2">
+                  <Badge variant="success" className="text-[10px] font-semibold uppercase tracking-wider">
+                    Winning Hybrid Architecture
+                  </Badge>
+                  <span className="text-[10px] font-mono text-success font-bold">ALXO Production</span>
+                </div>
+                <CardTitle className="text-sm font-bold text-foreground mt-2">
+                  Modular Hybrid Pipeline
+                </CardTitle>
+                <CardDescription className="text-xs text-muted-foreground">
+                  Bedrock Claude Haiku + Deterministic TypeScript + DynamoDB
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-3 text-xs">
+                <div className="rounded-md bg-background/80 p-2.5 border border-border/50 space-y-1">
+                  <p className="font-semibold text-foreground text-[11px]">How it works:</p>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    S3 Archival &rarr; Session Coalescing Parser &rarr; Bedrock Claude Haiku schema extraction &rarr; Confidence Gating (&lt;0.70) &rarr; Deterministic TypeScript math.
+                  </p>
+                </div>
+                <div className="rounded-md bg-success/10 p-2.5 border border-success/20 space-y-1">
+                  <p className="font-semibold text-success text-[11px]">Production Advantage:</p>
+                  <p className="text-muted-foreground text-[11px] leading-relaxed">
+                    <strong>100% exact math &amp; auditability:</strong> Separates probabilistic language interpretation from deterministic financial rules. Sub-second execution with human review safety.
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
         {/* Section 3: Live Health Dashboard */}
         <section className="space-y-4">
           <div className="flex items-center justify-between">
