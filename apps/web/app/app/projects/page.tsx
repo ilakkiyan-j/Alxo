@@ -17,7 +17,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   FolderPlus, FolderKanban, Search, Filter, LayoutGrid, List,
-  ArrowUpDown, Cloud, CheckCircle2, Clock, AlertCircle, Sparkles
+  ArrowUpDown, Cloud, CheckCircle2, Clock, AlertCircle, Sparkles, RotateCcw
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 import { useProjects } from '@/hooks/useProject';
@@ -61,12 +61,27 @@ const STATUS_BADGE_VARIANT: Record<string, 'success' | 'warning' | 'info' | 'def
 
 export default function ProjectsPage() {
   const { user } = useAuth();
-  const { projects, loading, error } = useProjects(user?.userId);
+  const { projects, loading, error, reload } = useProjects(user?.userId);
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<string>('all');
   const [viewMode, setViewMode] = useState<ViewMode>('grid');
   const [sortField, setSortField] = useState<SortField>('createdAt');
   const [details, setDetails] = React.useState<Map<string, ProjectDetail> | null>(null);
+  const [resetting, setResetting] = useState(false);
+
+  const handleResetWorkspace = async () => {
+    if (!confirm('Are you sure you want to reset demo workspace projects to a clean slate?')) return;
+    setResetting(true);
+    try {
+      await api.resetWorkspace(user?.userId);
+      if (reload) await reload();
+      window.location.reload();
+    } catch {
+      window.location.reload();
+    } finally {
+      setResetting(false);
+    }
+  };
 
   // Load project details for table view
   React.useEffect(() => {
@@ -110,11 +125,23 @@ export default function ProjectsPage() {
         title="Projects"
         description="Monitor and track scope creep across all client engagements."
         actions={
-          <Button asChild size="lg" id="projects-new-btn">
-            <Link href="/app/analysis/new">
-              <Sparkles className="h-4 w-4" /> New Analysis
-            </Link>
-          </Button>
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
+              size="lg"
+              onClick={handleResetWorkspace}
+              loading={resetting}
+              className="text-xs text-muted-foreground hover:text-danger hover:border-danger/40 gap-1.5"
+              title="Reset Demo Workspace"
+            >
+              <RotateCcw className="h-3.5 w-3.5" /> Reset Demo Data
+            </Button>
+            <Button asChild size="lg" id="projects-new-btn">
+              <Link href="/app/analysis/new">
+                <Sparkles className="h-4 w-4" /> New Analysis
+              </Link>
+            </Button>
+          </div>
         }
       />
 

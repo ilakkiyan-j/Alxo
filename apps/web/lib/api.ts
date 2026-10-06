@@ -35,11 +35,7 @@ export function getLocalProjects(userId?: string): Project[] {
     const raw = localStorage.getItem(LOCAL_PROJECTS_KEY);
     const parsed = raw ? (JSON.parse(raw) as Project[]) : [];
     if (!userId || userId === 'usr_admin_master_999' || userId === '__system') return parsed;
-    return parsed.filter((p) => {
-      if (p.userId === userId) return true;
-      if (userId === 'usr_demo_001' && (!p.userId || p.userId === 'usr_demo_001')) return true;
-      return false;
-    });
+    return parsed.filter((p) => p.userId === userId);
   } catch {
     return [];
   }
@@ -327,6 +323,23 @@ export const api = {
       method: 'POST',
       body: JSON.stringify(enriched),
     });
+  },
+
+  resetWorkspace: async (userId?: string) => {
+    if (typeof window !== 'undefined') {
+      Object.keys(localStorage)
+        .filter((k) => k.startsWith('scope_creep_projects') || k.startsWith('scope_creep_ledger') || k.startsWith('scope_creep_activity'))
+        .forEach((k) => localStorage.removeItem(k));
+    }
+    try {
+      await json('/api/projects/reset', {
+        method: 'POST',
+        body: JSON.stringify({ userId }),
+      });
+    } catch {
+      /* ignore */
+    }
+    return { success: true };
   },
 };
 

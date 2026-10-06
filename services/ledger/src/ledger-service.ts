@@ -182,9 +182,28 @@ export async function getProject(projectId: string, userId?: string): Promise<Pr
 
 function matchesUser(p: Project, targetUserId?: string): boolean {
   if (!targetUserId || targetUserId === 'usr_admin_master_999' || targetUserId === '__system') return true;
-  if (p.userId === targetUserId) return true;
-  if (targetUserId === 'usr_demo_001' && (!p.userId || p.userId === 'usr_demo_001')) return true;
-  return false;
+  return p.userId === targetUserId;
+}
+
+/**
+ * Clears demo/workspace projects and ledger items from mock stores.
+ */
+export async function clearWorkspaceProjects(userId?: string): Promise<{ success: boolean; clearedCount: number }> {
+  let cleared = 0;
+  if (!userId || userId === 'usr_demo_001' || userId === '__system') {
+    cleared = mockProjectsStore.size;
+    mockProjectsStore.clear();
+    mockLedgerStore.clear();
+    mockActivityStore.length = 0;
+  } else {
+    for (const [key, p] of Array.from(mockProjectsStore.entries())) {
+      if (p.userId === userId) {
+        mockProjectsStore.delete(key);
+        cleared++;
+      }
+    }
+  }
+  return { success: true, clearedCount: cleared };
 }
 
 /**
