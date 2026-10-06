@@ -754,7 +754,7 @@ function runMockClassification(
     }
 
     // Off-topic
-    if (text.includes('coffee') || text.includes('meeting tomorrow') || text.includes('ready to kick off')) {
+    if (text.includes('coffee') || text.includes('meeting') || text.includes('schedule') || text.includes('call') || text.includes('ready to kick off')) {
       return {
         messageId: msg.id,
         classification: 'off-topic',

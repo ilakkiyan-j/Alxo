@@ -2,7 +2,7 @@
 node_modules/
 .pnpm-store/
 
-# Next.js build output
+# Next.js & Build outputs
 .next/
 out/
 build/
@@ -10,10 +10,19 @@ dist/
 
 # Environment variable files (NEVER COMMIT SECRETS)
 .env
-.env.local
+.env*.local
 .env.development.local
 .env.test.local
 .env.production.local
+.env.staging
+.env.production
+
+# Local Credentials & Secrets
+credentials.md
+**/credentials.md
+*.pem
+*.key
+*credentials*.json
 
 # Logs & Debug
 npm-debug.log*
@@ -25,6 +34,7 @@ yarn-error.log*
 # OS & Editor generated files
 .DS_Store
 Thumbs.db
+desktop.ini
 .idea/
 .vscode/
 *.suo
@@ -33,18 +43,29 @@ Thumbs.db
 *.sln
 *.swp
 
-# Temporary & Cache files
+# AI IDEs, Tooling & Workspaces
+.kilo/
+.opencode/
+.gemini/
+.cursor/
+.windsurf/
+
+# Temporary, Cache & Coverage files
 .turbo/
 .vercel/
-.gemini/
 test-results/
 playwright-report/
+coverage/
+.nyc_output/
 
-# Local Credentials & Secrets
-credentials.md
+# Packaging, Submissions & Evaluation Run Matrixes
+submission/
+*.zip
+*.tar.gz
+*.tgz
+evaluation_results_matrix.csv
 
-# AI Prompts, UI Audits & OpenCode Configs
-.opencode/
-.ai/
-
-docs/
+# Private Archives & Interview Prep (Do Not Commit)
+docs/archive/
+archive/
+**/archive/
