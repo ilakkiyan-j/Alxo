@@ -179,6 +179,8 @@ export interface VerifyLedgerItemRequest {
   customEstimatedHours?: number; // Optional user override of hours
   /** Owner of the project (mock auth identity for MVP attribution). */
   userId?: string;
+  fallbackProject?: Project;
+  fallbackLedgerItems?: LedgerItem[];
 }
 
 /** API Request: POST /change-order */

@@ -86,10 +86,26 @@ export function useProject(projectId: string, userId?: string) {
     (itemId: string, patch: Partial<LedgerItem>) => {
       setData((prev) => {
         if (!prev) return prev;
-        const updated = {
+        const updatedItems = prev.ledgerItems.map((it) => (it.id === itemId ? { ...it, ...patch } : it));
+        const verified = updatedItems.filter((i) => i.verificationStatus === 'verified');
+        const review = updatedItems.filter((i) => i.verificationStatus === 'review_required');
+        const rejected = updatedItems.filter((i) => i.verificationStatus === 'rejected');
+        const totalHours = verified.reduce((acc, i) => acc + (i.estimatedHours || 0), 0);
+        const hourlyRate = prev.project?.hourlyRate ?? 60;
+        const totalCost = totalHours * hourlyRate;
+
+        const updated: ProjectDetail = {
           ...prev,
-          ledgerItems: prev.ledgerItems.map((it) => (it.id === itemId ? { ...it, ...patch } : it)),
+          ledgerItems: updatedItems,
+          totals: {
+            totalHours: Math.round(totalHours * 100) / 100,
+            totalCost: Math.round(totalCost * 100) / 100,
+            verifiedCount: verified.length,
+            reviewCount: review.length,
+            rejectedCount: rejected.length,
+          },
         };
+
         if (projectId) {
           projectCacheMap.set(projectId, updated);
         }

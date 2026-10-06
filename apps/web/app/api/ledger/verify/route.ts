@@ -21,7 +21,9 @@ export async function POST(request: Request) {
       body.ledgerItemId,
       body.action,
       body.customEstimatedHours,
-      body.userId
+      body.userId,
+      body.fallbackLedgerItems,
+      body.fallbackProject
     );
 
     const totals = await calculateProjectTotals(body.projectId, body.userId);

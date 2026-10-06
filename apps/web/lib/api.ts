@@ -288,12 +288,18 @@ export const api = {
   },
 
   verifyLedgerItem: async (request: VerifyLedgerItemRequest) => {
+    const localDetail = getLocalProjectDetail(request.projectId);
+    const enriched: VerifyLedgerItemRequest = {
+      ...request,
+      fallbackProject: request.fallbackProject || localDetail?.project,
+      fallbackLedgerItems: request.fallbackLedgerItems || localDetail?.ledgerItems,
+    };
+
     const res = await json<{ totals: ProjectDetail['totals'] }>('/api/ledger/verify', {
       method: 'POST',
-      body: JSON.stringify(request),
+      body: JSON.stringify(enriched),
     });
 
-    const localDetail = getLocalProjectDetail(request.projectId);
     if (localDetail && localDetail.ledgerItems) {
       const updatedItems = localDetail.ledgerItems.map((it) =>
         it.id === request.ledgerItemId

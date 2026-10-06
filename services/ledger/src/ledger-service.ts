@@ -260,7 +260,12 @@ export async function saveLedgerItems(items: LedgerItem[], userId?: string): Pro
 
   saveToMock(ownerId);
   saveToMock(DEFAULT_USER_ID);
-  mockLedgerStore.set(projectId, items);
+
+  const rawExisting = mockLedgerStore.get(projectId) || [];
+  const rawMerged = new Map<string, LedgerItem>();
+  rawExisting.forEach((i) => rawMerged.set(i.id, i));
+  items.forEach((i) => rawMerged.set(i.id, i));
+  mockLedgerStore.set(projectId, Array.from(rawMerged.values()));
 
   if (isMockMode()) {
     return;
@@ -274,11 +279,14 @@ export async function saveLedgerItems(items: LedgerItem[], userId?: string): Pro
     const docClient = DynamoDBDocumentClient.from(client);
 
     for (const item of items) {
-      await docClient.send(
-        new PutCommand({
-          TableName: LEDGER_TABLE,
-          Item: item,
-        })
+      await withDynamoTimeout(
+        docClient.send(
+          new PutCommand({
+            TableName: LEDGER_TABLE,
+            Item: item,
+          })
+        ),
+        1000
       );
     }
   } catch (err: any) {
@@ -363,16 +371,37 @@ export async function verifyLedgerItem(
   ledgerItemId: string,
   action: 'verify' | 'reject',
   customEstimatedHours?: number,
-  userId?: string
+  userId?: string,
+  fallbackItems?: LedgerItem[],
+  fallbackProject?: Project
 ): Promise<LedgerItem> {
-  const items = await getLedgerItems(projectId, userId);
-  const targetItem = items.find((i) => i.id === ledgerItemId);
+  if (fallbackProject) {
+    await saveProject(fallbackProject, userId);
+  }
+  if (fallbackItems && fallbackItems.length > 0) {
+    const existing = await getLedgerItems(projectId, userId);
+    if (existing.length === 0) {
+      await saveLedgerItems(fallbackItems, userId);
+    }
+  }
+
+  let items = await getLedgerItems(projectId, userId);
+  let targetItem = items.find((i) => i.id === ledgerItemId);
+
+  if (!targetItem && fallbackItems) {
+    targetItem = fallbackItems.find((i) => i.id === ledgerItemId);
+    if (targetItem) {
+      await saveLedgerItems(fallbackItems, userId);
+      items = await getLedgerItems(projectId, userId);
+      targetItem = items.find((i) => i.id === ledgerItemId) || targetItem;
+    }
+  }
 
   if (!targetItem) {
     throw new Error(`Ledger item ${ledgerItemId} not found for project ${projectId}.`);
   }
 
-  const project = await getProject(projectId, userId);
+  const project = (await getProject(projectId, userId)) || fallbackProject;
   const hourlyRate = project ? project.hourlyRate : 60;
 
   // Update item properties
@@ -458,11 +487,14 @@ export async function saveActivity(event: ActivityEvent): Promise<void> {
     const client = new DynamoDBClient(getAwsClientOptions());
     const docClient = DynamoDBDocumentClient.from(client);
 
-    await docClient.send(
-      new PutCommand({
-        TableName: ACTIVITY_TABLE,
-        Item: event,
-      })
+    await withDynamoTimeout(
+      docClient.send(
+        new PutCommand({
+          TableName: ACTIVITY_TABLE,
+          Item: event,
+        })
+      ),
+      1000
     );
   } catch (err: any) {
     console.warn(`[DynamoDB Warning] Failed to save activity event (${err.message}).`);
@@ -483,10 +515,13 @@ export async function listActivityEvents(): Promise<ActivityEvent[]> {
       const client = new DynamoDBClient(getAwsClientOptions());
       const docClient = DynamoDBDocumentClient.from(client);
 
-      const result = await docClient.send(
-        new ScanCommand({
-          TableName: ACTIVITY_TABLE,
-        })
+      const result = await withDynamoTimeout(
+        docClient.send(
+          new ScanCommand({
+            TableName: ACTIVITY_TABLE,
+          })
+        ),
+        1000
       );
 
       const items = (result.Items as ActivityEvent[]) || [];

@@ -21,11 +21,11 @@ export default function LedgerPage() {
   const rest = items.filter((it) => it.verificationStatus !== 'review_required');
 
   const handleVerifyAll = async () => {
+    const queueSnapshot = [...reviewQueue];
+    if (queueSnapshot.length === 0) return;
     setVerifyingAll(true);
     try {
-      for (const item of reviewQueue) {
-        await verifyItem(item.id);
-      }
+      await Promise.all(queueSnapshot.map((item) => verifyItem(item.id)));
     } catch {
       /* ignore */
     } finally {
